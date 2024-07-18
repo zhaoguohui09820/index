@@ -6,6 +6,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>赵国辉的网页</title>
   <link rel="icon" type="image/png" href="./image/logo-removebg-preview.jpeg">
+  <style>
+    /* 添加平滑过渡效果 */
+    img {
+      transition: transform 0.5s ease-in-out;
+      display: block;
+      /* 确保图片作为块级元素显示 */
+      margin: auto;
+      /* 自动外边距用于水平居中 */
+      margin-top: 10px;
+      /* 添加顶部边距 */
+      margin-bottom: 10px;
+      /* 添加底部边距 */
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+
+    details {
+      transition: max-height 0.5s ease-in-out;
+      overflow: hidden;
+    }
+
+    details[open]>div {
+      max-height: 1000px;
+      /* 确保足够大以容纳内容 */
+      transition: max-height 0.5s ease-in-out;
+    }
+
+    details>div {
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    h1,
+    h2 {
+      transition: color 0.3s ease;
+    }
+
+    h1:hover,
+    h2:hover {
+      color: darkred;
+    }
+
+    body {
+      opacity: 0;
+      transition: opacity 1s ease-in;
+    }
+
+    body.show {
+      opacity: 1;
+    }
+
+    /* 确保图片在它们所在的div中居中 */
+    .center-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      /* 设置与父容器相同的高度 */
+    }
+
+    /* 使图片位于右下角 */
+    img.bottom-right {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 10px;
+    }
+  </style>
 </head>
 
 <body>
@@ -14,6 +84,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    height: 200px;
     ">
     <img src="./image/logo-removebg-preview.jpeg" alt="zhaoguohui_logo" width="200px" height="200px">
   </div>
@@ -27,42 +99,57 @@
     max-width: 70%;
     margin: 20px auto;
     ">
-    <b style="
+    <h1 style="
     color: brown;
     font-size:larger;
-    ">更新!</b>
+    ">更新!</h1>
     <b>时间：</b>2024年7月18日星期四22点40分
     <b>名称：</b>我的网站图标
     <b>内容：</b>由空白<img src="./image/空白图标.png" width="212px" height="52px">更改为<img src="./image/新版图标.png" width="204px"
       height="50px">
-    <b style="
+    <h2 style="
     color: brown;
     font-size:larger;
-    ">历史日志</b>
-    <b>时间：</b>2024年7月18日星期四22点21分
-    <b>名称：</b>我的第一个素材
-    <b>内容：</b>冯少杰的素描
-    <img src="./image/fengshaojiesumiao.jpg" alt="fengshaojiesumiao" height="400px" width="260">
+    ">历史</h2>
+    <!-- 折叠列表开始 -->
+    <details>
+      <summary><b>2024年7月18日 冯少杰的素描</b></summary>
+      <div style="display: flex;
+            flex-direction:column;">
+        <b>时间：</b>2024年7月18日星期四22点21分
+        <b>名称：</b>我的第一个素材
+        <b>内容：</b>冯少杰的素描
+        <img src="./image/fengshaojiesumiao.jpg" alt="fengshaojiesumiao" height="400px" width="260">
+      </div>
+    </details>
+    <!-- 折叠列表结束 -->
+
   </div>
   <div style="
-    font-size: x-small;
-    color: white;
-    background: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 5px;
-    ">
-    <p style="font-size: large;color: rgb(40, 155, 231);">致谢：冯少杰（第一位志愿者）</p>
+                font-size: x-small;
+                color: white;
+                background: black;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                line-height: 5px;
+                padding: 20px;
+                ">
+    <p style="font-size: large;color: rgb(40, 155, 231);">致谢：冯少杰（第一位志愿者）
     <p>站长的微信：Zhao_guohui09820</p>
     <p>站长的QQ：2592299180</p>
     <p>站长的电子邮箱：zhaolixiangguohui@outlook.com</p>
     <p><b>👇</b>我的头像</p>
     <img src="./image/蜡笔小新头像.jpg" alt="头像" height="70px" width="70px">
-    <img src="./image/logo-removebg-preview.jpeg" alt="zhaoguohui_logo" height="50px" width="50px" style="display: flex;
-    align-self: self-end;">
+    <img class="bottom-right" src="./image/logo-removebg-preview.jpeg" alt="zhaoguohui_logo" height="50px" width="50px">
   </div>
 
+  <script>
+    // 渐入效果
+    document.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('show');
+    });
+  </script>
 </body>
 
 </html>
