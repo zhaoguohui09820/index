@@ -26,6 +26,15 @@
      max-width: 60%;
      padding: 20px;
      line-height: 150%;">
+    <button id="dzs" onclick="dianzan()">0</button>
+    <script>
+      function dianzan() {
+        let dianzanshubiaoqian = window.document.getElementById('dzs');
+        let dianzanshu = parseInt(dianzanshubiaoqian.innerText);
+        let xinshuzi = dianzanshu + 1;
+        dianzanshubiaoqian.innerText = xinshuzi
+      }
+    </script>
     <p><b>Hello world！</b></p>
     <p><b>开心每一天！！</b></p>
   </div>
