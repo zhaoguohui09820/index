@@ -1,167 +1,265 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+<!-- 文档类型声明，指定文档语言为中文 -->
 
 <head>
   <meta charset="UTF-8">
+  <!-- 设置字符集为UTF-8，确保页面可以正确显示中文字符 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 视口设置，确保在移动设备上正确显示 -->
   <title>赵国辉的网页</title>
+  <!-- 页面标题 -->
   <link rel="icon" type="image/png" href="./image/logo-removebg-preview.jpeg">
+  <!-- 设置页面的图标 -->
   <style>
-    /* 添加平滑过渡效果 */
+    /* 基本样式 */
+    body {
+      opacity: 0;
+      /* 初始状态为不可见 */
+      transition: opacity 1s ease-in;
+      /* 添加渐变效果 */
+    }
+
+    body.show {
+      opacity: 1;
+      /* 显示状态 */
+    }
+
     img {
       transition: transform 0.5s ease-in-out;
+      /* 图片渐变效果 */
       display: block;
-      /* 确保图片作为块级元素显示 */
-      margin: auto;
-      /* 自动外边距用于水平居中 */
-      margin-top: 10px;
-      /* 添加顶部边距 */
-      margin-bottom: 10px;
-      /* 添加底部边距 */
+      /* 将图片设置为块级元素 */
+      margin: 10px auto;
+      /* 添加上下边距并水平居中 */
     }
 
     img:hover {
       transform: scale(1.1);
+      /* 鼠标悬停时放大图片 */
     }
 
     details {
       transition: max-height 0.5s ease-in-out;
+      /* 折叠内容的过渡效果 */
       overflow: hidden;
+      /* 隐藏溢出的内容 */
     }
 
     details[open]>div {
       max-height: 1000px;
-      /* 确保足够大以容纳内容 */
+      /* 打开时设置最大高度 */
       transition: max-height 0.5s ease-in-out;
+      /* 过渡效果 */
     }
 
     details>div {
       max-height: 0;
+      /* 关闭时设置最大高度为0 */
       overflow: hidden;
+      /* 隐藏内容 */
     }
 
     h1,
     h2 {
       transition: color 0.3s ease;
+      /* 标题颜色的渐变效果 */
     }
 
     h1:hover,
     h2:hover {
       color: darkred;
+      /* 鼠标悬停时标题颜色变化 */
     }
 
-    body {
-      opacity: 0;
-      transition: opacity 1s ease-in;
+    /* 页眉样式 */
+    .header {
+      background: black;
+      /* 背景颜色 */
+      display: flex;
+      /* 使用flex布局 */
+      justify-content: center;
+      /* 水平居中 */
+      align-items: center;
+      /* 垂直居中 */
+      height: 200px;
+      /* 固定高度 */
     }
 
-    body.show {
-      opacity: 1;
+    .logo {
+      width: 200px;
+      /* 设置logo宽度 */
+      height: 200px;
+      /* 设置logo高度 */
     }
 
-    /* 确保图片在它们所在的div中居中 */
+    /* 内容区域样式 */
+    .content {
+      background: rgb(243, 243, 243);
+      /* 背景颜色 */
+      display: flex;
+      /* 使用flex布局 */
+      flex-direction: column;
+      /* 布局方向为列 */
+      justify-content: start;
+      /* 内容从头开始排列 */
+      line-height: 200%;
+      /* 行高 */
+      padding: 20px;
+      /* 内边距 */
+      max-width: 70%;
+      /* 最大宽度 */
+      margin: 20px auto;
+      /* 外边距 */
+    }
+
+    .update {
+      color: brown;
+      /* 更新标题颜色 */
+    }
+
+    /* 页脚样式 */
+    .footer {
+      font-size: x-small;
+      /* 字体大小 */
+      color: white;
+      /* 文字颜色 */
+      background: black;
+      /* 背景颜色 */
+      display: flex;
+      /* 使用flex布局 */
+      flex-direction: column;
+      /* 布局方向为列 */
+      align-items: center;
+      /* 水平居中 */
+      line-height: 5px;
+      /* 行高 */
+      padding: 20px;
+      /* 内边距 */
+    }
+
+    .footer-logo {
+      font-size: large;
+      /* 字体大小 */
+      color: rgb(40, 155, 231);
+      /* 文字颜色 */
+    }
+
+    /* 图片居中样式 */
     .center-content {
       display: flex;
+      /* 使用flex布局 */
       justify-content: center;
+      /* 水平居中 */
       align-items: center;
+      /* 垂直居中 */
       height: 100%;
-      /* 设置与父容器相同的高度 */
+      /* 高度占满父容器 */
     }
 
-    /* 使图片位于右下角 */
-    img.bottom-right {
+    /* 图片位于右下角样式 */
+    .bottom-right {
       position: absolute;
+      /* 绝对定位 */
       right: 0;
+      /* 右对齐 */
       margin: 10px;
+      /* 外边距 */
+    }
+
+    /* 历史摘要样式 */
+    .summary {
+      background-color: rgb(189, 189, 189);
+      /* 背景颜色 */
+      color: brown;
+      /* 文字颜色 */
+      padding: 10px;
+      /* 内边距 */
+      margin: 0px;
+      /* 外边距 */
+    }
+
+    /* 历史详细摘要样式 */
+    .history-summary {
+      background-color: rgb(212, 212, 212);
+      /* 背景颜色 */
+      padding: 10px;
+      /* 内边距 */
+    }
+
+    /* 历史内容样式 */
+    .history-content {
+      background-color: rgb(226, 226, 226);
+      /* 背景颜色 */
+      padding: 10px;
+      /* 内边距 */
     }
   </style>
 </head>
 
 <body>
-  <div style="
-    background: black;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    ">
-    <img src="./image/logo-removebg-preview.jpeg" alt="zhaoguohui_logo" width="200px" height="200px">
+  <!-- 页眉区域，包含logo -->
+  <div class="header">
+    <img class="logo" src="./image/logo-removebg-preview.jpeg" alt="zhaoguohui_logo">
   </div>
-  <div style="
-    background: rgb(243, 243, 243);
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    line-height: 200%;
-    padding: 20px;
-    max-width: 70%;
-    margin: 20px auto;
-    ">
-    <h2 style="
-    color: brown;
-    ">更新!</h2>
-    <div style="display: flex;
-                      flex-direction:column;">
+
+  <!-- 主要内容区域 -->
+  <div class="content">
+    <!-- 更新标题 -->
+    <h2 class="update">更新!</h2>
+    <!-- 更新内容 -->
+    <div>
       <b>时间：</b>2024年7月19日星期四7点30分
       <b>名称：</b>网站改版
       <b>内容：</b>新版眼不瞎的都能看到；鼠标悬停在图片上可以放大图片，“历史”新增折叠列表。就酱没了。
     </div>
-    <div>
+
+    <!-- 历史折叠区域 -->
+    <details>
+      <!-- 历史折叠标题 -->
+      <summary class="summary">
+        <h2>历史</h2>
+      </summary>
+      <!-- 历史详情1 -->
       <details>
-        <summary style="background-color: rgb(189, 189, 189);color:brown;padding: 10px;margin: 0px;">
-          <h2>历史</h2>
-        </summary>
-
-        <details>
-          <summary style="background-color: rgb(212, 212, 212);padding: 10px;"><b>2024年7月18日 我的网站图标</b></summary>
-          <div style="display: flex;
-            flex-direction:column;
-            background-color: rgb(226, 226, 226);
-            padding: 10px;">
-            <b>时间：</b>2024年7月18日星期四22点40分
-            <b>名称：</b>我的网站图标
-            <b>内容：</b>由空白<img src="./image/空白图标.png" width="212px" height="52px">更改为<img src="./image/新版图标.png"
-              width="204px" height="50px">
-          </div>
-        </details>
-
-        <details>
-          <summary style="background-color: rgb(212, 212, 212);padding: 10px;"><b>2024年7月18日 冯少杰的素描</b></summary>
-          <div style="display: flex;
-            flex-direction:column;
-            background-color: rgb(226, 226, 226);
-            padding: 10px;">
-            <b>时间：</b>2024年7月18日星期四22点21分
-            <b>名称：</b>我的第一个素材
-            <b>内容：</b>冯少杰的素描
-            <img src="./image/fengshaojiesumiao.jpg" alt="fengshaojiesumiao" height="400px" width="260">
-          </div>
-        </details>
-
+        <summary class="history-summary"><b>2024年7月18日 我的网站图标</b></summary>
+        <div class="history-content">
+          <b>时间：</b>2024年7月18日星期四22点40分
+          <b>名称：</b>我的网站图标
+          <b>内容：</b>由空白<img src="./image/空白图标.png" width="212px" height="52px">更改为<img src="./image/新版图标.png"
+            width="204px" height="50px">
+        </div>
       </details>
-    </div>
+
+      <!-- 历史详情2 -->
+      <details>
+        <summary class="history-summary"><b>2024年7月18日 冯少杰的素描</b></summary>
+        <div class="history-content">
+          <b>时间：</b>2024年7月18日星期四22点21分
+          <b>名称：</b>我的第一个素材
+          <b>内容：</b>冯少杰的素描
+          <img src="./image/fengshaojiesumiao.jpg" alt="fengshaojiesumiao" height="400px" width="260">
+        </div>
+      </details>
+    </details>
   </div>
-  <div style="
-      font-size: x-small;
-      color: white;
-      background: black;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      line-height: 5px;
-      padding: 20px;
-     ">
-    <p style="font-size: large;color: rgb(40, 155, 231);">致谢：冯少杰（第一位志愿者）
+
+  <!-- 页脚区域 -->
+  <div class="footer">
+    <!-- 致谢信息 -->
+    <p class="footer-logo">致谢：冯少杰（第一位志愿者）</p>
+    <!-- 联系方式 -->
     <p>站长的微信：Zhao_guohui09820</p>
     <p>站长的QQ：2592299180</p>
     <p>站长的电子邮箱：zhaolixiangguohui@outlook.com</p>
+    <!-- 头像 -->
     <p><b>👇</b>我的头像</p>
     <img src="./image/蜡笔小新头像.jpg" alt="头像" height="70px" width="70px">
   </div>
 
+  <!-- JavaScript代码区域 -->
   <script>
-    // 渐入效果
+    // 当文档加载完成后，添加.show类到body元素上，触发渐变效果
     document.addEventListener('DOMContentLoaded', function () {
       document.body.classList.add('show');
     });
