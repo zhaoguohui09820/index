@@ -95,6 +95,7 @@
 
     /* 内容区域样式 */
     .content {
+      padding: 10px;
       background: rgb(243, 243, 243);
       /* 背景颜色 */
       display: flex;
@@ -111,6 +112,8 @@
       /* 最大宽度 */
       margin: 20px auto;
       /* 外边距 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      /* 调整阴影的大小、模糊度和颜色 */
     }
 
     .update {
@@ -189,6 +192,8 @@
 
     /* 历史内容样式 */
     .history-content {
+      display: flex;
+      flex-direction: column;
       background-color: rgb(226, 226, 226);
       /* 背景颜色 */
       padding: 10px;
@@ -208,7 +213,7 @@
     <!-- 更新标题 -->
     <h2 class="update">更新!</h2>
     <!-- 更新内容 -->
-    <div>
+    <div style="display: flex;flex-direction: column;">
       <b>时间：</b>2024年7月19日星期四7点30分
       <b>名称：</b>网站改版
       <b>内容：</b>新版眼不瞎的都能看到；鼠标悬停在图片上可以放大图片，“历史”新增折叠列表。就酱没了。
