@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<!-- 文档类型声明，指定文档语言为中文 -->
+<!-- saved from url=(0040)https://zhaoguohui09820.github.io/index/ -->
+<html lang="zh-CN"><!-- 文档类型声明，指定文档语言为中文 -->
 
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
   <!-- 设置字符集为UTF-8，确保页面可以正确显示中文字符 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- 视口设置，确保在移动设备上正确显示 -->
   <title>赵国辉的网页</title>
   <!-- 页面标题 -->
-  <link rel="icon" type="image/png" href="./image/zhaoguohui_logo.ico">
+  <link rel="icon" type="image/png" href="https://zhaoguohui09820.github.io/index/image/zhaoguohui_logo.ico">
   <!-- 设置页面的图标 -->
   <style>
     /* CSS样式定义，用于定位和美化日期时间显示容器 */
@@ -354,28 +355,32 @@
       /* 内边距 */
     }
   </style>
+  <input type="hidden" id="_w_simile" data-inspect-config="3">
+  <script type="text/javascript"
+    src="chrome-extension://odphnbhiddhdpoccbialllejaajemdio/scripts/inspector.js"></script>
 </head>
 
-<body>
-  </div>
+<body class="show">
+
   <!-- 日期和时间显示的容器 -->
   <div id="datetime-container">
     <!-- 日期和星期的显示 -->
-    <div id="date-week"></div>
+    <div id="date-week">2024年07月19日 星期五</div>
     <!-- 当前时间的显示 -->
-    <div id="current-time"></div>
+    <div id="current-time">18:24:25</div>
   </div>
   <!-- 页眉区域，包含logo -->
   <div class="header">
-    <img class="logo" src="./image/zhaoguohui_logo.png" alt="zhaoguohui_logo">
+    <img class="logo" src="./index_files/zhaoguohui_logo.png" alt="zhaoguohui_logo">
   </div>
 
   <!-- 主要内容区域 --><!-- Flex容器 -->
   <div class="flex-container ">
-    <div class="flex-item">
+    <div onclick="./desktop_oclock.html" class="flex-item">
       <div class="liti" style=";background-color: rgba(0, 0, 0,0);">
-        <img id="desktop_oclock" src="./image/desktop_oclock.png" alt="desktop_oclock" height="50px" hwidth="50px">
-      </div>桌面时钟
+        <img src="./index_files/desktop_oclock.png" alt="desktop_oclock" height="50px" hwidth="50px">
+        桌面时钟
+      </div>
     </div>
     <div class="flex-item">
       <!-- 更新标题 -->
@@ -395,8 +400,8 @@
       <div class="panel">
         <b>时间：</b>2024年7月18日星期四22点40分<br>
         <b>名称：</b>我的网站图标<br>
-        <b>内容：</b>由空白<img src="./image/空白图标.png" width="212" height="52">更改为<img src="./image/新版图标.png" width="204"
-          height="50">
+        <b>内容：</b>由空白<img src="./index_files/空白图标.png" width="212" height="52">更改为<img src="./index_files/新版图标.png"
+          width="204" height="50">
       </div>
 
       <!-- 历史详情2 -->
@@ -405,7 +410,7 @@
         <b>时间：</b>2024年7月18日星期四22点21分<br>
         <b>名称：</b>我的第一个素材<br>
         <b>内容：</b>冯少杰的素描<br>
-        <img src="./image/fengshaojiesumiao.jpg" alt="fengshaojiesumiao" height="400" width="260">
+        <img src="./index_files/fengshaojiesumiao.jpg" alt="fengshaojiesumiao" height="400" width="260">
       </div>
     </div>
   </div>
@@ -420,21 +425,11 @@
     <p>站长的电子邮箱：zhaolixiangguohui@outlook.com</p>
     <!-- 头像 -->
     <p><b>👇</b>我的头像</p>
-    <img src="./image/蜡笔小新头像.jpg" alt="头像" height="70px" width="70px">
+    <img src="./index_files/蜡笔小新头像.jpg" alt="头像" height="70px" width="70px">
   </div>
 
   <!-- JavaScript代码区域 -->
   <script>
-    // 添加点击事件监听器
-    document.addEventListener('DOMContentLoaded', function () {
-      var clockImage = document.getElementById('desktop_clock');
-      if (clockImage) {
-        clockImage.addEventListener('click', function () {
-          // 跳转到新的HTML页面
-          window.location.href = 'desktop_oclock.html'; // 替换为你的新页面路径
-        });
-      }
-    });
     // 更新时间的JavaScript函数
     function updateTime() {
       var now = new Date(); // 创建一个新的Date对象表示当前时间
@@ -504,6 +499,8 @@
       });
     });
   </script>
+
+
 </body>
 
 </html>
