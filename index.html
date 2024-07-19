@@ -12,6 +12,53 @@
   <link rel="icon" type="image/png" href="./image/zhaoguohui_logo.ico">
   <!-- 设置页面的图标 -->
   <style>
+    /* 打开和关闭手风琴面板的样式 */
+    .accordion {
+      background-color: rgba(206, 206, 206, 0.4);
+      color: #000000;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      transition: 0.4s;
+      font-size: medium;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+
+    /* 设置点击和鼠标移到选项上面时（悬停）的样式 */
+    .active,
+    .accordion:hover {
+      background-color: rgba(163, 163, 163, 0.4);
+    }
+
+    /* 为手风琴面板设计样式。 默认隐藏 */
+    .panel {
+      padding: 0 18px;
+      background-color: rgba(228, 228, 228, 0.4);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
+    /* 设置 +、- 标志 */
+    .accordion:after {
+      content: '\002B';
+      /* Unicode 字符 + 号 */
+      color: #777;
+      font-weight: bold;
+      float: right;
+      margin-left: 2px;
+      font-size: large;
+    }
+
+    .active:after {
+      content: "\2212";
+      /* Unicode 字符 - 号 */
+    }
+
     #time {
       font-weight: bold;
       /* 加粗时间字体 */
@@ -242,18 +289,6 @@
       /* 外边距 */
     }
 
-    /* 历史摘要样式 */
-    .summary {
-      background-color: rgba(194, 194, 194, 0.5);
-      /* 背景颜色 */
-      color: brown;
-      /* 文字颜色 */
-      padding: 10px;
-      /* 内边距 */
-      margin: 0px;
-      /* 外边距 */
-    }
-
     /* 历史详细摘要样式 */
     .history-summary {
       background-color: rgba(221, 221, 221, 0.5);
@@ -293,34 +328,24 @@
     </div>
 
     <!-- 历史折叠区域 -->
-    <details>
-      <summary class="summary">
-        <h2>历史</h2>
-      </summary>
-      <!-- 历史详情1 -->
-      <details>
-        <summary class="history-summary"><b>2024年7月18日 我的网站图标</b></summary>
-        <div class="history-content">
-          <!-- 显示历史详情内容 -->
-          <b>时间：</b>2024年7月18日星期四22点40分
-          <b>名称：</b>我的网站图标
-          <b>内容：</b>由空白<img src="./image/空白图标.png" width="212" height="52">更改为<img src="./image/新版图标.png" width="204"
-            height="50">
-        </div>
-      </details>
+    <h2 class="update">历史</h2>
+    <!-- 历史详情1 -->
+    <button class="accordion">2024年7月18日 我的网站图标</button>
+    <div class="panel">
+      <b>时间：</b>2024年7月18日星期四22点40分<br>
+      <b>名称：</b>我的网站图标<br>
+      <b>内容：</b>由空白<img src="./image/空白图标.png" width="212" height="52">更改为<img src="./image/新版图标.png" width="204"
+        height="50">
+    </div>
 
-      <!-- 历史详情2 -->
-      <details>
-        <summary class="history-summary"><b>2024年7月18日 冯少杰的素描</b></summary>
-        <div class="history-content">
-          <!-- 显示历史详情内容 -->
-          <b>时间：</b>2024年7月18日星期四22点21分
-          <b>名称：</b>我的第一个素材
-          <b>内容：</b>冯少杰的素描
-          <img src="./image/fengshaojiesumiao.jpg" alt="fengshaojiesumiao" height="400" width="260">
-        </div>
-      </details>
-    </details>
+    <!-- 历史详情2 -->
+    <button class="accordion">2024年7月18日 冯少杰的素描</button>
+    <div class="panel">
+      <b>时间：</b>2024年7月18日星期四22点21分<br>
+      <b>名称：</b>我的第一个素材<br>
+      <b>内容：</b>冯少杰的素描<br>
+      <img src="./image/fengshaojiesumiao.jpg" alt="fengshaojiesumiao" height="400" width="260">
+    </div>
   </div>
 
   <!-- 页脚区域 -->
@@ -338,6 +363,20 @@
 
   <!-- JavaScript代码区域 -->
   <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
     function updateTime() {
       var now = new Date(); // 获取当前时间
       var hours = now.getHours().toString().padStart(2, '0'); // 获取小时并确保两位数字
