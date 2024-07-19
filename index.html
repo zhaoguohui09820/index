@@ -250,10 +250,10 @@
       flex-direction: column;
       flex: 1;
       /* 允许格子项伸缩以填充可用空间 */
-      min-height: 50px;
-      min-width: 75px;
+      height: 100px;
+      width: 100px;
       background-color: #f4f4f4;
-      opacity: 0.6;
+      opacity: 1;
       /* 背景颜色 */
       display: flex;
       /* 使格子项内部也使用flex布局 */
@@ -372,9 +372,8 @@
   <!-- 主要内容区域 --><!-- Flex容器 -->
   <div class="flex-container ">
     <div class="flex-item">
-      <div class="liti"
-        style="display: flex;justify-content: center;background-color: rgb(194, 158, 59);min-height: 50px;min-width: 100px;width: 200px;height: 150px;">
-        <img src="./image/desktop_clock.png" height="50px" width="50px">
+      <div id="desktop_oclock" class="liti" style=";background-color: rgba(0, 0, 0,0);">
+        <img src="./image/desktop_oclock.png" height="50px" width="50px">
       </div>桌面时钟
     </div>
     <div class="flex-item">
@@ -425,6 +424,16 @@
 
   <!-- JavaScript代码区域 -->
   <script>
+    // 添加点击事件监听器
+    document.addEventListener('DOMContentLoaded', function () {
+      var flexItems = document.querySelectorAll('desktop_oclock');
+      flexItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+          // 跳转到新的HTML页面
+          window.location.href = './desktop_oclock.html'; // 替换为你的新页面路径
+        });
+      });
+    });
     // 更新时间的JavaScript函数
     function updateTime() {
       var now = new Date(); // 创建一个新的Date对象表示当前时间
