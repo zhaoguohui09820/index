@@ -12,6 +12,30 @@
   <link rel="icon" type="image/png" href="./image/zhaoguohui_logo.ico">
   <!-- 设置页面的图标 -->
   <style>
+    /* CSS样式定义，用于定位和美化日期时间显示容器 */
+    #datetime-container {
+      color: white;
+      position: fixed;
+      /* 使用固定定位，使其相对于视口进行定位 */
+      top: 10px;
+      /* 容器距离页面顶部的距离 */
+      left: 10px;
+      /* 容器距离页面右侧的距离 */
+      font-size: 16px;
+      /* 字体大小 */
+      background-color: rgba(0, 0, 0, 0);
+      /* 背景色 */
+      padding: 5px;
+      /* 内边距 */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      /* 阴影效果 */
+    }
+
+    #date-week {
+      margin-bottom: 5px;
+      /* 日期和星期之间的间距 */
+    }
+
     /* 打开和关闭手风琴面板的样式 */
     .accordion {
       background-color: rgba(206, 206, 206, 0.4);
@@ -41,6 +65,8 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-out;
+      display: flex;
+      flex-direction: column;
     }
 
     /* 设置 +、- 标志 */
@@ -57,31 +83,6 @@
     .active:after {
       content: "\2212";
       /* Unicode 字符 - 号 */
-    }
-
-    #time {
-      font-weight: bold;
-      /* 加粗时间字体 */
-    }
-
-    .time-container {
-      position: fixed;
-      /* 固定位置 */
-      top: 10px;
-      /* 距离顶部10px */
-      right: 10px;
-      /* 距离右边10px */
-      padding: 5px 10px;
-      /* 内边距 */
-      background: rgba(0, 0, 0, 0);
-      /* 半透明的背景 */
-      color: white;
-      /* 文字颜色 */
-      border-radius: 5px;
-      /* 圆角边框 */
-      font-family: Arial, sans-serif;
-      /* 字体样式 */
-      font-size: large;
     }
 
     div {
@@ -210,31 +211,76 @@
       /* 设置logo高度 */
     }
 
-    /* 内容区域样式 */
-    .content {
-      padding: 10px;
-      background: rgba(243, 243, 243, 0.5);
+    /* 容器样式，使用flex布局 */
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      /* 允许子项在必要时换行 */
+      padding: 0px;
+      /* 容器内边距 */
+      gap: 7px;
+      /* 子项之间的间隔 */
+      margin: 20px;
+    }
+
+    /* 格子项样式 */
+    .flex-item {
+      flex-direction: column;
+      flex: 1;
+      /* 允许格子项伸缩以填充可用空间 */
+      min-width: 100px;
+      /* 格子项的最小宽度 */
+      min-height: 100px;
+      /* 格子项的高度 */
+      background-color: #f4f4f4;
+      opacity: 0.6;
       /* 背景颜色 */
       display: flex;
-      /* 使用flex布局 */
+      /* 使格子项内部也使用flex布局 */
+      justify-content: center;
+      /* 水平居中 */
+      align-items: center;
+      /* 垂直居中 */
+      font-size: 18px;
+      /* 字体大小 */
+    }
+
+    .liti {
       flex-direction: column;
-      /* 布局方向为列 */
-      justify-content: start;
-      /* 内容从头开始排列 */
-      line-height: 200%;
-      /* 行高 */
-      padding: 20px;
-      /* 内边距 */
-      max-width: 70%;
-      /* 最大宽度 */
-      margin: 20px auto;
-      /* 外边距 */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-      /* 调整阴影的大小、模糊度和颜色 */
+      flex: 1;
+      /* 允许格子项伸缩以填充可用空间 */
+      min-height: 50px;
+      min-width: 75px;
+      background-color: #f4f4f4;
+      opacity: 0.6;
+      /* 背景颜色 */
+      display: flex;
+      /* 使格子项内部也使用flex布局 */
+      font-size: 18px;
+      /* 字体大小 */
+      justify-content: center;
+      /* 水平居中 */
+      align-items: center;
+      /* 垂直居中 */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      /* 过渡效果 */
+      cursor: auto;
+      /* 鼠标指针样式 */
+      text-align: center
+    }
+
+    /* 鼠标悬停时的格子项样式 */
+    .liti:hover {
+      transform: scale(1.05);
+      /* 放大效果 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+      /* 阴影效果 */
     }
 
     .update {
       color: brown;
+      opacity: 1;
       /* 更新标题颜色 */
     }
 
@@ -310,41 +356,57 @@
 </head>
 
 <body>
-  <div class="time-container" id="time"></div>
+  </div>
+  <!-- 日期和时间显示的容器 -->
+  <div id="datetime-container">
+    <!-- 日期和星期的显示 -->
+    <div id="date-week"></div>
+    <!-- 当前时间的显示 -->
+    <div id="current-time"></div>
+  </div>
   <!-- 页眉区域，包含logo -->
   <div class="header">
     <img class="logo" src="./image/zhaoguohui_logo.png" alt="zhaoguohui_logo">
   </div>
 
-  <!-- 主要内容区域 -->
-  <div class="content">
-    <!-- 更新标题 -->
-    <h2 class="update">更新!</h2>
-    <!-- 更新内容 -->
-    <div style="display: flex;flex-direction: column;">
-      <b>时间：</b>2024年7月19日星期四7点30分
-      <b>名称：</b>网站改版
-      <b>内容：</b>新版眼不瞎的都能看到；增加背景和圆角，鼠标悬停在图片上可以放大图片，“历史”新增折叠列表。就酱没了。
+  <!-- 主要内容区域 --><!-- Flex容器 -->
+  <div class="flex-container ">
+    <div class="flex-item">
+      <div class="liti"
+        style="display: flex;justify-content: center;background-color: rgb(194, 158, 59);min-height: 50px;min-width: 100px;width: 200px;height: 150px;">
+        <img src="./image/desktop_clock.png" height="50px" width="50px">
+      </div>桌面时钟
     </div>
-
-    <!-- 历史折叠区域 -->
-    <h2 class="update">历史</h2>
-    <!-- 历史详情1 -->
-    <button class="accordion">2024年7月18日 我的网站图标</button>
-    <div class="panel">
-      <b>时间：</b>2024年7月18日星期四22点40分<br>
-      <b>名称：</b>我的网站图标<br>
-      <b>内容：</b>由空白<img src="./image/空白图标.png" width="212" height="52">更改为<img src="./image/新版图标.png" width="204"
-        height="50">
+    <div class="flex-item">
+      <!-- 更新标题 -->
+      <h2 class="update">更新!</h2>
+      <!-- 更新内容 -->
+      <div style="display: flex;flex-direction: column;padding: 20px;">
+        <b>时间：</b>2024年7月19日星期四7点30分
+        <b>名称：</b>网站改版
+        <b>内容：</b>新版眼不瞎的都能看到；增加背景和圆角，鼠标悬停在图片上可以放大图片，“历史”新增折叠列表。就酱没了。
+      </div>
     </div>
+    <div class="flex-item">
+      <!-- 历史折叠区域 -->
+      <h2 class="update">历史</h2>
+      <!-- 历史详情1 -->
+      <button class="accordion">2024年7月18日 我的网站图标</button>
+      <div class="panel">
+        <b>时间：</b>2024年7月18日星期四22点40分<br>
+        <b>名称：</b>我的网站图标<br>
+        <b>内容：</b>由空白<img src="./image/空白图标.png" width="212" height="52">更改为<img src="./image/新版图标.png" width="204"
+          height="50">
+      </div>
 
-    <!-- 历史详情2 -->
-    <button class="accordion">2024年7月18日 冯少杰的素描</button>
-    <div class="panel">
-      <b>时间：</b>2024年7月18日星期四22点21分<br>
-      <b>名称：</b>我的第一个素材<br>
-      <b>内容：</b>冯少杰的素描<br>
-      <img src="./image/fengshaojiesumiao.jpg" alt="fengshaojiesumiao" height="400" width="260">
+      <!-- 历史详情2 -->
+      <button class="accordion">2024年7月18日 冯少杰的素描</button>
+      <div class="panel">
+        <b>时间：</b>2024年7月18日星期四22点21分<br>
+        <b>名称：</b>我的第一个素材<br>
+        <b>内容：</b>冯少杰的素描<br>
+        <img src="./image/fengshaojiesumiao.jpg" alt="fengshaojiesumiao" height="400" width="260">
+      </div>
     </div>
   </div>
 
@@ -363,6 +425,36 @@
 
   <!-- JavaScript代码区域 -->
   <script>
+    // 更新时间的JavaScript函数
+    function updateTime() {
+      var now = new Date(); // 创建一个新的Date对象表示当前时间
+      var year = now.getFullYear(); // 获取当前年份
+      var month = (now.getMonth() + 1).toString().padStart(2, '0'); // 获取当前月份，并格式化为两位数字
+      var day = now.getDate().toString().padStart(2, '0'); // 获取当前日期，并格式化为两位数字
+      var dayOfWeek = now.toLocaleDateString('zh-CN', { weekday: 'long' }); // 获取当前星期，并格式化为中文
+      var hours = now.getHours().toString().padStart(2, '0'); // 获取当前小时，并格式化为两位数字
+      var minutes = now.getMinutes().toString().padStart(2, '0'); // 获取当前分钟，并格式化为两位数字
+      var seconds = now.getSeconds().toString().padStart(2, '0'); // 获取当前秒，并格式化为两位数字
+
+      // 构建格式化的日期字符串
+      var dateString = year + '年' + month + '月' + day + '日 ' + dayOfWeek;
+
+      // 构建格式化的时间字符串
+      var timeString = hours + ':' + minutes + ':' + seconds;
+
+      // 更新页面上的日期和星期
+      document.getElementById('date-week').textContent = dateString;
+
+      // 更新页面上的时间
+      document.getElementById('current-time').textContent = timeString;
+    }
+
+    // 页面加载完毕后设置定时器每秒更新时间
+    window.onload = function () {
+      updateTime(); // 首次调用更新时间函数
+      setInterval(updateTime, 1000); // 设置定时器，每1000毫秒（1秒）调用一次updateTime函数
+    };
+
     var acc = document.getElementsByClassName("accordion");
     var i;
 
@@ -377,19 +469,6 @@
         }
       });
     }
-    function updateTime() {
-      var now = new Date(); // 获取当前时间
-      var hours = now.getHours().toString().padStart(2, '0'); // 获取小时并确保两位数字
-      var minutes = now.getMinutes().toString().padStart(2, '0'); // 获取分钟并确保两位数字
-      var seconds = now.getSeconds().toString().padStart(2, '0'); // 获取秒并确保两位数字
-      var timeString = hours + ":" + minutes + ":" + seconds; // 组合时间字符串
-      document.getElementById('time').textContent = timeString; // 更新时间显示
-    }
-
-    // 初始化时间显示
-    updateTime();
-    // 每秒更新时间
-    setInterval(updateTime, 1000);
 
     // 当文档加载完成后，添加.show类到body元素上，触发渐变效果
     document.addEventListener('DOMContentLoaded', function () {
