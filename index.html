@@ -12,6 +12,28 @@
   <link rel="icon" type="image/png" href="./image/zhaoguohui_logo.ico">
   <!-- 设置页面的图标 -->
   <style>
+    /* 设置摘要和历史详情的样式 */
+    .summary,
+    .history-summary {
+      cursor: pointer;
+      /* 将鼠标光标变为指针，表示可点击 */
+      padding: 10px;
+      /* 添加内边距 */
+      background-color: #f2f2f2;
+      /* 背景颜色 */
+      border: 1px solid #ddd;
+      /* 边框样式 */
+    }
+
+    .history-content {
+      padding: 10px;
+      /* 添加内边距 */
+      border: 1px solid #ddd;
+      /* 边框样式 */
+      border-top: none;
+      /* 顶部的边框不显示，避免与摘要重叠 */
+    }
+
     /* 给整个网页添加背景图片 */
     body {
       background-image: url('./image/naxida01.jpg');
@@ -240,7 +262,6 @@
 
     <!-- 历史折叠区域 -->
     <details>
-      <!-- 历史折叠标题 -->
       <summary class="summary">
         <h2>历史</h2>
       </summary>
@@ -248,10 +269,11 @@
       <details>
         <summary class="history-summary"><b>2024年7月18日 我的网站图标</b></summary>
         <div class="history-content">
+          <!-- 显示历史详情内容 -->
           <b>时间：</b>2024年7月18日星期四22点40分
           <b>名称：</b>我的网站图标
-          <b>内容：</b>由空白<img src="./image/空白图标.png" width="212px" height="52px">更改为<img src="./image/新版图标.png"
-            width="204px" height="50px">
+          <b>内容：</b>由空白<img src="./image/空白图标.png" width="212" height="52">更改为<img src="./image/新版图标.png" width="204"
+            height="50">
         </div>
       </details>
 
@@ -259,10 +281,11 @@
       <details>
         <summary class="history-summary"><b>2024年7月18日 冯少杰的素描</b></summary>
         <div class="history-content">
+          <!-- 显示历史详情内容 -->
           <b>时间：</b>2024年7月18日星期四22点21分
           <b>名称：</b>我的第一个素材
           <b>内容：</b>冯少杰的素描
-          <img src="./image/fengshaojiesumiao.jpg" alt="fengshaojiesumiao" height="400px" width="260">
+          <img src="./image/fengshaojiesumiao.jpg" alt="fengshaojiesumiao" height="400" width="260">
         </div>
       </details>
     </details>
@@ -286,6 +309,25 @@
     // 当文档加载完成后，添加.show类到body元素上，触发渐变效果
     document.addEventListener('DOMContentLoaded', function () {
       document.body.classList.add('show');
+    });
+    // 获取所有的历史详情元素
+    var historyDetails = document.querySelectorAll('details details');
+
+    // 为每个历史详情的摘要添加点击事件监听器
+    historyDetails.forEach(function (detail, index) {
+      // 获取当前历史详情的摘要元素
+      var summary = detail.querySelector('.history-summary');
+
+      // 为摘要元素添加点击事件监听器
+      summary.addEventListener('click', function () {
+        // 遍历所有历史详情并关闭它们
+        historyDetails.forEach(function (otherDetail) {
+          // 如果当前详情不是被点击的详情，则关闭它
+          if (otherDetail !== detail) {
+            otherDetail.removeAttribute('open');
+          }
+        });
+      });
     });
   </script>
 </body>
