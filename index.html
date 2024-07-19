@@ -234,7 +234,7 @@
       min-height: 100px;
       /* 格子项的高度 */
       background-color: #f4f4f4;
-      opacity: 0.6;
+      opacity: 0.7;
       /* 背景颜色 */
       display: flex;
       /* 使格子项内部也使用flex布局 */
@@ -426,13 +426,13 @@
   <script>
     // 添加点击事件监听器
     document.addEventListener('DOMContentLoaded', function () {
-      var flexItems = document.querySelectorAll('desktop_oclock');
-      flexItems.forEach(function (item) {
-        item.addEventListener('click', function () {
+      var clockImage = document.getElementById('desktop_clock');
+      if (clockImage) {
+        clockImage.addEventListener('click', function () {
           // 跳转到新的HTML页面
-          window.location.href = './desktop_oclock.html'; // 替换为你的新页面路径
+          window.location.href = 'desktop_oclock.html'; // 替换为你的新页面路径
         });
-      });
+      }
     });
     // 更新时间的JavaScript函数
     function updateTime() {
