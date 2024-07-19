@@ -9,9 +9,24 @@
   <!-- 视口设置，确保在移动设备上正确显示 -->
   <title>赵国辉的网页</title>
   <!-- 页面标题 -->
-  <link rel="icon" type="image/png" href="./image/logo-removebg-preview.jpeg">
+  <link rel="icon" type="image/png" href="./image/zhaoguohui_logo.ico">
   <!-- 设置页面的图标 -->
   <style>
+    /* 给整个网页添加背景图片 */
+    body {
+      background-image: url('./image/naxida01.jpg');
+      /* 替换为您的背景图片路径 */
+      background-size: cover;
+      /* 图片会覆盖整个背景区域 */
+      background-position: center;
+      /* 图片会居中显示 */
+      background-repeat: no-repeat;
+      /* 图片不会重复 */
+      backdrop-filter: blur(2px);
+      /* 添加模糊效果，5px 是模糊程度 */
+      background-attachment: fixed;
+    }
+
     /* 基本样式 */
     body {
       opacity: 0;
@@ -74,7 +89,7 @@
 
     /* 页眉样式 */
     .header {
-      background: black;
+      background: rgba(0, 0, 0, 0.7);
       /* 背景颜色 */
       display: flex;
       /* 使用flex布局 */
@@ -84,6 +99,8 @@
       /* 垂直居中 */
       height: 200px;
       /* 固定高度 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      /* 调整阴影的大小、模糊度和颜色 */
     }
 
     .logo {
@@ -96,7 +113,7 @@
     /* 内容区域样式 */
     .content {
       padding: 10px;
-      background: rgb(243, 243, 243);
+      background: rgba(243, 243, 243, 0.5);
       /* 背景颜色 */
       display: flex;
       /* 使用flex布局 */
@@ -112,7 +129,7 @@
       /* 最大宽度 */
       margin: 20px auto;
       /* 外边距 */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
       /* 调整阴影的大小、模糊度和颜色 */
     }
 
@@ -127,7 +144,7 @@
       /* 字体大小 */
       color: white;
       /* 文字颜色 */
-      background: black;
+      background: rgba(0, 0, 0, 0.7);
       /* 背景颜色 */
       display: flex;
       /* 使用flex布局 */
@@ -139,6 +156,8 @@
       /* 行高 */
       padding: 20px;
       /* 内边距 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      /* 调整阴影的大小、模糊度和颜色 */
     }
 
     .footer-logo {
@@ -172,7 +191,7 @@
 
     /* 历史摘要样式 */
     .summary {
-      background-color: rgba(189, 189, 189, 0.5);
+      background-color: rgba(194, 194, 194, 0.5);
       /* 背景颜色 */
       color: brown;
       /* 文字颜色 */
@@ -184,7 +203,7 @@
 
     /* 历史详细摘要样式 */
     .history-summary {
-      background-color: rgba(212, 212, 212, 0.5);
+      background-color: rgba(221, 221, 221, 0.5);
       /* 背景颜色 */
       padding: 10px;
       /* 内边距 */
@@ -194,7 +213,7 @@
     .history-content {
       display: flex;
       flex-direction: column;
-      background-color: rgba(226, 226, 226, 0.5);
+      background-color: rgba(238, 238, 238, 0.5);
       /* 背景颜色 */
       padding: 10px;
       /* 内边距 */
@@ -205,7 +224,7 @@
 <body>
   <!-- 页眉区域，包含logo -->
   <div class="header">
-    <img class="logo" src="./image/logo-removebg-preview.jpeg" alt="zhaoguohui_logo">
+    <img class="logo" src="./image/zhaoguohui_logo.png" alt="zhaoguohui_logo">
   </div>
 
   <!-- 主要内容区域 -->
