@@ -12,39 +12,17 @@
   <link rel="icon" type="image/png" href="./image/zhaoguohui_logo.ico">
   <!-- 设置页面的图标 -->
   <style>
-    .weather-container {
-      position: fixed;
-      /* 固定位置 */
-      top: 10px;
-      /* 距离顶部10px */
-      left: 10px;
-      /* 距离左边10px */
-      padding: 10px;
-      /* 内边距 */
-      background-color: rgba(255, 255, 255, 0.0);
-      /* 半透明的背景 */
-      color: #ffffff;
-      /* 文字颜色 */
-      border-radius: 5px;
-      /* 圆角边框 */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
-      /* 阴影效果 */
-      font-family: Arial, sans-serif;
-      /* 字体样式 */
-      font-size: small;
-    }
-
-    .weather-icon {
-      font-size: 2em;
-      /* 图标大小 */
+    #time {
+      font-weight: bold;
+      /* 加粗时间字体 */
     }
 
     .time-container {
       position: fixed;
       /* 固定位置 */
-      top: 27px;
+      top: 10px;
       /* 距离顶部10px */
-      right: 20px;
+      right: 10px;
       /* 距离右边10px */
       padding: 5px 10px;
       /* 内边距 */
@@ -56,6 +34,7 @@
       /* 圆角边框 */
       font-family: Arial, sans-serif;
       /* 字体样式 */
+      font-size: large;
     }
 
     div {
@@ -296,11 +275,6 @@
 </head>
 
 <body>
-  <div class="weather-container" id="weather">
-    <span class="weather-icon">🌤️</span> <!-- 天气图标 -->
-    <span id="temperature">21°C</span> <!-- 温度 -->
-    <span id="location">河北 邯郸 魏县</span> <!-- 位置 -->
-  </div>
   <div class="time-container" id="time"></div>
   <!-- 页眉区域，包含logo -->
   <div class="header">
@@ -364,20 +338,6 @@
 
   <!-- JavaScript代码区域 -->
   <script>
-    // 模拟天气数据
-    var weatherData = {
-      temperature: '21°C',
-      location: 'City, Country'
-    };
-
-    // 更新天气组件的函数
-    function updateWeather() {
-      document.getElementById('temperature').textContent = weatherData.temperature;
-      document.getElementById('location').textContent = weatherData.location;
-    }
-
-    // 初始化天气显示
-    updateWeather();
     function updateTime() {
       var now = new Date(); // 获取当前时间
       var hours = now.getHours().toString().padStart(2, '0'); // 获取小时并确保两位数字
