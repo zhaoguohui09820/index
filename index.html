@@ -12,6 +12,52 @@
   <link rel="icon" type="image/png" href="./image/zhaoguohui_logo.ico">
   <!-- 设置页面的图标 -->
   <style>
+    .weather-container {
+      position: fixed;
+      /* 固定位置 */
+      top: 10px;
+      /* 距离顶部10px */
+      left: 10px;
+      /* 距离左边10px */
+      padding: 10px;
+      /* 内边距 */
+      background-color: rgba(255, 255, 255, 0.0);
+      /* 半透明的背景 */
+      color: #ffffff;
+      /* 文字颜色 */
+      border-radius: 5px;
+      /* 圆角边框 */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+      /* 阴影效果 */
+      font-family: Arial, sans-serif;
+      /* 字体样式 */
+      font-size: small;
+    }
+
+    .weather-icon {
+      font-size: 2em;
+      /* 图标大小 */
+    }
+
+    .time-container {
+      position: fixed;
+      /* 固定位置 */
+      top: 27px;
+      /* 距离顶部10px */
+      right: 20px;
+      /* 距离右边10px */
+      padding: 5px 10px;
+      /* 内边距 */
+      background: rgba(0, 0, 0, 0);
+      /* 半透明的背景 */
+      color: white;
+      /* 文字颜色 */
+      border-radius: 5px;
+      /* 圆角边框 */
+      font-family: Arial, sans-serif;
+      /* 字体样式 */
+    }
+
     div {
       border-radius: 10px;
       /* 圆角大小 */
@@ -250,6 +296,12 @@
 </head>
 
 <body>
+  <div class="weather-container" id="weather">
+    <span class="weather-icon">🌤️</span> <!-- 天气图标 -->
+    <span id="temperature">21°C</span> <!-- 温度 -->
+    <span id="location">河北 邯郸 魏县</span> <!-- 位置 -->
+  </div>
+  <div class="time-container" id="time"></div>
   <!-- 页眉区域，包含logo -->
   <div class="header">
     <img class="logo" src="./image/zhaoguohui_logo.png" alt="zhaoguohui_logo">
@@ -312,6 +364,34 @@
 
   <!-- JavaScript代码区域 -->
   <script>
+    // 模拟天气数据
+    var weatherData = {
+      temperature: '21°C',
+      location: 'City, Country'
+    };
+
+    // 更新天气组件的函数
+    function updateWeather() {
+      document.getElementById('temperature').textContent = weatherData.temperature;
+      document.getElementById('location').textContent = weatherData.location;
+    }
+
+    // 初始化天气显示
+    updateWeather();
+    function updateTime() {
+      var now = new Date(); // 获取当前时间
+      var hours = now.getHours().toString().padStart(2, '0'); // 获取小时并确保两位数字
+      var minutes = now.getMinutes().toString().padStart(2, '0'); // 获取分钟并确保两位数字
+      var seconds = now.getSeconds().toString().padStart(2, '0'); // 获取秒并确保两位数字
+      var timeString = hours + ":" + minutes + ":" + seconds; // 组合时间字符串
+      document.getElementById('time').textContent = timeString; // 更新时间显示
+    }
+
+    // 初始化时间显示
+    updateTime();
+    // 每秒更新时间
+    setInterval(updateTime, 1000);
+
     // 当文档加载完成后，添加.show类到body元素上，触发渐变效果
     document.addEventListener('DOMContentLoaded', function () {
       document.body.classList.add('show');
