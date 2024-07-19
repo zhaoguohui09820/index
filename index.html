@@ -13,6 +13,32 @@
   <link rel="icon" type="image/png" href="./image/zhaoguohui_logo.ico">
   <!-- 设置页面的图标 -->
   <style>
+    /* 设置所有链接的默认颜色 */
+    a:link {
+      color: black;
+      /* 未访问的链接颜色 */
+      text-decoration: none;
+      /* 移除下划线 */
+    }
+
+    /* 设置鼠标悬停时的链接颜色 */
+    a:hover {
+      color: rgb(0, 0, 0);
+      /* 鼠标悬停时的颜色 */
+    }
+
+    /* 设置点击时的链接颜色 */
+    a:active {
+      color: rgb(0, 0, 0);
+      /* 点击时的颜色 */
+    }
+
+    /* 设置已访问链接的颜色 */
+    a:visited {
+      color: rgb(0, 0, 0);
+      /* 已访问的链接颜色 */
+    }
+
     /* CSS样式定义，用于定位和美化日期时间显示容器 */
     #datetime-container {
       color: white;
@@ -376,13 +402,14 @@
 
   <!-- 主要内容区域 --><!-- Flex容器 -->
   <div class="flex-container ">
-    <div class="flex-item">
-      <div onclick="https://zhaoguohui09820.github.io/desktop_oclock.html" class="liti"
-        style=";background-color: rgba(0, 0, 0,0);">
-        <img src="./image/desktop_oclock.png" alt="desktop_oclock" height="50px" hwidth="50px">
-        桌面时钟
+    <a href="./desktop_oclock.html">
+      <div class="flex-item">
+        <div class="liti" style=";background-color: rgba(0, 0, 0,0);">
+          <img src="./image/desktop_oclock.png" alt="desktop_oclock" height="50px" hwidth="50px">
+          桌面时钟
+        </div>
       </div>
-    </div>
+    </a>
     <div class="flex-item">
       <!-- 更新标题 -->
       <h2 class="update">更新!</h2>
