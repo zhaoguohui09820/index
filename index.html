@@ -456,8 +456,9 @@
     document.addEventListener('DOMContentLoaded', function () {
       document.body.classList.add('show');
     });
+
     // 获取所有的历史详情元素
-    var historyDetails = document.querySelectorAll('details details');
+    var historyDetails = document.querySelectorAll('details');
 
     // 为每个历史详情的摘要添加点击事件监听器
     historyDetails.forEach(function (detail, index) {
@@ -475,6 +476,7 @@
         });
       });
     });
+
   </script>
 
 
