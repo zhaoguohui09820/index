@@ -478,22 +478,17 @@
         // 当前按钮后的面板
         var currentPanel = this.nextElementSibling;
 
-        // 关闭所有已展开的面板
-        var allPanels = document.querySelectorAll('.panel');
-        for (var j = 0; j < allPanels.length; j++) {
-          if (allPanels[j].style.maxHeight) {
-            allPanels[j].style.maxHeight = null;
-            allPanels[j].previousElementSibling.classList.remove('active');
-          }
-        }
+        // 切换当前按钮的active类
+        currentButton.classList.toggle("active");
 
-        // 展开当前面板
+        // 如果当前按钮后的元素是.panel，则切换其maxHeight属性
         if (currentPanel && currentPanel.classList.contains('panel')) {
-          currentPanel.style.maxHeight = currentPanel.scrollHeight + "px";
-          currentButton.classList.add('active');
+          // 展开或收起面板
+          currentPanel.style.maxHeight = currentPanel.style.maxHeight ? null : currentPanel.scrollHeight + "px";
         }
       });
     }
+
 
   </script>
 
