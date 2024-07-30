@@ -13,11 +13,26 @@
   <link rel="icon" type="image/ico" href="./image/ico/zhaoguohui_logo.ico">
   <!-- 设置页面的图标 -->
   <style>
+    .margin-top {
+      margin: 10px 5px 5px 5px;
+      /* 仅调整上边距 */
+    }
+
+    .margin-all {
+      margin: 5px;
+      /* 调整所有边距 */
+    }
+
+    .margin-bottom {
+      margin: 5px 5px 10px 5px;
+      /* 调整所下边距 */
+    }
+
     /* 设置所有链接的默认颜色 */
     a:link {
       color: rgb(0, 175, 219);
       /* 未访问的链接颜色 */
-      text-decoration: none;
+      /* text-decoration: none;
       /* 移除下划线 */
     }
 
@@ -375,16 +390,16 @@
         <p>视频教程：<a
             href="https://6qffx1-my.sharepoint.com/:v:/g/personal/zhao_6qffx1_onmicrosoft_com/ERCrcMK1qxNJvYRSp30FmlMBqW_I1jXmz--Pj4TUi8kGNw?e=qRYMbx">点击观看</a>
         </p>
-        <p>压缩包下载：
-        <p>OneDrive：<a
+        <p class="margin-all">压缩包下载（哪个能下载就用哪个，这几个链接都一样，只是提供了更多的下载渠道）：</p>
+        <p class="margin-top">OneDrive：<a
             href="https://6qffx1-my.sharepoint.com/:u:/g/personal/zhao_6qffx1_onmicrosoft_com/ES_N0ngNlGNKvju0vwJexHYBNsAk7yZcjfSZ2Ad2fv06IA?e=EBzyen">点击下载</a>
         </p>
-        <p>天翼云盘：<a href="https://cloud.189.cn/web/share?code=aqyANbreiuqm（访问码：tcc6）">点击下载</a></p>
-        <p>坚果云：<a href="https://www.jianguoyun.com/p/DdUNbOwQzKblDBjNttAFIAA">点击下载</a></p>
-        <p>123云盘：<a href="https://www.123pan.com/s/iDsSVv-CpKAv.html">点击下载</a></p>
-        <p>百度网盘：<a href="https://pan.baidu.com/s/1lFWwO5DXyI-T9OSUX-5Szw?pwd=pkre 提取码: pkre">点击下载</a></p>
-        <p>腾讯微云：<a href="https://share.weiyun.com/H6gm1FAJ">点击下载</a></p>
+        <p class="margin-all">天翼云盘：<a href="https://cloud.189.cn/web/share?code=aqyANbreiuqm（访问码：tcc6）">点击下载</a></p>
+        <p class="margin-all">坚果云：<a href="https://www.jianguoyun.com/p/DdUNbOwQzKblDBjNttAFIAA">点击下载</a></p>
+        <p class="margin-all">123云盘：<a href="https://www.123pan.com/s/iDsSVv-CpKAv.html">点击下载</a></p>
+        <p class="margin-all">百度网盘：<a href="https://pan.baidu.com/s/1lFWwO5DXyI-T9OSUX-5Szw?pwd=pkre 提取码: pkre">点击下载</a>
         </p>
+        <p class="margin-bottom">腾讯微云：<a href="https://share.weiyun.com/H6gm1FAJ">点击下载</a></p>
       </div>
       <button class="accordion">2024年7月19日</button>
       <div class="panel">太抽象了吧，那么多人，体验就一个字“史”
@@ -393,7 +408,17 @@
       </div>
       <button class="accordion">2024年7月18日</button>
       <div class="panel">冯少杰的素描
+        <p><a href="./image/jpg/fengshaojiesumiao.jpg">点击下载原图</a></p>
+        <p>备用下载在图片下面</p>
         <img src="./image/webp/fengshaojiesumiao.webp" alt="fengshaojiesumiao" width="80%" height="auto">
+        <p class="margin-top">OneDrive：<a
+            href="https://6qffx1-my.sharepoint.com/:i:/g/personal/zhao_6qffx1_onmicrosoft_com/ET6gA2_ivPpFiUot3RbxXYsBA0tqLXYy-2tPAuiC8u-98Q?e=x0bbj7">点击下载</a>
+        </p>
+        <p class="margin-all">天翼云盘：<a href="https://cloud.189.cn/web/share?code=aAZ7BzAfiYrm（访问码：0jiy）">点击下载</a></p>
+        <p class="margin-all">坚果云：<a href="https://www.jianguoyun.com/p/DSZJ9q4QzKblDBjiutAFIAA">点击下载</a></p>
+        <p class="margin-all">123云盘：<a href="https://www.123pan.com/s/iDsSVv-rpKAv.html">点击下载</a></p>
+        <p class="margin-all">百度网盘：<a href="https://pan.baidu.com/s/1C2WU4fKFrkrekiYX2-9h2A?pwd=8qy3">点击下载</a></p>
+        <p class="margin-bottom">腾讯微云：<a href="https://share.weiyun.com/P3r0CgO3">点击下载</a></p>
       </div>
     </div>
   </div>
@@ -448,40 +473,27 @@
 
     for (i = 0; i < acc.length; i++) {
       acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
+        // 当前被点击的按钮
+        var currentButton = this;
+        // 当前按钮后的面板
+        var currentPanel = this.nextElementSibling;
+
+        // 关闭所有已展开的面板
+        var allPanels = document.querySelectorAll('.panel');
+        for (var j = 0; j < allPanels.length; j++) {
+          if (allPanels[j].style.maxHeight) {
+            allPanels[j].style.maxHeight = null;
+            allPanels[j].previousElementSibling.classList.remove('active');
+          }
+        }
+
+        // 展开当前面板
+        if (currentPanel && currentPanel.classList.contains('panel')) {
+          currentPanel.style.maxHeight = currentPanel.scrollHeight + "px";
+          currentButton.classList.add('active');
         }
       });
     }
-
-    // 当文档加载完成后，添加.show类到body元素上，触发渐变效果
-    document.addEventListener('DOMContentLoaded', function () {
-      document.body.classList.add('show');
-    });
-
-    // 获取所有的历史详情元素
-    var historyDetails = document.querySelectorAll('details');
-
-    // 为每个历史详情的摘要添加点击事件监听器
-    historyDetails.forEach(function (detail, index) {
-      // 获取当前历史详情的摘要元素
-      var summary = detail.querySelector('.history-summary');
-
-      // 为摘要元素添加点击事件监听器
-      summary.addEventListener('click', function () {
-        // 遍历所有历史详情并关闭它们
-        historyDetails.forEach(function (otherDetail) {
-          // 如果当前详情不是被点击的详情，则关闭它
-          if (otherDetail !== detail) {
-            otherDetail.removeAttribute('open');
-          }
-        });
-      });
-    });
 
   </script>
 
