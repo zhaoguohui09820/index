@@ -44,7 +44,7 @@
     }
 
     body {
-      background-image: url('./image/background.webp');
+      background-image: url('./image/background.avif');
       /* 设置背景图片 */
       background-size: cover;
       /* 背景图片覆盖整个背景区域 */
@@ -357,7 +357,7 @@
 <body class="show">
   <!--宠物开始-->
   <div id="pet" class="cywl">
-    <img id="pet-img" src="./max/stand1.png">
+    <img id="pet-img" src="./max/stand1.avif">
   </div>
   <!--宠物结束-->
   <header class="header"> <!-- 页眉区域，包含logo -->
@@ -527,7 +527,7 @@
 
 
     const img111 = new Image();
-    img111.src = `./max/falling1.png`;
+    img111.src = `./max/falling1.avif`;
     fallingFrames.push(img111);
 
     // 创建动画序列  
@@ -535,33 +535,33 @@
       // 将行走动画帧添加到 walkFrames 数组中
 
       const img = new Image();
-      img.src = `./max/walkright${i}.png`;
+      img.src = `./max/walkright${i}.avif`;
       RightwalkFrames.push(img);
 
       const img2 = new Image();
-      img2.src = `./max/walkleft${i}.png`;
+      img2.src = `./max/walkleft${i}.avif`;
       LeftwalkFrames.push(img2);
 
       // 其他
 
       const img3 = new Image();
-      img3.src = `./max/drag${i}.png`;
+      img3.src = `./max/drag${i}.avif`;
       DragFrames.push(img3);
 
       const img4 = new Image();
-      img4.src = `./max/fish${i}.png`;
+      img4.src = `./max/fish${i}.avif`;
       fishFrames.push(img4);
 
       const img5 = new Image();
-      img5.src = `./max/kiss${i}.png`;
+      img5.src = `./max/kiss${i}.avif`;
       kissFrames.push(img5);
 
       const img6 = new Image();
-      img6.src = `./max/sleep${i}.png`;
+      img6.src = `./max/sleep${i}.avif`;
       sleepFrames.push(img6);
 
       const img7 = new Image();
-      img7.src = `./max/stand${i}.png`;
+      img7.src = `./max/stand${i}.avif`;
       standFrames.push(img7);
 
     }
