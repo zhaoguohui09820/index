@@ -421,7 +421,7 @@
       </div>
       <button class="accordion">2024年7月18日</button> <!-- 手风琴按钮 -->
       <div class="panel"> <!-- 手风琴面板 -->
-        <p>冯少杰的素描</p>
+        <p>冯少杰的画</p>
         <p>原图下载链接在末尾</p>
         <img src="./image/fengshaojiesumiao.avif" alt="fengshaojiesumiao" width="80%" height="auto">
         <p>OneDrive：<a
@@ -435,13 +435,15 @@
       </div>
     </div>
     <div style="width: 80%;opacity: 0.9;background-color: #f1f2f3;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6)">
-      <script>
-        var idcomments_acct = 'ef04893f9c10746a4032da000994cfc9';
-        var idcomments_post_id;
-        var idcomments_post_url;
-      </script>
-      <span id="IDCommentsPostTitle" style="display:none"></span>
-      <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+      <div style="margin: 0 auto;width: 70%;opacity: 0.9;background-color: #f1f2f3;">
+        <script>
+          var idcomments_acct = 'ef04893f9c10746a4032da000994cfc9';
+          var idcomments_post_id;
+          var idcomments_post_url;
+        </script>
+        <span id="IDCommentsPostTitle" style="display:none"></span>
+        <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+      </div>
     </div>
   </main>
 
@@ -463,6 +465,7 @@
         nahidaAudio.play(); // 播放音频
       });
     });
+    
     document.addEventListener('DOMContentLoaded', function () {
       var audio = document.getElementById('backgroundMusic');
       var button = document.getElementById('playPauseButton');
@@ -482,8 +485,8 @@
 
     // 创建 pet 对象
     const pet = {
-      x: 50,   // 宠物初始位置的横坐标 （左下角开始）
-      y: 50,
+      x: 500,   // 宠物初始位置的横坐标 （左下角开始）
+      y: 500,
       vx: 1,   // 水平方向上宠物前进的速度
       vy: 0   // 垂直方向上宠物前进的速度
     };
