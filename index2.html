@@ -11,29 +11,16 @@
             margin: 5px;
         }
 
-        .GIFnahida {
+        .GIF {
             position: absolute;
             /* 绝对定位 */
             left: 60px;
             /* 在最左边 */
-            top: 150px;
+            top: 100px;
             /* 可以根据需要调整垂直位置 */
             width: 100px;
             /* 设置图片按钮的宽度 */
-            height: auto;
-            /* 设置图片按钮的高度 */
-        }
-
-        .GIFleidianjiangjun {
-            position: absolute;
-            /* 绝对定位 */
-            left: 160px;
-            /* 在最左边 */
-            top: 140px;
-            /* 可以根据需要调整垂直位置 */
-            width: 100px;
-            /* 设置图片按钮的宽度 */
-            height: auto;
+            height: 93.5px;
             /* 设置图片按钮的高度 */
         }
 
@@ -42,7 +29,7 @@
             /* 绝对定位 */
             left: 10px;
             /* 在最左边 */
-            top: 200px;
+            top: 150px;
             /* 可以根据需要调整垂直位置 */
             width: 30px;
             /* 设置图片按钮的宽度 */
@@ -74,7 +61,7 @@
         }
 
         body {
-            background-image: url('./image/background.avif');
+            background-image: url('./image/background1.avif');
             /* 设置背景图片 */
             background-size: cover;
             /* 背景图片覆盖整个背景区域 */
@@ -146,8 +133,9 @@
             /* 使用flex布局 */
             justify-content: center;
             /* 水平居中 */
-            align-items: start;
-            height: 250px;
+            align-items: center;
+            /* 垂直居中 */
+            height: 200px;
             /* 固定高度 */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
             /* 调整阴影的大小、模糊度和颜色 */
@@ -341,6 +329,7 @@
         button {
             cursor: url(./Maxwell_Who-CatCursor/alternate.ico),
                 default;
+            target: "_blank"
         }
 
         html {
@@ -400,18 +389,12 @@
     <!--宠物结束-->
     <header class="header"> <!-- 页眉区域，包含logo -->
         <img id="playPauseButton" src="./image/pause-icon.png" alt="播放/暂停">
-        <audio id="backgroundMusic" loop autoplay src="./video/bgm.mp3" type="audio/mpeg"></audio>
-
-        <img id="imagenahida" class="GIFnahida" src="./image/纳西妲_叉腰.gif" alt="纳西妲_叉腰">
+        <img id="image" class="GIF" src="./image/影3.gif" alt="影3">
         <!-- 三个音频元素，分别对应三个音频文件 -->
-        <audio id="audionahida1" src="./video/nahidaCHN1.mp3"></audio>
-        <audio id="audionahida2" src="./video/nahidaCHN2.mp3"></audio>
-        <audio id="audionahida3" src="./video/nahidaCHN3.mp3"></audio>
-        <img id="imageleidianjiangjun" class="GIFleidianjiangjun" src="./image/影3.gif" alt="影3">
-        <audio id="audioleidianjiangjun1" src="./video/leidianjiangjunCHN1.mp3"></audio>
-        <audio id="audioleidianjiangjun2" src="./video/leidianjiangjunCHN2.mp3"></audio>
-        <audio id="audioleidianjiangjun3" src="./video/leidianjiangjunCHN3.mp3"></audio>
-
+        <audio id="audio1" src="./video/leidianjiangjunCHN1.mp3"></audio>
+        <audio id="audio2" src="./video/leidianjiangjunCHN2.mp3"></audio>
+        <audio id="audio3" src="./video/leidianjiangjunCHN3.mp3"></audio>
+        <audio id="backgroundMusic" loop autoplay src="./video/bgm.mp3" type="audio/mpeg"></audio>
         <a href="https://zhaoguohui09820.github.io/index/"><img class="logo" src="./image/zhaoguohui_logo1.png"
                 alt="zhaoguohui_logo" width="200px" height="200px"></a>
     </header>
@@ -425,8 +408,6 @@
             <div class="flex-item" style="display: flex;flex-direction: row;box-shadow: 0 4px 8px rgba(0, 0, 0, 0);">
                 <a href="./index1.html" style="margin-left: 15px;"><img src="./image/nahidahead.png"
                         alt="nahidahead"></a>
-                <a href="./index2.html" style="margin-left: 15px;"><img src="./image/leidianjiangjunhead.png"
-                        alt="leidianjiangjunhead"></a>
             </div>
         </div>
         <div class="flex-item"> <!-- 格子项 -->
@@ -462,7 +443,7 @@
             </div>
         </div>
         <div style="width: 90%;opacity: 0.9;background-color: #f1f2f3;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6)">
-            <div style="margin: 0 auto;width: 90%;">
+            <div style="margin: 0 auto;width: 90%;opacity: 0.9;background-color: #f1f2f3;">
                 <script>
                     var idcomments_acct = 'ef04893f9c10746a4032da000994cfc9';
                     var idcomments_post_id;
@@ -482,49 +463,6 @@
     </footer>
 
     <script>
-        let currentNonBgmAudio = null;
-
-        function toggleAudio(audioElements, index) {
-            if (currentNonBgmAudio && currentNonBgmAudio !== audioElements[index]) {
-                currentNonBgmAudio.pause();
-                currentNonBgmAudio.currentTime = 0;
-            }
-            if (currentNonBgmAudio === audioElements[index]) {
-                if (audioElements[index].paused) {
-                    audioElements[index].play();
-                } else {
-                    audioElements[index].pause();
-                    currentNonBgmAudio = null;
-                }
-            } else {
-                currentNonBgmAudio = audioElements[index];
-                currentNonBgmAudio.play();
-            }
-        }
-
-        function setupAudioPlayer(imageId, audioIds) {
-            const image = document.getElementById(imageId);
-            const audioElements = audioIds.map(id => document.getElementById(id));
-
-            let currentAudioIndex = 0;
-
-            image.addEventListener('click', () => {
-                toggleAudio(audioElements, currentAudioIndex);
-                currentAudioIndex = (currentAudioIndex + 1) % audioElements.length;
-            });
-
-            audioElements.forEach(audio => {
-                audio.addEventListener('ended', () => {
-                    currentNonBgmAudio = null;
-                });
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            setupAudioPlayer('imagenahida', ['audionahida1', 'audionahida2', 'audionahida3']);
-            setupAudioPlayer('imageleidianjiangjun', ['audioleidianjiangjun1', 'audioleidianjiangjun2', 'audioleidianjiangjun3']);
-        });
-
         document.addEventListener('DOMContentLoaded', function () {
             var audio = document.getElementById('backgroundMusic');
             var button = document.getElementById('playPauseButton');
@@ -556,6 +494,64 @@
             });
         });
 
+        document.addEventListener('DOMContentLoaded', () => {
+            // 获取图片元素
+            const image = document.getElementById('image');
+            // 获取三个音频元素
+            const audio1 = document.getElementById('audio1');
+            const audio2 = document.getElementById('audio2');
+            const audio3 = document.getElementById('audio3');
+
+            // 当前音频的索引，初始为1
+            let currentAudio = 1;
+            // 当前音频是否正在播放的标志，初始为false
+            let isPlaying = false;
+
+            // 停止并重置所有音频元素的函数
+            const stopAllAudios = () => {
+                audio1.pause();
+                audio1.currentTime = 0;
+                audio2.pause();
+                audio2.currentTime = 0;
+                audio3.pause();
+                audio3.currentTime = 0;
+            };
+
+            // 为图片添加点击事件监听器
+            image.addEventListener('click', () => {
+                // 如果当前音频正在播放，则暂停播放
+                if (isPlaying) {
+                    stopAllAudios();
+                    isPlaying = false; // 更新播放标志
+                } else {
+                    // 停止并重置所有音频元素
+                    stopAllAudios();
+
+                    // 根据当前音频索引播放对应的音频
+                    if (currentAudio === 1) {
+                        audio1.play(); // 播放第一个音频
+                        currentAudio = 2; // 更新索引为2
+                    } else if (currentAudio === 2) {
+                        audio2.play(); // 播放第二个音频
+                        currentAudio = 3; // 更新索引为3
+                    } else if (currentAudio === 3) {
+                        audio3.play(); // 播放第三个音频
+                        currentAudio = 1; // 更新索引为1，循环播放
+                    }
+                    isPlaying = true; // 更新播放标志
+                }
+            });
+
+            // 监听音频播放完毕事件
+            const handleAudioEnded = () => {
+                isPlaying = false;
+            };
+
+            audio1.addEventListener('ended', handleAudioEnded);
+            audio2.addEventListener('ended', handleAudioEnded);
+            audio3.addEventListener('ended', handleAudioEnded);
+        });
+
         // 创建 pet 对象
         const pet = {
             x: 500,   // 宠物初始位置的横坐标 （左下角开始）
@@ -565,7 +561,7 @@
         };
 
         // 动作权重
-        const actions = {
+        var actions = {
             walkleft: 1,
             walkright: 1,
             fish: 1,
@@ -585,23 +581,30 @@
         const fallingFrames = [];
 
         // 初始化 定时器
-        let ttt = null;
-        let dragTime = null;
+        var ttt = null;
+        var dragTime = null;
 
-        let action = 'stand';
+        var action = 'stand';
 
         // 将对象中的动作按照权重转换为数组
-        const actionList = Object.keys(actions).map(key => ({
-            name: key,
-            weight: actions[key]
-        })).reduce((prev, curr) => prev.concat(curr), []);
+        var actionList = Object.keys(actions).map(function (key) {
+            return {
+                name: key,
+                weight: actions[key]
+            };
+        }).reduce(function (prev, curr) {
+            return prev.concat(curr);
+        }, []);
 
         // 根据权重随机选择动作
         function randomAction() {
-            const totalWeight = actionList.reduce((prev, curr) => prev + curr.weight, 0);
-            let randomNum = Math.random() * totalWeight;
+            var totalWeight = actionList.reduce(function (prev, curr) {
+                return prev + curr.weight;
+            }, 0);
 
-            for (let i = 0; i < actionList.length; i++) {
+            var randomNum = Math.random() * totalWeight;
+
+            for (var i = 0; i < actionList.length; i++) {
                 if (randomNum <= actionList[i].weight) {
                     return actionList[i].name;
                 }
@@ -667,9 +670,9 @@
         const petImg = document.querySelector('#pet-img');
         petImg.style.pointerEvents = 'none';
 
-        let isDragging = false;
-        let diffX = 0;
-        let diffY = 0;
+        var isDragging = false;
+        var diffX = 0;
+        var diffY = 0;
 
         let animationId = null;
 
@@ -725,7 +728,7 @@
             }
         });
 
-        let petTimer = setInterval(function name() {
+        var petTimer = setInterval(function name() {
             action = randomAction();
         }, 3000);
 
