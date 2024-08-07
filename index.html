@@ -1,181 +1,29 @@
 <!DOCTYPE html>
-<!-- saved from url=(0040)https://zhaoguohui09820.github.io/index/ -->
-<html lang="zh-CN"><!-- 文档类型声明，指定文档语言为中文 -->
+<html lang="zh-CN">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <!-- 设置字符集为UTF-8，确保页面可以正确显示中文字符 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 视口设置，确保在移动设备上正确显示 -->
-  <title>Zhao Guohui's blog</title>
-  <!-- 页面标题 -->
-  <link rel="icon" type="image/ico" href="./image/zhaoguohui_logo.webp">
-  <!-- 设置页面的图标 -->
+  <meta charset="UTF-8"> <!-- 设置字符集为UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 视口设置，确保在移动设备上正确显示 -->
+  <title>Zhao Guohui's blog</title> <!-- 页面标题 -->
+  <link rel="icon" type="image/ico" href="./image/zhaoguohui_logo.webp"> <!-- 设置页面的图标 -->
   <style>
-    .margin-top {
-      margin: 10px 5px 5px 5px;
-      /* 仅调整上边距 */
-    }
-
-    .margin-all {
-      margin: 5px;
-      /* 调整所有边距 */
-    }
-
-    .margin-bottom {
-      margin: 5px 5px 10px 5px;
-      /* 调整所下边距 */
-    }
-
-    /* 设置所有链接的默认颜色 */
-    a:link {
-      color: rgb(0, 175, 219);
-      /* 未访问的链接颜色 */
-      /* text-decoration: none;
-      /* 移除下划线 */
-    }
-
-    /* 设置鼠标悬停时的链接颜色 */
-    a:hover {
-      color: rgb(0, 175, 219);
-      /* 鼠标悬停时的颜色 */
-    }
-
-    /* 设置点击时的链接颜色 */
-    a:active {
-      color: rgb(0, 0, 0);
-      /* 点击时的颜色 */
-    }
-
-    /* 设置已访问链接的颜色 */
-    a:visited {
-      color: rgb(0, 175, 219);
-      /* 已访问的链接颜色 */
-    }
-
-    /* CSS样式定义，用于定位和美化日期时间显示容器 */
-    #datetime-container {
-      color: white;
-      position: fixed;
-      /* 使用固定定位，使其相对于视口进行定位 */
-      top: 10px;
-      /* 容器距离页面顶部的距离 */
-      left: 10px;
-      /* 容器距离页面右侧的距离 */
-      font-size: 16px;
-      /* 字体大小 */
-      background-color: rgba(0, 0, 0, 0);
-      /* 背景色 */
-      padding: 5px;
-      /* 内边距 */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
-      /* 阴影效果 */
-    }
-
-    #date-week {
-      margin-bottom: 5px;
-      /* 日期和星期之间的间距 */
-    }
-
-    /* 打开和关闭手风琴面板的样式 */
-    .accordion {
-      background-color: rgba(206, 206, 206, 0.4);
-      color: #000000;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      text-align: left;
-      border: none;
-      outline: none;
-      transition: 0.4s;
-      font-size: medium;
-      font-weight: bold;
-      border-radius: 10px;
-    }
-
-    /* 设置点击和鼠标移到选项上面时（悬停）的样式 */
-    .active,
-    .accordion:hover {
-      background-color: rgba(163, 163, 163, 0.4);
-    }
-
-    /* 为手风琴面板设计样式。 默认隐藏 */
-    .panel {
-      padding: 0 18px;
-      background-color: rgba(228, 228, 228, 0.4);
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* 设置 +、- 标志 */
-    .accordion:after {
-      content: '\002B';
-      /* Unicode 字符 + 号 */
-      color: #777;
-      font-weight: bold;
-      float: right;
-      margin-left: 2px;
-      font-size: large;
-    }
-
-    .active:after {
-      content: "\2212";
-      /* Unicode 字符 - 号 */
-    }
-
-    div {
-      border-radius: 8px;
-      /* 圆角大小 */
-    }
-
-    /* 设置摘要和历史详情的样式 */
-    .summary,
-    .history-summary {
-      cursor: pointer;
-      /* 将鼠标光标变为指针，表示可点击 */
-      padding: 10px;
-      /* 添加内边距 */
-      background-color: #f2f2f2;
-      /* 背景颜色 */
-      border: 1px solid #ddd;
-      /* 边框样式 */
-    }
-
-    .history-content {
-      padding: 10px;
-      /* 添加内边距 */
-      border: 1px solid #ddd;
-      /* 边框样式 */
-      border-top: none;
-      /* 顶部的边框不显示，避免与摘要重叠 */
-    }
-
-    /* 给整个网页添加背景图片 */
     body {
       background-image: url('./image/background.webp');
-      /* 替换为您的背景图片路径 */
+      /* 设置背景图片 */
       background-size: cover;
-      /* 图片会覆盖整个背景区域 */
+      /* 背景图片覆盖整个背景区域 */
       background-position: center;
-      /* 图片会居中显示 */
+      /* 背景图片居中显示 */
       background-repeat: no-repeat;
-      /* 图片不会重复 */
-      /* backdrop-filter: blur(2px);
-      /* 添加模糊效果，5px 是模糊程度 */
+      /* 背景图片不重复 */
       background-attachment: fixed;
-      /* 背景图像固定 */
-    }
-
-    /* 基本样式 */
-    body {
+      /* 背景图片固定 */
       opacity: 0;
       /* 初始状态为不可见 */
       transition: opacity 1s ease-in;
       /* 添加渐变效果 */
+      position: relative;
+      /* 相对定位 */
     }
 
     body.show {
@@ -230,7 +78,6 @@
       /* 鼠标悬停时标题颜色变化 */
     }
 
-    /* 页眉样式 */
     .header {
       background: rgba(0, 0, 0, 0.7);
       /* 背景颜色 */
@@ -253,10 +100,11 @@
       /* 设置logo高度 */
     }
 
-    /* 容器样式，使用flex布局 */
     .flex-container {
       display: flex;
+      /* 使用flex布局 */
       flex-direction: column;
+      /* 布局方向为列 */
       flex-wrap: wrap;
       /* 允许子项在必要时换行 */
       padding: 0px;
@@ -264,12 +112,14 @@
       gap: 7px;
       /* 子项之间的间隔 */
       margin: 20px;
+      /* 外边距 */
       align-items: center;
+      /* 垂直居中 */
     }
 
-    /* 格子项样式 */
     .flex-item {
       flex-direction: column;
+      /* 布局方向为列 */
       flex: 1;
       /* 允许格子项伸缩以填充可用空间 */
       width: 80%;
@@ -277,8 +127,9 @@
       height: 100px;
       /* 格子项的高度 */
       background-color: #f4f4f4;
-      opacity: 0.9;
       /* 背景颜色 */
+      opacity: 0.9;
+      /* 透明度 */
       display: flex;
       /* 使格子项内部也使用flex布局 */
       font-size: 18px;
@@ -287,12 +138,13 @@
 
     .update {
       color: brown;
-      opacity: 1;
       /* 更新标题颜色 */
+      opacity: 1;
+      /* 透明度 */
       margin: 20px;
+      /* 外边距 */
     }
 
-    /* 页脚样式 */
     .footer {
       font-size: x-small;
       /* 字体大小 */
@@ -321,7 +173,6 @@
       /* 文字颜色 */
     }
 
-    /* 图片居中样式 */
     .center-content {
       display: flex;
       /* 使用flex布局 */
@@ -333,7 +184,6 @@
       /* 高度占满父容器 */
     }
 
-    /* 图片位于右下角样式 */
     .bottom-right {
       position: absolute;
       /* 绝对定位 */
@@ -343,7 +193,6 @@
       /* 外边距 */
     }
 
-    /* 历史详细摘要样式 */
     .history-summary {
       background-color: rgba(221, 221, 221, 0.5);
       /* 背景颜色 */
@@ -351,94 +200,180 @@
       /* 内边距 */
     }
 
-    /* 历史内容样式 */
     .history-content {
       display: flex;
+      /* 使用flex布局 */
       flex-direction: column;
+      /* 布局方向为列 */
       background-color: rgba(238, 238, 238, 0.5);
       /* 背景颜色 */
       padding: 10px;
       /* 内边距 */
     }
+
+    .accordion {
+      background-color: rgba(206, 206, 206, 0.4);
+      /* 背景颜色 */
+      color: #000000;
+      /* 文字颜色 */
+      cursor: pointer;
+      /* 鼠标指针变为指针，表示可点击 */
+      padding: 18px;
+      /* 内边距 */
+      width: 100%;
+      /* 宽度占满父容器 */
+      text-align: left;
+      /* 文字左对齐 */
+      border: none;
+      /* 无边框 */
+      outline: none;
+      /* 无轮廓 */
+      transition: 0.4s;
+      /* 过渡效果 */
+      font-size: medium;
+      /* 字体大小 */
+      font-weight: bold;
+      /* 字体加粗 */
+      border-radius: 10px;
+      /* 圆角 */
+    }
+
+    .active,
+    .accordion:hover {
+      background-color: rgba(163, 163, 163, 0.4);
+      /* 点击和悬停时的背景颜色 */
+    }
+
+    .panel {
+      padding: 0 18px;
+      /* 内边距 */
+      background-color: rgba(228, 228, 228, 0.4);
+      /* 背景颜色 */
+      max-height: 0;
+      /* 默认隐藏 */
+      overflow: hidden;
+      /* 隐藏溢出的内容 */
+      transition: max-height 0.3s ease-out;
+      /* 过渡效果 */
+      display: flex;
+      /* 使用flex布局 */
+      flex-direction: column;
+      /* 布局方向为列 */
+    }
+
+    .accordion:after {
+      content: '\002B';
+      /* Unicode 字符 + 号 */
+      color: #777;
+      /* 颜色 */
+      font-weight: bold;
+      /* 字体加粗 */
+      float: right;
+      /* 右对齐 */
+      margin-left: 2px;
+      /* 左边距 */
+      font-size: large;
+      /* 字体大小 */
+    }
+
+    .active:after {
+      content: "\2212";
+      /* Unicode 字符 - 号 */
+    }
+
+    #datetime-container {
+      color: white;
+      /* 文字颜色 */
+      position: fixed;
+      /* 固定定位 */
+      top: 10px;
+      /* 距离页面顶部的距离 */
+      left: 10px;
+      /* 距离页面左侧的距离 */
+      font-size: 16px;
+      /* 字体大小 */
+      background-color: rgba(0, 0, 0, 0);
+      /* 背景颜色 */
+      padding: 5px;
+      /* 内边距 */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+      /* 阴影效果 */
+    }
+
+    #date-week {
+      margin-bottom: 5px;
+      /* 日期和星期之间的间距 */
+    }
   </style>
 </head>
 
 <body class="show">
-  <!-- 日期和时间显示的容器 -->
-  <div id="datetime-container">
-    <!-- 日期和星期的显示 -->
-    <div id="date-week"></div>
-    <!-- 当前时间的显示 -->
-    <div id="current-time"></div>
-  </div>
-  <!-- 页眉区域，包含logo -->
-  <div class="header">
-    <a href="https://zhaoguohui09820.github.io/index/"><img class="logo" src="./image/zhaoguohui_logo1.webp" alt="zhaoguohui_logo_300×300" width="200px"
-      height="200px"></a>
-  </div>
+  <header class="header"> <!-- 页眉区域，包含logo -->
+    <a href="https://zhaoguohui09820.github.io/index/"><img class="logo" src="./image/zhaoguohui_logo1.webp"
+        alt="zhaoguohui_logo_300×300" width="200px" height="200px"></a>
+  </header>
 
-  <!-- 主要内容区域 --><!-- Flex容器 -->
-  <div class="flex-container ">
-    <div class="flex-item" style="display: flex;flex-direction: row;">
-      <a href="./desktop_oclock.html"><img src="./image/desktop_oclock.webp" alt="desktop_oclock" width="75"
-          height="75" style="float: left;">
-      </a>
+  <main class="flex-container"> <!-- 主要内容区域 -->
+    <div class="flex-item" style="display: flex;flex-direction: row;"> <!-- 格子项 -->
+      <a href="./desktop_oclock.html"><img src="./image/desktop_oclock.webp" alt="desktop_oclock" width="75" height="75"
+          style="float: left;"></a>
     </div>
-    <div class="flex-item">
-      <button class="accordion">2024年7月29日</button>
-      <div class="panel">我的世界加入赵国辉的服务器教程
+    <div class="flex-item"> <!-- 格子项 -->
+      <button class="accordion">2024年7月29日</button> <!-- 手风琴按钮 -->
+      <div class="panel"> <!-- 手风琴面板 -->
+        <p>我的世界加入赵国辉的服务器教程</p>
         <p>视频教程：<a
             href="https://6qffx1-my.sharepoint.com/:v:/g/personal/zhao_6qffx1_onmicrosoft_com/ERCrcMK1qxNJvYRSp30FmlMBqW_I1jXmz--Pj4TUi8kGNw?e=qRYMbx">点击观看</a>
         </p>
-        <p class="margin-all">压缩包下载（哪个能下载就用哪个，这几个链接都一样，只是提供了更多的下载渠道）：</p>
-        <p class="margin-top">OneDrive：<a
+        <p>压缩包下载（哪个能下载就用哪个，这几个链接都一样，只是提供了更多的下载渠道）：</p>
+        <p>OneDrive：<a
             href="https://6qffx1-my.sharepoint.com/:u:/g/personal/zhao_6qffx1_onmicrosoft_com/ES_N0ngNlGNKvju0vwJexHYBNsAk7yZcjfSZ2Ad2fv06IA?e=EBzyen">点击下载</a>
         </p>
-        <p class="margin-all">天翼云盘：<a href="https://cloud.189.cn/web/share?code=aqyANbreiuqm（访问码：tcc6）">点击下载</a></p>
-        <p class="margin-all">坚果云：<a href="https://www.jianguoyun.com/p/DdUNbOwQzKblDBjNttAFIAA">点击下载</a></p>
-        <p class="margin-all">123云盘：<a href="https://www.123pan.com/s/iDsSVv-CpKAv.html">点击下载</a></p>
-        <p class="margin-all">百度网盘：<a href="https://pan.baidu.com/s/1lFWwO5DXyI-T9OSUX-5Szw?pwd=pkre 提取码: pkre">点击下载</a>
-        </p>
-        <p class="margin-bottom">腾讯微云：<a href="https://share.weiyun.com/H6gm1FAJ">点击下载</a></p>
+        <p>天翼云盘：<a href="https://cloud.189.cn/web/share?code=aqyANbreiuqm（访问码：tcc6）">点击下载</a></p>
+        <p>坚果云：<a href="https://www.jianguoyun.com/p/DdUNbOwQzKblDBjNttAFIAA">点击下载</a></p>
+        <p>123云盘：<a href="https://www.123pan.com/s/iDsSVv-CpKAv.html">点击下载</a></p>
+        <p>百度网盘：<a href="https://pan.baidu.com/s/1lFWwO5DXyI-T9OSUX-5Szw?pwd=pkre 提取码: pkre">点击下载</a></p>
+        <p>腾讯微云：<a href="https://share.weiyun.com/H6gm1FAJ">点击下载</a></p>
       </div>
-      <button class="accordion">2024年7月19日</button>
-      <div class="panel">太抽象了吧，那么多人，体验就一个字“史”
+      <button class="accordion">2024年7月19日</button> <!-- 手风琴按钮 -->
+      <div class="panel"> <!-- 手风琴面板 -->
+        <p>太抽象了吧，那么多人，体验就一个字“史”</p>
         <img src="./image/2024_7_19_01.webp" alt="2024_7_19_01" width="80%" height="auto">
         <img src="./image/2024_7_19_02.webp" alt="2024_7_19_02" width="80%" height="auto">
       </div>
-      <button class="accordion">2024年7月18日</button>
-      <div class="panel">冯少杰的素描
+      <button class="accordion">2024年7月18日</button> <!-- 手风琴按钮 -->
+      <div class="panel"> <!-- 手风琴面板 -->
+        <p>冯少杰的素描</p>
         <p>原图下载链接在末尾</p>
         <img src="./image/fengshaojiesumiao.webp" alt="fengshaojiesumiao" width="80%" height="auto">
-        <p class="margin-top">OneDrive：<a
+        <p>OneDrive：<a
             href="https://6qffx1-my.sharepoint.com/:i:/g/personal/zhao_6qffx1_onmicrosoft_com/ET6gA2_ivPpFiUot3RbxXYsBA0tqLXYy-2tPAuiC8u-98Q?e=x0bbj7">点击下载</a>
         </p>
-        <p class="margin-all">天翼云盘：<a href="https://cloud.189.cn/web/share?code=aAZ7BzAfiYrm（访问码：0jiy）">点击下载</a></p>
-        <p class="margin-all">坚果云：<a href="https://www.jianguoyun.com/p/DSZJ9q4QzKblDBjiutAFIAA">点击下载</a></p>
-        <p class="margin-all">123云盘：<a href="https://www.123pan.com/s/iDsSVv-rpKAv.html">点击下载</a></p>
-        <p class="margin-all">百度网盘：<a href="https://pan.baidu.com/s/1C2WU4fKFrkrekiYX2-9h2A?pwd=8qy3">点击下载</a></p>
-        <p class="margin-bottom">腾讯微云：<a href="https://share.weiyun.com/P3r0CgO3">点击下载</a></p>
+        <p>天翼云盘：<a href="https://cloud.189.cn/web/share?code=aAZ7BzAfiYrm（访问码：0jiy）">点击下载</a></p>
+        <p>坚果云：<a href="https://www.jianguoyun.com/p/DSZJ9q4QzKblDBjiutAFIAA">点击下载</a></p>
+        <p>123云盘：<a href="https://www.123pan.com/s/iDsSVv-rpKAv.html">点击下载</a></p>
+        <p>百度网盘：<a href="https://pan.baidu.com/s/1C2WU4fKFrkrekiYX2-9h2A?pwd=8qy3">点击下载</a></p>
+        <p>腾讯微云：<a href="https://share.weiyun.com/P3r0CgO3">点击下载</a></p>
       </div>
     </div>
-  </div>
+  </main>
 
-  <!-- 页脚区域 -->
-  <div class="footer">
-    <!-- 致谢信息 -->
+  <footer class="footer"> <!-- 页脚区域 -->
     <p class="footer-logo">致谢：冯少杰（第一位志愿者）</p>
-    <!-- 联系方式 -->
     <p>站长的微信：Zhao_guohui09820</p>
     <p>站长的QQ：2592299180</p>
     <p>站长的电子邮箱：zhaolixiangguohui@outlook.com</p>
-    <!-- 头像 -->
     <p><b>👇</b>我的头像</p>
     <img src="./image/蜡笔小新头像.webp" alt="xiaoxin" height="70px" width="70px">
+  </footer>
+
+  <div id="datetime-container"> <!-- 日期和时间显示的容器 -->
+    <div id="date-week"></div> <!-- 日期和星期的显示 -->
+    <div id="current-time"></div> <!-- 当前时间的显示 -->
   </div>
 
-  <!-- JavaScript代码区域 -->
   <script>
-    // 更新时间的JavaScript函数
-    function updateTime() {
+    function updateTime() { // 更新时间的JavaScript函数
       var now = new Date(); // 创建一个新的Date对象表示当前时间
       var year = now.getFullYear(); // 获取当前年份
       var month = (now.getMonth() + 1).toString().padStart(2, '0'); // 获取当前月份，并格式化为两位数字
@@ -448,50 +383,32 @@
       var minutes = now.getMinutes().toString().padStart(2, '0'); // 获取当前分钟，并格式化为两位数字
       var seconds = now.getSeconds().toString().padStart(2, '0'); // 获取当前秒，并格式化为两位数字
 
-      // 构建格式化的日期字符串
-      var dateString = year + '年' + month + '月' + day + '日 ' + dayOfWeek;
+      var dateString = year + '年' + month + '月' + day + '日 ' + dayOfWeek; // 构建格式化的日期字符串
+      var timeString = hours + ':' + minutes + ':' + seconds; // 构建格式化的时间字符串
 
-      // 构建格式化的时间字符串
-      var timeString = hours + ':' + minutes + ':' + seconds;
-
-      // 更新页面上的日期和星期
-      document.getElementById('date-week').textContent = dateString;
-
-      // 更新页面上的时间
-      document.getElementById('current-time').textContent = timeString;
+      document.getElementById('date-week').textContent = dateString; // 更新页面上的日期和星期
+      document.getElementById('current-time').textContent = timeString; // 更新页面上的时间
     }
 
-    // 页面加载完毕后设置定时器每秒更新时间
-    window.onload = function () {
+    window.onload = function () { // 页面加载完毕后设置定时器每秒更新时间
       updateTime(); // 首次调用更新时间函数
       setInterval(updateTime, 1000); // 设置定时器，每1000毫秒（1秒）调用一次updateTime函数
     };
 
-    var acc = document.getElementsByClassName("accordion");
-    var i;
+    var acc = document.getElementsByClassName("accordion"); // 获取所有手风琴按钮
+    for (var i = 0; i < acc.length; i++) { // 遍历所有手风琴按钮
+      acc[i].addEventListener("click", function () { // 为每个手风琴按钮添加点击事件监听器
+        var currentButton = this; // 当前被点击的按钮
+        var currentPanel = this.nextElementSibling; // 当前按钮后的面板
 
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function () {
-        // 当前被点击的按钮
-        var currentButton = this;
-        // 当前按钮后的面板
-        var currentPanel = this.nextElementSibling;
+        currentButton.classList.toggle("active"); // 切换当前按钮的active类
 
-        // 切换当前按钮的active类
-        currentButton.classList.toggle("active");
-
-        // 如果当前按钮后的元素是.panel，则切换其maxHeight属性
-        if (currentPanel && currentPanel.classList.contains('panel')) {
-          // 展开或收起面板
-          currentPanel.style.maxHeight = currentPanel.style.maxHeight ? null : currentPanel.scrollHeight + "px";
+        if (currentPanel && currentPanel.classList.contains('panel')) { // 如果当前按钮后的元素是.panel，则切换其maxHeight属性
+          currentPanel.style.maxHeight = currentPanel.style.maxHeight ? null : currentPanel.scrollHeight + "px"; // 展开或收起面板
         }
       });
     }
-
-
   </script>
-
-
 </body>
 
 </html>
