@@ -179,6 +179,8 @@
       /* 使格子项内部也使用flex布局 */
       font-size: 18px;
       /* 字体大小 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      /* 调整阴影的大小、模糊度和颜色 */
     }
 
     .update {
@@ -327,30 +329,6 @@
       content: "\2212";
       /* Unicode 字符 - 号 */
     }
-
-    #datetime-container {
-      color: white;
-      /* 文字颜色 */
-      position: fixed;
-      /* 固定定位 */
-      top: 10px;
-      /* 距离页面顶部的距离 */
-      left: 10px;
-      /* 距离页面左侧的距离 */
-      font-size: 16px;
-      /* 字体大小 */
-      background-color: rgba(0, 0, 0, 0);
-      /* 背景颜色 */
-      padding: 5px;
-      /* 内边距 */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
-      /* 阴影效果 */
-    }
-
-    #date-week {
-      margin-bottom: 5px;
-      /* 日期和星期之间的间距 */
-    }
   </style>
 </head>
 
@@ -361,7 +339,7 @@
   </div>
   <!--宠物结束-->
   <header class="header"> <!-- 页眉区域，包含logo -->
-    <img id="playPauseButton" src="./image/pause-icon.webp" alt="播放/暂停">
+    <img id="playPauseButton" src="./image/pause-icon.avif" alt="播放/暂停">
     <audio id="backgroundMusic" src="./video/bgm.mp3" type="audio/mpeg"></audio>
     <a href="https://zhaoguohui09820.github.io/index/"><img class="logo" src="./image/zhaoguohui_logo1.webp"
         alt="zhaoguohui_logo_300×300" width="200px" height="200px"></a>
@@ -392,14 +370,14 @@
       <button class="accordion">2024年7月19日</button> <!-- 手风琴按钮 -->
       <div class="panel"> <!-- 手风琴面板 -->
         <p>太抽象了吧，那么多人，体验就一个字“史”</p>
-        <img src="./image/2024_7_19_01.webp" alt="2024_7_19_01" width="80%" height="auto">
-        <img src="./image/2024_7_19_02.webp" alt="2024_7_19_02" width="80%" height="auto">
+        <img src="./image/2024_7_19_01.avif" alt="2024_7_19_01" width="80%" height="auto">
+        <img src="./image/2024_7_19_02.avif" alt="2024_7_19_02" width="80%" height="auto">
       </div>
       <button class="accordion">2024年7月18日</button> <!-- 手风琴按钮 -->
       <div class="panel"> <!-- 手风琴面板 -->
         <p>冯少杰的素描</p>
         <p>原图下载链接在末尾</p>
-        <img src="./image/fengshaojiesumiao.webp" alt="fengshaojiesumiao" width="80%" height="auto">
+        <img src="./image/fengshaojiesumiao.avif" alt="fengshaojiesumiao" width="80%" height="auto">
         <p>OneDrive：<a
             href="https://6qffx1-my.sharepoint.com/:i:/g/personal/zhao_6qffx1_onmicrosoft_com/ET6gA2_ivPpFiUot3RbxXYsBA0tqLXYy-2tPAuiC8u-98Q?e=x0bbj7">点击下载</a>
         </p>
@@ -418,13 +396,8 @@
     <p>站长的QQ：2592299180</p>
     <p>站长的电子邮箱：zhaolixiangguohui@outlook.com</p>
     <p><b>👇</b>我的头像</p>
-    <img src="./image/蜡笔小新头像.webp" alt="xiaoxin" height="70px" width="70px">
+    <img src="./image/蜡笔小新头像.avif" alt="xiaoxin" height="70px" width="70px">
   </footer>
-
-  <div id="datetime-container"> <!-- 日期和时间显示的容器 -->
-    <div id="date-week"></div> <!-- 日期和星期的显示 -->
-    <div id="current-time"></div> <!-- 当前时间的显示 -->
-  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -435,10 +408,10 @@
       button.addEventListener('click', function () {
         if (isPlaying) {
           audio.pause();
-          button.src = './image/pause-icon.webp'; 
+          button.src = './image/pause-icon.avif';
         } else {
           audio.play();
-          button.src = './image/play-icon.webp'; 
+          button.src = './image/play-icon.avif';
         }
         isPlaying = !isPlaying;
       });
@@ -759,28 +732,6 @@
 
     // 启动循环
     loop();
-    function updateTime() { // 更新时间的JavaScript函数
-      var now = new Date(); // 创建一个新的Date对象表示当前时间
-      var year = now.getFullYear(); // 获取当前年份
-      var month = (now.getMonth() + 1).toString().padStart(2, '0'); // 获取当前月份，并格式化为两位数字
-      var day = now.getDate().toString().padStart(2, '0'); // 获取当前日期，并格式化为两位数字
-      var dayOfWeek = now.toLocaleDateString('zh-CN', { weekday: 'long' }); // 获取当前星期，并格式化为中文
-      var hours = now.getHours().toString().padStart(2, '0'); // 获取当前小时，并格式化为两位数字
-      var minutes = now.getMinutes().toString().padStart(2, '0'); // 获取当前分钟，并格式化为两位数字
-      var seconds = now.getSeconds().toString().padStart(2, '0'); // 获取当前秒，并格式化为两位数字
-
-      var dateString = year + '年' + month + '月' + day + '日 ' + dayOfWeek; // 构建格式化的日期字符串
-      var timeString = hours + ':' + minutes + ':' + seconds; // 构建格式化的时间字符串
-
-      document.getElementById('date-week').textContent = dateString; // 更新页面上的日期和星期
-      document.getElementById('current-time').textContent = timeString; // 更新页面上的时间
-    }
-
-    window.onload = function () { // 页面加载完毕后设置定时器每秒更新时间
-      updateTime(); // 首次调用更新时间函数
-      setInterval(updateTime, 1000); // 设置定时器，每1000毫秒（1秒）调用一次updateTime函数
-    };
-
     var acc = document.getElementsByClassName("accordion"); // 获取所有手风琴按钮
     for (var i = 0; i < acc.length; i++) { // 遍历所有手风琴按钮
       acc[i].addEventListener("click", function () { // 为每个手风琴按钮添加点击事件监听器
