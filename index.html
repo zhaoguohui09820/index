@@ -386,16 +386,17 @@
             <a href="./desktop_oclock.html"><img src="./image/desktop_oclock.webp" alt="desktop_oclock" width="50"
                     height="50" style="float: left;"></a>
         </div>
-        <div class="flex-item"> <!-- 格子项 -->
-            <div class="flex-item"
-                style="display: flex;flex-direction: row;box-shadow: 0 4px 8px rgba(0, 0, 0, 0);flex-wrap: nowrap; /* 防止换行 */overflow-x: auto; /* 添加水平滚动条 */">
-                <a href="./pages/nahida.html" style="margin-left: 15px;"><img src="./image/nahidahead.png"
-                        alt="nahidahead" height="80" width="80"></a>
-                <a href="./pages/leidianjiangjun.html" style="margin-left: 15px;"><img
-                        src="./image/leidianjiangjunhead.png" alt="leidianjiangjunhead" height="80" width="80"></a>
-                <a href="./pages/xiao.html" style="margin-left: 15px;"><img
-                        src="./image/xiaohead.png" alt="xiaohead" height="80" width="80"></a>
-            </div>
+        <div class="flex-item"
+            style="display: flex;flex-direction: row;box-shadow: 0 4px 8px rgba(0, 0, 0, 0);rap; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
+            <!-- 添加 overflow-x: auto; 使容器可以水平滚动 -->
+            <!-- 添加 scroll-behavior: smooth; 使滚动平滑 -->
+            <!-- 添加 -webkit-overflow-scrolling: touch; 使在移动设备上滚动更流畅 -->
+            <a href="./pages/nahida.html" style="margin-left: 15px;"><img src="./image/nahidahead.png" alt="nahidahead"
+                    height="80" width="80"></a>
+            <a href="./pages/leidianjiangjun.html" style="margin-left: 15px;"><img src="./image/leidianjiangjunhead.png"
+                    alt="leidianjiangjunhead" height="80" width="80"></a>
+            <a href="./pages/xiao.html" style="margin-left: 15px;"><img src="./image/xiaohead.png" alt="xiaohead"
+                    height="80" width="80"></a>
         </div>
         <div class="flex-item"> <!-- 格子项 -->
             <button class="accordion">2024年7月29日</button> <!-- 手风琴按钮 -->
