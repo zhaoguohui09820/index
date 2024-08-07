@@ -7,6 +7,19 @@
   <title>Zhao Guohui's blog</title> <!-- 页面标题 -->
   <link rel="icon" type="image/ico" href="./image/zhaoguohui_logo.webp"> <!-- 设置页面的图标 -->
   <style>
+    .GIF {
+      position: absolute;
+      /* 绝对定位 */
+      left: 60px;
+      /* 在最左边 */
+      top: 100px;
+      /* 可以根据需要调整垂直位置 */
+      width: 100px;
+      /* 设置图片按钮的宽度 */
+      height: 93.5px;
+      /* 设置图片按钮的高度 */
+    }
+
     #playPauseButton {
       position: absolute;
       /* 绝对定位 */
@@ -215,13 +228,6 @@
       /* 圆角 */
     }
 
-    .footer-logo {
-      font-size: large;
-      /* 字体大小 */
-      color: rgb(40, 155, 231);
-      /* 文字颜色 */
-    }
-
     .center-content {
       display: flex;
       /* 使用flex布局 */
@@ -339,7 +345,9 @@
   </div>
   <!--宠物结束-->
   <header class="header"> <!-- 页眉区域，包含logo -->
-    <img id="playPauseButton" src="./image/pause-icon.avif" alt="播放/暂停">
+    <img id="playPauseButton" src="./image/pause-icon.png" alt="播放/暂停">
+    <img class="GIF" src="./image/纳西妲_叉腰.gif" alt="纳西妲_叉腰">
+    <audio id="nahidaAudio" src="./video/nahidaJPA.MP3"></audio>
     <audio id="backgroundMusic" loop autoplay src="./video/bgm.mp3" type="audio/mpeg"></audio>
     <a href="https://zhaoguohui09820.github.io/index/"><img class="logo" src="./image/zhaoguohui_logo1.webp"
         alt="zhaoguohui_logo_300×300" width="200px" height="200px"></a>
@@ -391,15 +399,25 @@
   </main>
 
   <footer class="footer"> <!-- 页脚区域 -->
-    <p class="footer-logo">致谢：冯少杰（第一位志愿者）</p>
-    <p>站长的微信：Zhao_guohui09820</p>
-    <p>站长的QQ：2592299180</p>
-    <p>站长的电子邮箱：zhaolixiangguohui@outlook.com</p>
+    <p>微信：Zhao_guohui09820</p>
+    <p>QQ：2592299180</p>
+    <p>电子邮箱：zhaolixiangguohui@outlook.com</p>
     <p><b>👇</b>我的头像</p>
     <img src="./image/蜡笔小新头像.avif" alt="xiaoxin" height="70px" width="70px">
   </footer>
 
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 获取GIF和音频元素
+      var nahidaGIF = document.querySelector('.GIF');
+      var nahidaAudio = document.getElementById('nahidaAudio');
+
+      // 为GIF添加点击事件监听器
+      nahidaGIF.addEventListener('click', function () {
+        nahidaAudio.currentTime = 0; // 重置音频播放时间
+        nahidaAudio.play(); // 播放音频
+      });
+    });
     document.addEventListener('DOMContentLoaded', function () {
       var audio = document.getElementById('backgroundMusic');
       var button = document.getElementById('playPauseButton');
@@ -408,10 +426,10 @@
       button.addEventListener('click', function () {
         if (isPlaying) {
           audio.pause();
-          button.src = './image/pause-icon.avif';
+          button.src = './image/pause-icon.png';
         } else {
           audio.play();
-          button.src = './image/play-icon.avif';
+          button.src = './image/play-icon.png';
         }
         isPlaying = !isPlaying;
       });
