@@ -178,7 +178,7 @@
       /* 格子项的高度 */
       background-color: #f1f2f3;
       /* 背景颜色 */
-      opacity: 0.9;
+      opacity: 0.8;
       /* 透明度 */
       display: flex;
       /* 使格子项内部也使用flex布局 */
@@ -388,9 +388,12 @@
   <!--宠物结束-->
   <header class="header"> <!-- 页眉区域，包含logo -->
     <img id="playPauseButton" src="./image/pause-icon.png" alt="播放/暂停">
-    <img class="GIF" src="./image/纳西妲_叉腰.gif" alt="纳西妲_叉腰">
-    <audio id="nahidaAudio" src="./video/nahidaCHN.mp3"></audio>
-    <audio id="backgroundMusic" loop autoplay src="./video/bgm.mp3" type="audio/mpeg"></audio>
+    <img id="image" class="GIF" src="./image/纳西妲_叉腰.gif" alt="纳西妲_叉腰">
+    <!-- 三个音频元素，分别对应三个音频文件 -->
+    <audio id="audio1" src="./video/nahidaCHN1.mp3"></audio>
+    <audio id="audio2" src="./video/nahidaCHN2.mp3"></audio>
+    <audio id="audio3" src="./video/nahidaCHN3.mp3"></audio>
+ <audio id="backgroundMusic" loop autoplay src="./video/bgm.mp3" type="audio/mpeg"></audio>
     <a href="https://zhaoguohui09820.github.io/index/"><img class="logo" src="./image/zhaoguohui_logo1.png"
         alt="zhaoguohui_logo" width="200px" height="200px"></a>
   </header>
@@ -399,6 +402,13 @@
     <div class="flex-item" style="display: flex;flex-direction: row;"> <!-- 格子项 -->
       <a href="./desktop_oclock.html"><img src="./image/desktop_oclock.webp" alt="desktop_oclock" width="50" height="50"
           style="float: left;"></a>
+    </div>
+    <div class="flex-item"> <!-- 格子项 -->
+      <h3 style="padding-left: 10px;">定制网页</h3>
+      <div class="flex-item" style="display: flex;flex-direction: row;box-shadow: 0 4px 8px rgba(0, 0, 0, 0);">
+        <a href="./index1.html" style="margin-left: 15px;"><img src="./image/leidianjiangjunhead.png"
+            alt="leidianjiangjunhead"></a>
+      </div>
     </div>
     <div class="flex-item"> <!-- 格子项 -->
       <button class="accordion">2024年7月29日</button> <!-- 手风琴按钮 -->
@@ -432,8 +442,8 @@
         <p>腾讯微云：<a href="https://share.weiyun.com/P3r0CgO3">点击下载</a></p>
       </div>
     </div>
-    <div style="width: 90%;opacity: 0.9;background-color: #f1f2f3;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6)">
-      <div style="margin: 0 auto;width: 90%;opacity: 0.9;background-color: #f1f2f3;">
+    <div style="width: 90%;opacity: 0.8;background-color: #f1f2f3;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6)">
+      <div style="margin: 0 auto;width: 90%;opacity: 0.8;background-color: #f1f2f3;">
         <script>
           var idcomments_acct = 'ef04893f9c10746a4032da000994cfc9';
           var idcomments_post_id;
@@ -453,18 +463,6 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // 获取GIF和音频元素
-      var nahidaGIF = document.querySelector('.GIF');
-      var nahidaAudio = document.getElementById('nahidaAudio');
-
-      // 为GIF添加点击事件监听器
-      nahidaGIF.addEventListener('click', function () {
-        nahidaAudio.currentTime = 0; // 重置音频播放时间
-        nahidaAudio.play(); // 播放音频
-      });
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
       var audio = document.getElementById('backgroundMusic');
       var button = document.getElementById('playPauseButton');
       var isPlaying = false;
@@ -479,6 +477,64 @@
         }
         isPlaying = !isPlaying;
       });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // 获取图片元素
+      const image = document.getElementById('image');
+      // 获取三个音频元素
+      const audio1 = document.getElementById('audio1');
+      const audio2 = document.getElementById('audio2');
+      const audio3 = document.getElementById('audio3');
+
+      // 当前音频的索引，初始为1
+      let currentAudio = 1;
+      // 当前音频是否正在播放的标志，初始为false
+      let isPlaying = false;
+
+      // 停止并重置所有音频元素的函数
+      const stopAllAudios = () => {
+        audio1.pause();
+        audio1.currentTime = 0;
+        audio2.pause();
+        audio2.currentTime = 0;
+        audio3.pause();
+        audio3.currentTime = 0;
+      };
+
+      // 为图片添加点击事件监听器
+      image.addEventListener('click', () => {
+        // 如果当前音频正在播放，则暂停播放
+        if (isPlaying) {
+          stopAllAudios();
+          isPlaying = false; // 更新播放标志
+        } else {
+          // 停止并重置所有音频元素
+          stopAllAudios();
+
+          // 根据当前音频索引播放对应的音频
+          if (currentAudio === 1) {
+            audio1.play(); // 播放第一个音频
+            currentAudio = 2; // 更新索引为2
+          } else if (currentAudio === 2) {
+            audio2.play(); // 播放第二个音频
+            currentAudio = 3; // 更新索引为3
+          } else if (currentAudio === 3) {
+            audio3.play(); // 播放第三个音频
+            currentAudio = 1; // 更新索引为1，循环播放
+          }
+          isPlaying = true; // 更新播放标志
+        }
+      });
+
+      // 监听音频播放完毕事件
+      const handleAudioEnded = () => {
+        isPlaying = false;
+      };
+
+      audio1.addEventListener('ended', handleAudioEnded);
+      audio2.addEventListener('ended', handleAudioEnded);
+      audio3.addEventListener('ended', handleAudioEnded);
     });
 
     // 创建 pet 对象
