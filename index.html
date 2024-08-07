@@ -29,7 +29,20 @@
             /* 绝对定位 */
             left: 160px;
             /* 在最左边 */
-            top: 140px;
+            top: 137px;
+            /* 可以根据需要调整垂直位置 */
+            width: 100px;
+            /* 设置图片按钮的宽度 */
+            height: auto;
+            /* 设置图片按钮的高度 */
+        }
+
+        .GIFxiao {
+            position: absolute;
+            /* 绝对定位 */
+            left: 260px;
+            /* 在最左边 */
+            top: 145px;
             /* 可以根据需要调整垂直位置 */
             width: 100px;
             /* 设置图片按钮的宽度 */
@@ -90,6 +103,8 @@
             /* 添加渐变效果 */
             position: relative;
             /* 相对定位 */
+            overflow-x: hidden;
+            /* 防止页面水平滚动 */
         }
 
         body.show {
@@ -401,17 +416,6 @@
     <header class="header"> <!-- 页眉区域，包含logo -->
         <img id="playPauseButton" src="./image/pause-icon.png" alt="播放/暂停">
         <audio id="backgroundMusic" loop autoplay src="./video/bgm.mp3" type="audio/mpeg"></audio>
-
-        <img id="imagenahida" class="GIFnahida" src="./image/纳西妲_叉腰.gif" alt="纳西妲_叉腰">
-        <!-- 三个音频元素，分别对应三个音频文件 -->
-        <audio id="audionahida1" src="./video/nahidaCHN1.mp3"></audio>
-        <audio id="audionahida2" src="./video/nahidaCHN2.mp3"></audio>
-        <audio id="audionahida3" src="./video/nahidaCHN3.mp3"></audio>
-        <img id="imageleidianjiangjun" class="GIFleidianjiangjun" src="./image/影3.gif" alt="影3">
-        <audio id="audioleidianjiangjun1" src="./video/leidianjiangjunCHN1.mp3"></audio>
-        <audio id="audioleidianjiangjun2" src="./video/leidianjiangjunCHN2.mp3"></audio>
-        <audio id="audioleidianjiangjun3" src="./video/leidianjiangjunCHN3.mp3"></audio>
-
         <a href="https://zhaoguohui09820.github.io/index/"><img class="logo" src="./image/zhaoguohui_logo1.png"
                 alt="zhaoguohui_logo" width="200px" height="200px"></a>
     </header>
@@ -422,11 +426,14 @@
                     height="50" style="float: left;"></a>
         </div>
         <div class="flex-item"> <!-- 格子项 -->
-            <div class="flex-item" style="display: flex;flex-direction: row;box-shadow: 0 4px 8px rgba(0, 0, 0, 0);">
+            <div class="flex-item"
+                style="display: flex;flex-direction: row;box-shadow: 0 4px 8px rgba(0, 0, 0, 0);flex-wrap: nowrap; /* 防止换行 */overflow-x: auto; /* 添加水平滚动条 */">
                 <a href="./pages/nahida.html" style="margin-left: 15px;"><img src="./image/nahidahead.png"
                         alt="nahidahead" height="80" width="80"></a>
-                <a href="./pages/leidianjiangjun.html" style="margin-left: 15px;"><img src="./image/leidianjiangjunhead.png"
-                        alt="leidianjiangjunhead" height="80" width="80"></a>
+                <a href="./pages/leidianjiangjun.html" style="margin-left: 15px;"><img
+                        src="./image/leidianjiangjunhead.png" alt="leidianjiangjunhead" height="80" width="80"></a>
+                <a href="./pages/xiao.html" style="margin-left: 15px;"><img
+                        src="./image/xiaohead.png" alt="xiaohead" height="80" width="80"></a>
             </div>
         </div>
         <div class="flex-item"> <!-- 格子项 -->
@@ -482,49 +489,6 @@
     </footer>
 
     <script>
-        let currentNonBgmAudio = null;
-
-        function toggleAudio(audioElements, index) {
-            if (currentNonBgmAudio && currentNonBgmAudio !== audioElements[index]) {
-                currentNonBgmAudio.pause();
-                currentNonBgmAudio.currentTime = 0;
-            }
-            if (currentNonBgmAudio === audioElements[index]) {
-                if (audioElements[index].paused) {
-                    audioElements[index].play();
-                } else {
-                    audioElements[index].pause();
-                    currentNonBgmAudio = null;
-                }
-            } else {
-                currentNonBgmAudio = audioElements[index];
-                currentNonBgmAudio.play();
-            }
-        }
-
-        function setupAudioPlayer(imageId, audioIds) {
-            const image = document.getElementById(imageId);
-            const audioElements = audioIds.map(id => document.getElementById(id));
-
-            let currentAudioIndex = 0;
-
-            image.addEventListener('click', () => {
-                toggleAudio(audioElements, currentAudioIndex);
-                currentAudioIndex = (currentAudioIndex + 1) % audioElements.length;
-            });
-
-            audioElements.forEach(audio => {
-                audio.addEventListener('ended', () => {
-                    currentNonBgmAudio = null;
-                });
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            setupAudioPlayer('imagenahida', ['audionahida1', 'audionahida2', 'audionahida3']);
-            setupAudioPlayer('imageleidianjiangjun', ['audioleidianjiangjun1', 'audioleidianjiangjun2', 'audioleidianjiangjun3']);
-        });
-
         document.addEventListener('DOMContentLoaded', function () {
             var audio = document.getElementById('backgroundMusic');
             var button = document.getElementById('playPauseButton');
