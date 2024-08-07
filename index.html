@@ -7,6 +7,10 @@
   <title>Zhao Guohui's blog</title> <!-- 页面标题 -->
   <link rel="icon" type="image/ico" href="./image/zhaoguohui_logo.webp"> <!-- 设置页面的图标 -->
   <style>
+    p {
+      margin: 5px;
+    }
+
     .GIF {
       position: absolute;
       /* 绝对定位 */
@@ -349,8 +353,8 @@
     <img class="GIF" src="./image/纳西妲_叉腰.gif" alt="纳西妲_叉腰">
     <audio id="nahidaAudio" src="./video/nahidaJPA.MP3"></audio>
     <audio id="backgroundMusic" loop autoplay src="./video/bgm.mp3" type="audio/mpeg"></audio>
-    <a href="https://zhaoguohui09820.github.io/index/"><img class="logo" src="./image/zhaoguohui_logo1.webp"
-        alt="zhaoguohui_logo_300×300" width="200px" height="200px"></a>
+    <a href="https://zhaoguohui09820.github.io/index/"><img class="logo" src="./image/zhaoguohui_logo1.png"
+        alt="zhaoguohui_logo" width="200px" height="200px"></a>
   </header>
 
   <main class="flex-container"> <!-- 主要内容区域 -->
@@ -374,12 +378,6 @@
         <p>123云盘：<a href="https://www.123pan.com/s/iDsSVv-CpKAv.html">点击下载</a></p>
         <p>百度网盘：<a href="https://pan.baidu.com/s/1lFWwO5DXyI-T9OSUX-5Szw?pwd=pkre 提取码: pkre">点击下载</a></p>
         <p>腾讯微云：<a href="https://share.weiyun.com/H6gm1FAJ">点击下载</a></p>
-      </div>
-      <button class="accordion">2024年7月19日</button> <!-- 手风琴按钮 -->
-      <div class="panel"> <!-- 手风琴面板 -->
-        <p>太抽象了吧，那么多人，体验就一个字“史”</p>
-        <img src="./image/2024_7_19_01.avif" alt="2024_7_19_01" width="80%" height="auto">
-        <img src="./image/2024_7_19_02.avif" alt="2024_7_19_02" width="80%" height="auto">
       </div>
       <button class="accordion">2024年7月18日</button> <!-- 手风琴按钮 -->
       <div class="panel"> <!-- 手风琴面板 -->
@@ -649,24 +647,36 @@
 
     loop();
 
-    // 添加手风琴按钮点击事件监听器
-    function addAccordionListeners() {
+    document.addEventListener('DOMContentLoaded', function () {
       var acc = document.getElementsByClassName("accordion");
       for (var i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function () {
+          // 关闭所有其他手风琴面板
+          var activePanel = document.querySelector(".accordion.active");
+          if (activePanel && activePanel !== this) {
+            activePanel.classList.remove("active");
+            var activePanelContent = activePanel.nextElementSibling;
+            if (activePanelContent && activePanelContent.classList.contains('panel')) {
+              activePanelContent.style.maxHeight = null;
+            }
+          }
+
+          // 切换当前手风琴面板
           var currentButton = this;
           var currentPanel = this.nextElementSibling;
 
           currentButton.classList.toggle("active");
 
           if (currentPanel && currentPanel.classList.contains('panel')) {
-            currentPanel.style.maxHeight = currentPanel.style.maxHeight ? null : currentPanel.scrollHeight + "px";
+            if (currentPanel.style.maxHeight) {
+              currentPanel.style.maxHeight = null;
+            } else {
+              currentPanel.style.maxHeight = currentPanel.scrollHeight + "px";
+            }
           }
         });
       }
-    }
-
-    document.addEventListener('DOMContentLoaded', addAccordionListeners);
+    });
   </script>
 </body>
 
