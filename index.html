@@ -340,6 +340,60 @@
       /* Unicode 字符 - 号 */
     }
 
+    a,
+    img,
+    button {
+      cursor: url(./Maxwell_Who-CatCursor/alternate.ico),
+        default;
+    }
+
+    html {
+
+      /* 文字输入 */
+      cursor: url('./Maxwell_Who-CatCursor/text.ico'),
+        text;
+
+      /* 链接 */
+      cursor: url('./Maxwell_Who-CatCursor/link.ico'),
+        pointer;
+
+      /* 移动 */
+      cursor: url('./Maxwell_Who-CatCursor/move.ico'),
+        move;
+
+      /* 拖拽 */
+      cursor: url('./Maxwell_Who-CatCursor/grab.ico'),
+        grab;
+
+      /* 关闭 */
+      cursor: url('./Maxwell_Who-CatCursor/not-allowed.ico'),
+        not-allowed;
+
+      /* 等待/加载 */
+      cursor: url('./Maxwell_Who-CatCursor/busy.ico'),
+        wait;
+
+      /* 改变大小 */
+      cursor: url('./Maxwell_Who-CatCursor/resize.ico'),
+        col-resize;
+      /* 左右调整 */
+      cursor: url('./Maxwell_Who-CatCursor/resize.ico'),
+        row-resize;
+      /* 上下调整 */
+      cursor: url('./Maxwell_Who-CatCursor/resize.ico'),
+        nwse-resize;
+      /* 左上到右下调整 */
+      cursor: url('./Maxwell_Who-CatCursor/resize.ico'),
+        nesw-resize;
+      /* 右上到左下调整 */
+      cursor: url('./Maxwell_Who-CatCursor/resize.ico'),
+        ew-resize;
+      /* 左右调整 */
+      cursor: url('./Maxwell_Who-CatCursor/resize.ico'),
+        ns-resize;
+      /* 上下调整 */
+    }
+
     /* 使用Flexbox布局 */
     .comment-section {
       margin: 20px;
@@ -356,11 +410,9 @@
       /* 使用Flexbox布局 */
       flex-direction: column;
       /* 设置主轴方向为垂直 */
-      width: 80%;
-      /* 格子项的最小宽度 */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-      /* 调整阴影的大小、模糊度和颜色 */
       opacity: 0.9;
+      /* 透明度 */
+      width: 70%;
     }
 
     .comment-form {
@@ -370,6 +422,7 @@
       /* 设置主轴方向为垂直 */
       margin-bottom: 20px;
       /* 设置底部外边距 */
+      width: 90%;
     }
 
     .comment-form input,
@@ -380,12 +433,10 @@
       /* 设置内边距 */
       margin: 10px 0;
       /* 设置外边距 */
-      border: 1px solid #186477;
+      border: 1px solid #00b7ff;
       /* 设置边框 */
       border-radius: 10px;
       /* 设置边框圆角 */
-      width: 80%;
-      /* 格子项的最小宽度 */
       resize: none;
       /* 关闭调节大小功能 */
     }
@@ -429,60 +480,7 @@
       flex-direction: column;
       /* 设置主轴方向为垂直 */
     }
-
-    a,
-    img,
-    button {
-      cursor: url(./Maxwell_Who-CatCursor/alternate.ico),
-        default;
-    }
-
-    html {
-
-      /* 文字输入 */
-      cursor: url('path/to/text.ico'),
-        text;
-
-      /* 链接 */
-      cursor: url('path/to/link.ico'),
-        pointer;
-
-      /* 移动 */
-      cursor: url('path/to/move.ico'),
-        move;
-
-      /* 拖拽 */
-      cursor: url('path/to/grab.ico'),
-        grab;
-
-      /* 关闭 */
-      cursor: url('path/to/not-allowed.ico'),
-        not-allowed;
-
-      /* 等待/加载 */
-      cursor: url('./Maxwell_Who-CatCursor/busy.ico'),
-        wait;
-
-      /* 改变大小 */
-      cursor: url('path/to/resize.ico'),
-        col-resize;
-      /* 左右调整 */
-      cursor: url('path/to/resize.ico'),
-        row-resize;
-      /* 上下调整 */
-      cursor: url('path/to/resize.ico'),
-        nwse-resize;
-      /* 左上到右下调整 */
-      cursor: url('path/to/resize.ico'),
-        nesw-resize;
-      /* 右上到左下调整 */
-      cursor: url('path/to/resize.ico'),
-        ew-resize;
-      /* 左右调整 */
-      cursor: url('path/to/resize.ico'),
-        ns-resize;
-      /* 上下调整 */
-    }
+  </style>
   </style>
 </head>
 
@@ -541,13 +539,13 @@
 
     <body class="show">
       <div class="comment-section">
-        <h2>评论区</h2> <!-- 评论区的标题 -->
+        <h2>评论</h2> <!-- 评论区的标题 -->
         <div class="comment-form">
           <input type="text" id="name" placeholder="你的名字"> <!-- 输入名字的文本框 -->
           <textarea id="comment" placeholder="在这里输入你的评论"></textarea> <!-- 输入评论的文本区域 -->
-          <button onclick="addComment()">提交评论</button> <!-- 提交评论的按钮 -->
+          <button onclick="addComment()">发布</button> <!-- 提交评论的按钮 -->
         </div>
-        <div id="comments"></div> <!-- 显示评论的容器 -->
+        <div id="intensedebate-comments"></div> <!-- IntenseDebate 评论框容器 -->
       </div>
 
   </main>
@@ -559,51 +557,6 @@
   </footer>
 
   <script>
-    // 页面加载时从服务器获取评论数据
-    window.onload = function () {
-      fetch('/getComments') // 假设服务器端提供一个 /getComments 接口
-        .then(response => response.json())
-        .then(comments => {
-          comments.forEach(comment => {
-            addCommentToDOM(comment.name, comment.comment);
-          });
-        });
-    };
-
-    function addComment() {
-      const name = document.getElementById('name').value; // 获取名字输入框的值
-      const commentText = document.getElementById('comment').value; // 获取评论输入框的值
-
-      if (name && commentText) { // 检查名字和评论是否都不为空
-        // 将评论数据发送到服务器
-        fetch('/addComment', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ name, comment: commentText })
-        }).then(response => response.json())
-          .then(data => {
-            if (data.success) {
-              addCommentToDOM(name, commentText);
-              // 清空表单
-              document.getElementById('name').value = '';
-              document.getElementById('comment').value = '';
-            } else {
-              alert('评论提交失败，请重试');
-            }
-          });
-      } else {
-        alert('请填写名字和评论内容'); // 提示用户填写名字和评论内容
-      }
-    }
-
-    function addCommentToDOM(name, commentText) {
-      const commentDiv = document.createElement('div'); // 创建一个新的div元素
-      commentDiv.className = 'comment'; // 设置div的class属性
-      commentDiv.innerHTML = `<strong>${name}</strong>: ${commentText}`; // 设置div的内容
-      document.getElementById('comments').appendChild(commentDiv); // 将新创建的div添加到评论容器中
-    }
     document.addEventListener('DOMContentLoaded', function () {
       // 获取GIF和音频元素
       var nahidaGIF = document.querySelector('.GIF');
@@ -877,6 +830,13 @@
       }
     });
   </script>
+  <script>
+    var idcomments_acct = 'ef04893f9c10746a4032da000994cfc9';
+    var idcomments_post_id;
+    var idcomments_post_url;
+  </script>
+  <span id="IDCommentsPostTitle" style="display:none"></span>
+  <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 </body>
 
 </html>
