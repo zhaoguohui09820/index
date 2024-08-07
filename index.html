@@ -264,7 +264,7 @@
       /* 使用flex布局 */
       flex-direction: column;
       /* 布局方向为列 */
-      background-color: rgba(238, 238, 238, 0.5);
+      background-color: #f1f2f3;
       /* 背景颜色 */
       padding: 10px;
       /* 内边距 */
@@ -393,94 +393,6 @@
         ns-resize;
       /* 上下调整 */
     }
-
-    /* 使用Flexbox布局 */
-    .comment-section {
-      margin: 20px;
-      /* 设置外边距 */
-      padding: 20px;
-      /* 设置内边距 */
-      border: 1px solid #ccc;
-      /* 设置边框 */
-      border-radius: 10px;
-      /* 设置边框圆角 */
-      background-color: #fff;
-      /* 添加不透明的背景颜色 */
-      display: flex;
-      /* 使用Flexbox布局 */
-      flex-direction: column;
-      /* 设置主轴方向为垂直 */
-      opacity: 0.9;
-      /* 透明度 */
-      width: 70%;
-    }
-
-    .comment-form {
-      display: flex;
-      /* 使用Flexbox布局 */
-      flex-direction: column;
-      /* 设置主轴方向为垂直 */
-      margin-bottom: 20px;
-      /* 设置底部外边距 */
-      width: 90%;
-    }
-
-    .comment-form input,
-    .comment-form textarea {
-      width: 100%;
-      /* 设置宽度为100% */
-      padding: 10px;
-      /* 设置内边距 */
-      margin: 10px 0;
-      /* 设置外边距 */
-      border: 1px solid #00b7ff;
-      /* 设置边框 */
-      border-radius: 10px;
-      /* 设置边框圆角 */
-      resize: none;
-      /* 关闭调节大小功能 */
-    }
-
-    .comment-form button {
-      padding: 10px 20px;
-      /* 设置内边距 */
-      border: none;
-      /* 设置无边框 */
-      border-radius: 5px;
-      /* 设置边框圆角 */
-      background-color: #007BFF;
-      /* 设置背景颜色 */
-      color: white;
-      /* 设置文字颜色 */
-      cursor: pointer;
-      /* 设置鼠标悬停样式 */
-      align-self: flex-start;
-      /* 沿主轴方向对齐到开始位置 */
-    }
-
-    .comment-form button:hover {
-      background-color: #0056b3;
-      /* 设置悬停时的背景颜色 */
-    }
-
-    .comment {
-      margin: 10px 0;
-      /* 设置外边距 */
-      padding: 10px;
-      /* 设置内边距 */
-      border: 1px solid #ccc;
-      /* 设置边框 */
-      border-radius: 10px;
-      /* 设置边框圆角 */
-    }
-
-    #comments {
-      display: flex;
-      /* 使用Flexbox布局 */
-      flex-direction: column;
-      /* 设置主轴方向为垂直 */
-    }
-  </style>
   </style>
 </head>
 
@@ -505,6 +417,7 @@
           style="float: left;"></a>
     </div>
     <div class="flex-item"> <!-- 格子项 -->
+      每个区域都有单独的评论区，下面还有大的评论区
       <button class="accordion">2024年7月29日</button> <!-- 手风琴按钮 -->
       <div class="panel"> <!-- 手风琴面板 -->
         <p>我的世界加入赵国辉的服务器教程</p>
@@ -536,18 +449,15 @@
         <p>腾讯微云：<a href="https://share.weiyun.com/P3r0CgO3">点击下载</a></p>
       </div>
     </div>
-
-    <body class="show">
-      <div class="comment-section">
-        <h2>评论</h2> <!-- 评论区的标题 -->
-        <div class="comment-form">
-          <input type="text" id="name" placeholder="你的名字"> <!-- 输入名字的文本框 -->
-          <textarea id="comment" placeholder="在这里输入你的评论"></textarea> <!-- 输入评论的文本区域 -->
-          <button onclick="addComment()">发布</button> <!-- 提交评论的按钮 -->
-        </div>
-        <div id="intensedebate-comments"></div> <!-- IntenseDebate 评论框容器 -->
-      </div>
-
+    <div style="width: 80%;">
+      <script>
+        var idcomments_acct = 'ef04893f9c10746a4032da000994cfc9';
+        var idcomments_post_id;
+        var idcomments_post_url;
+      </script>
+      <span id="IDCommentsPostTitle" style="display:none"></span>
+      <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+    </div>
   </main>
 
   <footer class="footer"> <!-- 页脚区域 -->
@@ -830,13 +740,6 @@
       }
     });
   </script>
-  <script>
-    var idcomments_acct = 'ef04893f9c10746a4032da000994cfc9';
-    var idcomments_post_id;
-    var idcomments_post_url;
-  </script>
-  <span id="IDCommentsPostTitle" style="display:none"></span>
-  <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 </body>
 
 </html>
