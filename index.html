@@ -339,6 +339,150 @@
       content: "\2212";
       /* Unicode 字符 - 号 */
     }
+
+    /* 使用Flexbox布局 */
+    .comment-section {
+      margin: 20px;
+      /* 设置外边距 */
+      padding: 20px;
+      /* 设置内边距 */
+      border: 1px solid #ccc;
+      /* 设置边框 */
+      border-radius: 10px;
+      /* 设置边框圆角 */
+      background-color: #fff;
+      /* 添加不透明的背景颜色 */
+      display: flex;
+      /* 使用Flexbox布局 */
+      flex-direction: column;
+      /* 设置主轴方向为垂直 */
+      width: 80%;
+      /* 格子项的最小宽度 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      /* 调整阴影的大小、模糊度和颜色 */
+      opacity: 0.9;
+    }
+
+    .comment-form {
+      display: flex;
+      /* 使用Flexbox布局 */
+      flex-direction: column;
+      /* 设置主轴方向为垂直 */
+      margin-bottom: 20px;
+      /* 设置底部外边距 */
+    }
+
+    .comment-form input,
+    .comment-form textarea {
+      width: 100%;
+      /* 设置宽度为100% */
+      padding: 10px;
+      /* 设置内边距 */
+      margin: 10px 0;
+      /* 设置外边距 */
+      border: 1px solid #186477;
+      /* 设置边框 */
+      border-radius: 10px;
+      /* 设置边框圆角 */
+      width: 80%;
+      /* 格子项的最小宽度 */
+      resize: none;
+      /* 关闭调节大小功能 */
+    }
+
+    .comment-form button {
+      padding: 10px 20px;
+      /* 设置内边距 */
+      border: none;
+      /* 设置无边框 */
+      border-radius: 5px;
+      /* 设置边框圆角 */
+      background-color: #007BFF;
+      /* 设置背景颜色 */
+      color: white;
+      /* 设置文字颜色 */
+      cursor: pointer;
+      /* 设置鼠标悬停样式 */
+      align-self: flex-start;
+      /* 沿主轴方向对齐到开始位置 */
+    }
+
+    .comment-form button:hover {
+      background-color: #0056b3;
+      /* 设置悬停时的背景颜色 */
+    }
+
+    .comment {
+      margin: 10px 0;
+      /* 设置外边距 */
+      padding: 10px;
+      /* 设置内边距 */
+      border: 1px solid #ccc;
+      /* 设置边框 */
+      border-radius: 10px;
+      /* 设置边框圆角 */
+    }
+
+    #comments {
+      display: flex;
+      /* 使用Flexbox布局 */
+      flex-direction: column;
+      /* 设置主轴方向为垂直 */
+    }
+
+    a,
+    img,
+    button {
+      cursor: url(./Maxwell_Who-CatCursor/alternate.ico),
+        default;
+    }
+
+    html {
+
+      /* 文字输入 */
+      cursor: url('path/to/text.ico'),
+        text;
+
+      /* 链接 */
+      cursor: url('path/to/link.ico'),
+        pointer;
+
+      /* 移动 */
+      cursor: url('path/to/move.ico'),
+        move;
+
+      /* 拖拽 */
+      cursor: url('path/to/grab.ico'),
+        grab;
+
+      /* 关闭 */
+      cursor: url('path/to/not-allowed.ico'),
+        not-allowed;
+
+      /* 等待/加载 */
+      cursor: url('./Maxwell_Who-CatCursor/busy.ico'),
+        wait;
+
+      /* 改变大小 */
+      cursor: url('path/to/resize.ico'),
+        col-resize;
+      /* 左右调整 */
+      cursor: url('path/to/resize.ico'),
+        row-resize;
+      /* 上下调整 */
+      cursor: url('path/to/resize.ico'),
+        nwse-resize;
+      /* 左上到右下调整 */
+      cursor: url('path/to/resize.ico'),
+        nesw-resize;
+      /* 右上到左下调整 */
+      cursor: url('path/to/resize.ico'),
+        ew-resize;
+      /* 左右调整 */
+      cursor: url('path/to/resize.ico'),
+        ns-resize;
+      /* 上下调整 */
+    }
   </style>
 </head>
 
@@ -394,17 +538,72 @@
         <p>腾讯微云：<a href="https://share.weiyun.com/P3r0CgO3">点击下载</a></p>
       </div>
     </div>
+
+    <body class="show">
+      <div class="comment-section">
+        <h2>评论区</h2> <!-- 评论区的标题 -->
+        <div class="comment-form">
+          <input type="text" id="name" placeholder="你的名字"> <!-- 输入名字的文本框 -->
+          <textarea id="comment" placeholder="在这里输入你的评论"></textarea> <!-- 输入评论的文本区域 -->
+          <button onclick="addComment()">提交评论</button> <!-- 提交评论的按钮 -->
+        </div>
+        <div id="comments"></div> <!-- 显示评论的容器 -->
+      </div>
+
   </main>
 
   <footer class="footer"> <!-- 页脚区域 -->
     <p>微信：Zhao_guohui09820</p>
     <p>QQ：2592299180</p>
     <p>电子邮箱：zhaolixiangguohui@outlook.com</p>
-    <p><b>👇</b>我的头像</p>
-    <img src="./image/蜡笔小新头像.avif" alt="xiaoxin" height="70px" width="70px">
   </footer>
 
   <script>
+    // 页面加载时从服务器获取评论数据
+    window.onload = function () {
+      fetch('/getComments') // 假设服务器端提供一个 /getComments 接口
+        .then(response => response.json())
+        .then(comments => {
+          comments.forEach(comment => {
+            addCommentToDOM(comment.name, comment.comment);
+          });
+        });
+    };
+
+    function addComment() {
+      const name = document.getElementById('name').value; // 获取名字输入框的值
+      const commentText = document.getElementById('comment').value; // 获取评论输入框的值
+
+      if (name && commentText) { // 检查名字和评论是否都不为空
+        // 将评论数据发送到服务器
+        fetch('/addComment', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ name, comment: commentText })
+        }).then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              addCommentToDOM(name, commentText);
+              // 清空表单
+              document.getElementById('name').value = '';
+              document.getElementById('comment').value = '';
+            } else {
+              alert('评论提交失败，请重试');
+            }
+          });
+      } else {
+        alert('请填写名字和评论内容'); // 提示用户填写名字和评论内容
+      }
+    }
+
+    function addCommentToDOM(name, commentText) {
+      const commentDiv = document.createElement('div'); // 创建一个新的div元素
+      commentDiv.className = 'comment'; // 设置div的class属性
+      commentDiv.innerHTML = `<strong>${name}</strong>: ${commentText}`; // 设置div的内容
+      document.getElementById('comments').appendChild(commentDiv); // 将新创建的div添加到评论容器中
+    }
     document.addEventListener('DOMContentLoaded', function () {
       // 获取GIF和音频元素
       var nahidaGIF = document.querySelector('.GIF');
