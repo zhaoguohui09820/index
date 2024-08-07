@@ -361,7 +361,7 @@
   </div>
   <!--宠物结束-->
   <header class="header"> <!-- 页眉区域，包含logo -->
-    <img id="playPauseButton" src="./image/pause-icon.png" alt="播放/暂停">
+    <img id="playPauseButton" src="./image/pause-icon.webp" alt="播放/暂停">
     <audio id="backgroundMusic" src="./video/bgm.mp3" type="audio/mpeg"></audio>
     <a href="https://zhaoguohui09820.github.io/index/"><img class="logo" src="./image/zhaoguohui_logo1.webp"
         alt="zhaoguohui_logo_300×300" width="200px" height="200px"></a>
@@ -435,10 +435,10 @@
       button.addEventListener('click', function () {
         if (isPlaying) {
           audio.pause();
-          button.src = './image/pause-icon.png'; 
+          button.src = './image/pause-icon.webp'; 
         } else {
           audio.play();
-          button.src = './image/play-icon.png'; 
+          button.src = './image/play-icon.webp'; 
         }
         isPlaying = !isPlaying;
       });
