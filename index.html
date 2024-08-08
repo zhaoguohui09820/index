@@ -429,8 +429,10 @@
                 <p>腾讯微云：<a href="https://share.weiyun.com/P3r0CgO3">点击下载</a></p>
             </div>
         </div>
-        <div style="display: flex;flex-direction: column;width: 90%;opacity: 0.9;background-color: #f1f2f3ee;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);align-items: center;">
-            <p style="color: brown;font-size: larger;">留言（评论）功能只在<a href="https://zhaoguohui09820.github.io/index/">这个页面</a>上有</p>
+        <div
+            style="display: flex;flex-direction: column;width: 90%;opacity: 0.9;background-color: #f1f2f3ee;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);align-items: center;">
+            <p style="color: brown;font-size: larger;">留言（评论）功能只在<a
+                    href="https://zhaoguohui09820.github.io/index/">这个页面</a>上有</p>
             <p style="color: brown;font-size: larger;">留言（评论）时的名字格式：Zhao_Guohui</p>
             <p style="color: brown;font-size: larger;">不用登入，直接输入留言（评论）内容和名字发表留言就行</p>
             <div style="margin: 0 auto;width: 90%;">
@@ -454,6 +456,19 @@
     </footer>
 
     <script>
+        var audio = document.getElementById('myAudio');
+
+        // 监听页面可见性变化
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) {
+                // 页面不可见时停止音频
+                audio.pause();
+            } else {
+                // 页面可见时恢复音频
+                audio.play();
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             var audio = document.getElementById('backgroundMusic');
             var button = document.getElementById('playPauseButton');
