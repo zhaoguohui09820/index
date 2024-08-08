@@ -456,19 +456,6 @@
     </footer>
 
     <script>
-        var audio = document.getElementById('myAudio');
-
-        // 监听页面可见性变化
-        document.addEventListener('visibilitychange', function () {
-            if (document.hidden) {
-                // 页面不可见时停止音频
-                audio.pause();
-            } else {
-                // 页面可见时恢复音频
-                audio.play();
-            }
-        });
-
         document.addEventListener('DOMContentLoaded', function () {
             var audio = document.getElementById('backgroundMusic');
             var button = document.getElementById('playPauseButton');

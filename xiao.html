@@ -481,6 +481,25 @@
         button.src = './image/pause-icon.png'; // 暂停时显示暂停图标
         isPlaying = false;
       });
+
+      // 监听页面可见性变化
+      document.addEventListener('visibilitychange', function () {
+        var audio1 = document.getElementById('audio1');
+        var audio2 = document.getElementById('audio2');
+        var audio3 = document.getElementById('audio3');
+        var backgroundMusic = document.getElementById('backgroundMusic');
+
+        if (document.hidden) {
+          // 页面不可见时停止所有音频
+          audio1.pause();
+          audio2.pause();
+          audio3.pause();
+          backgroundMusic.pause();
+        } else {
+          // 页面可见时恢复背景音乐
+          backgroundMusic.play();
+        }
+      });
     });
 
     document.addEventListener('DOMContentLoaded', () => {

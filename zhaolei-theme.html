@@ -460,6 +460,17 @@
                 button.src = './image/pause-icon.png'; // 暂停时显示暂停图标
                 isPlaying = false;
             });
+
+            // 监听页面可见性变化
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) {
+                    // 页面不可见时停止音频
+                    audio.pause();
+                } else {
+                    // 页面可见时恢复音频
+                    audio.play();
+                }
+            });
         });
 
         // 创建 pet 对象
