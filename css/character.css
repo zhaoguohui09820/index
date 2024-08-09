@@ -37,7 +37,7 @@ p {
     z-index: 9999;
     left: 50px;
     bottom: 50px;
-    cursor: url(./Maxwell_Who-CatCursor/alternate.ico),
+    cursor: url(../Maxwell_Who-CatCursor/alternate.ico),
         default;
     display: flex;
 }
@@ -303,53 +303,53 @@ details>div {
 a,
 img,
 button {
-    cursor: url(./Maxwell_Who-CatCursor/alternate.ico),
+    cursor: url(../Maxwell_Who-CatCursor/alternate.ico),
         default;
 }
 
 html {
 
     /* 文字输入 */
-    cursor: url('./Maxwell_Who-CatCursor/text.ico'),
+    cursor: url('../Maxwell_Who-CatCursor/text.ico'),
         text;
 
     /* 链接 */
-    cursor: url('./Maxwell_Who-CatCursor/link.ico'),
+    cursor: url('../Maxwell_Who-CatCursor/link.ico'),
         pointer;
 
     /* 移动 */
-    cursor: url('./Maxwell_Who-CatCursor/move.ico'),
+    cursor: url('../Maxwell_Who-CatCursor/move.ico'),
         move;
 
     /* 拖拽 */
-    cursor: url('./Maxwell_Who-CatCursor/grab.ico'),
+    cursor: url('../Maxwell_Who-CatCursor/grab.ico'),
         grab;
 
     /* 关闭 */
-    cursor: url('./Maxwell_Who-CatCursor/not-allowed.ico'),
+    cursor: url('../Maxwell_Who-CatCursor/not-allowed.ico'),
         not-allowed;
 
     /* 等待/加载 */
-    cursor: url('./Maxwell_Who-CatCursor/busy.ico'),
+    cursor: url('../Maxwell_Who-CatCursor/busy.ico'),
         wait;
 
     /* 改变大小 */
-    cursor: url('./Maxwell_Who-CatCursor/resize.ico'),
+    cursor: url('../Maxwell_Who-CatCursor/resize.ico'),
         col-resize;
     /* 左右调整 */
-    cursor: url('./Maxwell_Who-CatCursor/resize.ico'),
+    cursor: url('../Maxwell_Who-CatCursor/resize.ico'),
         row-resize;
     /* 上下调整 */
-    cursor: url('./Maxwell_Who-CatCursor/resize.ico'),
+    cursor: url('../Maxwell_Who-CatCursor/resize.ico'),
         nwse-resize;
     /* 左上到右下调整 */
-    cursor: url('./Maxwell_Who-CatCursor/resize.ico'),
+    cursor: url('../Maxwell_Who-CatCursor/resize.ico'),
         nesw-resize;
     /* 右上到左下调整 */
-    cursor: url('./Maxwell_Who-CatCursor/resize.ico'),
+    cursor: url('../Maxwell_Who-CatCursor/resize.ico'),
         ew-resize;
     /* 左右调整 */
-    cursor: url('./Maxwell_Who-CatCursor/resize.ico'),
+    cursor: url('../Maxwell_Who-CatCursor/resize.ico'),
         ns-resize;
     /* 上下调整 */
 }
