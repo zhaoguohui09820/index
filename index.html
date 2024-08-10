@@ -1,106 +1,259 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-cn">
 
 <head>
-    <meta charset="UTF-8"> <!-- 设置字符集为UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 视口设置，确保在移动设备上正确显示 -->
-    <title>Zhao Guohui's blog</title> <!-- 页面标题 -->
-    <link rel="icon" type="image/ico" href="./image/zhaoguohui_logo.webp"> <!-- 设置页面的图标 -->
-    <link rel="stylesheet" href="./css/index.css">
-</head>
-
-<body class="show">
-    <!--宠物开始-->
-    <div id="pet" class="cywl">
-        <img id="pet-img" src="./max/stand1.avif">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="落日沉溺于橘色的海，晚风沦陷于赤诚的爱" />
+    <meta name="keywords" content="classnotes,笔记，日常，日记，讨论,博客,blog" />
+    <meta name="generator" content="Typecho 1.2.1" />
+    <meta name="template" content="Cuteen" />
+    <link rel="pingback" href="https://ixfish.cn/index.php/action/xmlrpc" />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ixfish.cn/index.php/action/xmlrpc?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ixfish.cn/index.php/action/xmlrpc?wlw" />
+    <link rel="alternate" type="application/rss+xml" title="Bert Waver &raquo; RSS 2.0"
+        href="https://ixfish.cn/index.php/feed/" />
+    <link rel="alternate" type="application/rdf+xml" title="Bert Waver &raquo; RSS 1.0"
+        href="https://ixfish.cn/index.php/feed/rss/" />
+    <link rel="alternate" type="application/atom+xml" title="Bert Waver &raquo; ATOM 1.0"
+        href="https://ixfish.cn/index.php/feed/atom/" />
+    <link rel="icon" type="image/png" href="./img/zhaoguohui_logo.webp">
+    <link rel="apple-touch-icon-precomposed" href="./img/zhaoguohui_logo.webp">
+    <title>Bert Waver</title>
+    <link rel="stylesheet" href="./css/vendor.min.css">
+    <link title="dark-prism" rel="stylesheet" href="./css/prism.css">
+    <div id='LocalizeScript'>
+        <script type='text/javascript'>
+            var CuteenConfig = {
+                "theme_version": "5.15(20240520)",
+                "index": "https:\/\/ixfish.cn\/index.php",
+                "api": "https:\/\/ixfish.cn\/index.php\/cuteen\/api",
+                "page_size": "5",
+                "category_mid": "null",
+                "search_words": "null",
+                "post_cid": "null",
+                "static_cdn_url": "https:\/\/ixfish.cn\/usr\/themes\/Cuteen\/static",
+                "is_login": false,
+                "load_article_mode": "number",
+                "theme_url": "https:\/\/ixfish.cn\/usr\/themes\/Cuteen",
+                "music_id": "id",
+                "music_media": "media",
+                "TopIndexArray": "[1]"
+            };
+        </script>
     </div>
-    <!--宠物结束-->
-    <header class="header"> <!-- 页眉区域，包含logo -->
-        <img id="playPauseButton" src="./image/pause-icon.png" alt="播放/暂停">
-        <audio id="backgroundMusic" loop autoplay src="./video/原神 Genshin Impact Main Theme - 陈致逸 HOYO-MiX.flac"
-            type="audio/mpeg"></audio>
-        <a href="https://zhaoguohui09820.github.io/index/"><img class="logo" src="./image/zhaoguohui_logo1.png"
-                alt="zhaoguohui_logo" width="200px" height="200px"></a>
-    </header>
+</head>
+<script src="https://ixfish.cn/usr/themes/Cuteen/static/js/font_3601434_nup6sgrztd.js"></script>
+<style data-custom-style>
+    .hero::after {
+        content: '';
+        width: 100%;
+        height: 10%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to top, #fff, transparent);
+    }
 
-    <main class="flex-container"> <!-- 主要内容区域 -->
-        <div class="flex-item" style="display: flex;flex-direction: row;"> <!-- 格子项 -->
-            <a href="./desktop_oclock.html"><img src="./image/desktop_oclock.webp" alt="desktop_oclock" width="50"
-                    height="50" style="float: left;"></a>
-        </div>
-        <div class="flex-item"
-            style="display: flex;flex-direction: row;box-shadow: 0 4px 8px rgba(0, 0, 0, 0);overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
-            <!-- 添加 overflow-x: auto; 使容器可以水平滚动 -->
-            <!-- 添加 scroll-behavior: smooth; 使滚动平滑 -->
-            <!-- 添加 -webkit-overflow-scrolling: touch; 使在移动设备上滚动更流畅 -->
-            <a href="./nahida.html" style="margin-left: 15px;"><img src="./image/nahidahead.png" alt="nahidahead"
-                    height="80" width="80"></a>
-            <a href="./leidianjiangjun.html" style="margin-left: 15px;"><img src="./image/leidianjiangjunhead.png"
-                    alt="leidianjiangjunhead" height="80" width="80"></a>
-            <a href="./xiao.html" style="margin-left: 15px;"><img src="./image/xiaohead.png" alt="xiaohead" height="80"
-                    width="80"></a>
-            <a href="./klee.html" style="margin-left: 15px;"><img src="./image/kleehead.png" alt="xiaohead" height="80"
-                    width="80"></a>
-        </div>
-        <div class="flex-item"> <!-- 格子项 -->
-            <button class="accordion">2024年7月29日</button> <!-- 手风琴按钮 -->
-            <div class="panel"> <!-- 手风琴面板 -->
-                <p>我的世界加入赵国辉的服务器教程</p>
-                <p>视频教程：<a
-                        href="https://6qffx1-my.sharepoint.com/:v:/g/personal/zhao_6qffx1_onmicrosoft_com/ES0bat5OyGdPu2Ug5gzu4JUBGcQKF_zhd_yIjMmBpGUZRw?e=KbhjYt">点击观看</a>
-                </p>
-                <p>压缩包下载（哪个能下载就用哪个，这几个链接都一样，只是提供了更多的下载渠道）：</p>
-                <p>OneDrive：<a
-                        href="https://6qffx1-my.sharepoint.com/:u:/g/personal/zhao_6qffx1_onmicrosoft_com/ES_N0ngNlGNKvju0vwJexHYBNsAk7yZcjfSZ2Ad2fv06IA?e=EBzyen">点击下载</a>
-                </p>
-                <p>天翼云盘：<a href="https://cloud.189.cn/web/share?code=aqyANbreiuqm（访问码：tcc6）">点击下载</a></p>
-                <p>坚果云：<a href="https://www.jianguoyun.com/p/DdUNbOwQzKblDBjNttAFIAA">点击下载</a></p>
-                <p>123云盘：<a href="https://www.123pan.com/s/iDsSVv-CpKAv.html">点击下载</a></p>
-                <p>百度网盘：<a href="https://pan.baidu.com/s/1lFWwO5DXyI-T9OSUX-5Szw?pwd=pkre 提取码: pkre">点击下载</a></p>
-                <p>腾讯微云：<a href="https://share.weiyun.com/H6gm1FAJ">点击下载</a></p>
-            </div>
-            <button class="accordion">2024年7月18日</button> <!-- 手风琴按钮 -->
-            <div class="panel"> <!-- 手风琴面板 -->
-                <p>冯少杰的画</p>
-                <p>原图下载链接在末尾</p>
-                <img src="./image/fengshaojiesumiao.avif" alt="fengshaojiesumiao" width="auto" height="300px">
-                <p>OneDrive：<a
-                        href="https://6qffx1-my.sharepoint.com/:i:/g/personal/zhao_6qffx1_onmicrosoft_com/ET6gA2_ivPpFiUot3RbxXYsBA0tqLXYy-2tPAuiC8u-98Q?e=x0bbj7">点击下载</a>
-                </p>
-                <p>天翼云盘：<a href="https://cloud.189.cn/web/share?code=aAZ7BzAfiYrm（访问码：0jiy）">点击下载</a></p>
-                <p>坚果云：<a href="https://www.jianguoyun.com/p/DSZJ9q4QzKblDBjiutAFIAA">点击下载</a></p>
-                <p>123云盘：<a href="https://www.123pan.com/s/iDsSVv-rpKAv.html">点击下载</a></p>
-                <p>百度网盘：<a href="https://pan.baidu.com/s/1C2WU4fKFrkrekiYX2-9h2A?pwd=8qy3">点击下载</a></p>
-                <p>腾讯微云：<a href="https://share.weiyun.com/P3r0CgO3">点击下载</a></p>
-            </div>
-        </div>
-        <div
-            style="display: flex;flex-direction: column;width: 90%;opacity: 0.9;background-color: #f1f2f3ee;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);align-items: center;">
-            <p style="color: brown;font-size: larger;">留言（评论）功能只在<a
-                    href="https://zhaoguohui09820.github.io/index/">这个页面</a>上有</p>
-            <p style="color: brown;font-size: larger;">留言（评论）时的名字格式：Zhao_Guohui</p>
-            <p style="color: brown;font-size: larger;">不用登入，直接输入留言（评论）内容和名字发表留言就行</p>
-            <div style="margin: 0 auto;width: 90%;">
-                <script>
-                    var idcomments_acct = 'ef04893f9c10746a4032da000994cfc9';
-                    var idcomments_post_id;
-                    var idcomments_post_url;
-                </script>
-                <span id="IDCommentsPostTitle" style="display:none"></span>
-                <script type='text/javascript'
-                    src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
-            </div>
-        </div>
-    </main>
+    .dark .hero::after {
+        background: linear-gradient(to top, #0F172A, transparent);
+    }
+</style>
 
-    <footer class="footer"> <!-- 页脚区域 -->
-        <p><a href="https://zhaoguohui09820.github.io/xtindex/" style="color: rgb(0, 217, 255);">点击跳转</a> 星铁主题</p>
-        <p>微信：Zhao_guohui09820</p>
-        <p>QQ：2592299180</p>
-        <p>电子邮箱：zhaolixiangguohui@outlook.com</p>
-    </footer>
+<body>
+    <nav class="navbar navbar-expand-md fixed-top px-2 px-md-5 has-img" id="navPC">
+        <div class="container-fluid">
+            <ul class="navbar-nav d-md-none">
+                <li class="nav-item navbar-icon">
+                    <svg class="icon icon-20 " aria-hidden="true" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar">
+                        <use xlink:href="#menu"></use>
+                    </svg>
+                </li>
+            </ul>
 
-    <script src="./js/index.js"></script>
+            <a class="navbar-brand m-0 me-md-3" href="https://zhaoguohui09820.github.io/index/">
+                <img id="light-logo" class="navbar-logo" src="./img/light_logo.png" alt="Zhao Guohui">
+                <img id="dark-logo" class="navbar-logo d-none" src="./img/dark_logo.png" alt="Zhao Guohui">
+            </a>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Zhao_Guohui</h5>
+                    <svg class='icon icon-20' aria-hidden='true' data-bs-dismiss="offcanvas">
+                        <use xlink:href='#x'></use>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+                    <section class="d-md-none d-block sidebar-author position-relative">
+                        <div class="sidebar-banner border-0" style="background-image: url('./img/center-bg.svg')">
+                        </div>
+                        <div class="text-center">
+                            <img class="sidebar-avatar" src="./img/avatar.jpg" alt="avatar">
+                        </div>
+                        <h2 class="fw-bold serif-font mt-5 fs-4 text-center">Zhao Guohui</h2>
+                        <div class="sidebar-sign w-100">落日沉溺于橘色的海，晚风沦陷于赤诚的爱</div>
+                    </section>
+
+                    <ul class="navbar-nav justify-content-start flex-grow-1 px-4 pt-4 px-md-0 pt-md-0 pe-md-3">
+                        <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
+                                href="https://ixfish.cn/index.php/chat.html">🎉 留言</a></li>
+                        <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
+                                href="https://ixfish.cn/index.php/friends-link.html">💌 友链</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <ul class="navbar-nav">
+                <li class="navbar-icon" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <svg class="icon icon-20" aria-hidden="true">
+                        <use xlink:href="#search"></use>
+                    </svg>
+                </li>
+                <li class="navbar-icon d-none d-md-inline-flex" onclick="Cuteen.DarkModeToggle();"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="昼夜切换">
+                    <svg class="icon icon-20 darkMode" aria-hidden="true">
+                        <use xlink:href="#moon"></use>
+                    </svg>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="hero-box" class="hero" style="background-image: url('./img//S00124-22374219.jpg');">
+        <h3 class="big-title serif-font">Zhao Guohui</h3>
+        <div class="sub-title">
+            落日沉溺于橘色的海，晚风沦陷于赤诚的爱 </div>
+    </div>
+    <div class="wiiuii_layout">
+        <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none">
+        </svg>
+    </div>
+    <script async id="MathJax-script" src="./js/mathjax/tex-chtml.js"></script>
+    <script>
+        MathJax = {
+            options: {
+                renderActions: {
+                    addMenu: [0, "", ""]
+                }
+            },
+            tex: {
+                inlineMath: [
+                    ["$", "$"],
+                    ["\\(", "\\)"]
+                ]
+            },
+            svg: {
+                fontCache: "global"
+            }
+        }
+    </script>
+
+    <script src="./js/pjax.min.js"></script>
+    <script src="./js/topbar.min.js"></script>
+    <script>
+        const pjax = new Pjax({
+            selectors: [
+                'main', 'title', '#LocalizeScript', '#tool', '#hero-box'
+            ],
+        });
+        document.addEventListener('pjax:send', () => {
+            NProgress.set(0.6);
+        });
+        document.addEventListener('pjax:complete', () => {
+            NProgress.done();
+            if (document.getElementById('echarts_pie')) EchartsInit();
+            refreshFsLightbox();
+            MathJax.typeset();
+            if (typeof Prism !== 'undefined') Prism.highlightAll(true, null);
+            Cuteen.PjaxLoad()
+        });
+    </script>
+    <script src="./js/message.js"></script>
+    <script src="./js/OwO.js"></script>
+    <script src="./js/lazyload.min.js"></script>
+    <script src="./js/fslightbox.js"></script>
+    <script src="./js/prism.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!--底部波浪开始-->
+    <div class="wiiuii_layout">
+        <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 
+        58-18 88-18s
+        58 18 88 18 
+        58-18 88-18 
+        58 18 88 18
+        v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2" />
+                <use xlink:href="#gentle-wave" x="50" y="3" fill="#3461c1" />
+                <use xlink:href="#gentle-wave" x="50" y="6" fill="#2d55aa" />
+            </g>
+        </svg>
+    </div>
+    <style type='text/css'>
+        .parallax>use {
+            animation: move-forever 12s linear infinite;
+        }
+
+        .parallax>use:nth-child(1) {
+            animation-delay: -2s;
+        }
+
+        .parallax>use:nth-child(2) {
+            animation-delay: -2s;
+            animation-duration: 5s;
+        }
+
+        .parallax>use:nth-child(3) {
+            animation-delay: -4s;
+            animation-duration: 3s;
+        }
+
+        @keyframes move-forever {
+            0% {
+                transform: translate(-90px, 0%);
+            }
+
+            100% {
+                transform: translate(85px, 0%);
+            }
+        }
+
+        .wiiuii_layout {
+            width: 100%;
+            height: 40px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            background: var(--footer-bg);
+        }
+
+        .editorial {
+            display: block;
+            width: 100%;
+            height: 40px;
+            margin: 0;
+        }
+    </style>
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?79b180ac424c16981c20149b765cc854";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </body>
 
 </html>
