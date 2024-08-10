@@ -164,7 +164,7 @@ class App {
     Comment(btn) {
         const fm = document.getElementById('comment-form');
         const action = fm.getAttribute('data-action');
-        fm.onsubmit = function(e) {
+        fm.onsubmit = function (e) {
             e.preventDefault();
             let fmData = new FormData(fm);
             btn.setAttribute('disabled', true)
@@ -219,7 +219,7 @@ class App {
     AjaxGetCommentInfo() {
         const input = document.getElementById('comment-qq');
         if (!input) return;
-        input.onblur = function() {
+        input.onblur = function () {
             const QQ = input.value;
             const reg = /^[1-9]\d{4,9}$/;
             if (!reg.test(QQ)) return;
@@ -289,9 +289,9 @@ class App {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function(event) {
+document.addEventListener('DOMContentLoaded', function (event) {
     window.Cuteen = new App();
 });
-document.addEventListener('pjax:complete', function(event) {
+document.addEventListener('pjax:complete', function (event) {
     Cuteen.CloseOffcanvas()
 });
