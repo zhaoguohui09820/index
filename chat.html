@@ -130,11 +130,6 @@
 
             </div>
             <ul class="navbar-nav">
-                <li class="navbar-icon" data-bs-toggle="modal" data-bs-target="#searchModal">
-                    <svg class="icon icon-20" aria-hidden="true">
-                        <use xlink:href="#search"></use>
-                    </svg>
-                </li>
                 <li class="navbar-icon d-none d-md-inline-flex" onclick="Cuteen.DarkModeToggle();"
                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="昼夜切换">
                     <svg class="icon icon-20 darkMode" aria-hidden="true">
@@ -144,26 +139,6 @@
             </ul>
         </div>
     </nav>
-
-    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <form class="modal-content" target="_blank">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="searchModalLabel">搜点什么</h5>
-                    <svg class='icon icon-20' aria-hidden='true' data-bs-dismiss="modal">
-                        <use xlink:href='#x'></use>
-                    </svg>
-                </div>
-                <div class="modal-body">
-                    <input value="" autocomplete="off" class="form-control" name="s" type="text"
-                        placeholder="请输入搜索关键词……" required />
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">点击搜索</button>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <div id="hero-box" class="hero"
         style="background-image: url('https://zhaoguohui09820.github.io/index/img/S00124-22441169.jpg');">
