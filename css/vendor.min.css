@@ -14011,31 +14011,31 @@ img.loaded.article-left-img {
 .text-bg-primary {
     font-weight: 400;
     color: #0d6efd !important;
-    background-color: rgba(13, 110, 253, .1) !important
+    background-color: rgba(13, 110, 253, 0) !important
 }
 
 .text-bg-info {
     font-weight: 400;
     color: #0d6efd !important;
-    background-color: rgba(13, 110, 253, .1) !important
+    background-color: rgba(13, 110, 253, 0) !important
 }
 
 .text-bg-success {
     font-weight: 400;
     color: #20c997 !important;
-    background-color: rgba(32, 201, 151, .1) !important
+    background-color: rgba(32, 201, 151, 0) !important
 }
 
 .text-bg-danger {
     font-weight: 400;
     color: #dc3545 !important;
-    background-color: rgba(220, 53, 69, .1) !important
+    background-color: rgba(220, 53, 69, 0) !important
 }
 
 .text-bg-warning {
     font-weight: 400;
     color: #fd7e14 !important;
-    background-color: rgba(253, 126, 20, .1) !important
+    background-color: rgba(253, 126, 20, 0) !important
 }
 
 .cuteen-blockquote.primary {
