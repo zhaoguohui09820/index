@@ -36,7 +36,7 @@
         </script>
     </div>
 </head>
-<audio id="backgroundMusic" loop autoplay>
+<audio id="backgroundMusic" loop autoplay volume="10">
     <source src="https://zhaoguohui09820.github.io/index/audio/「你的名字。」ED - なんでもないや(Piano Cover) - DickLi ICW.flac"
         type="audio/mpeg">
     Your browser does not support the audio element.
@@ -440,6 +440,11 @@
                 music.pause();
             }
         }
+        // 设置固定的音量
+        document.addEventListener('DOMContentLoaded', function () {
+            var music = document.getElementById('backgroundMusic');
+            music.volume = 0.5; // 设置音量为50%
+        });
     </script>
 </body>
 
