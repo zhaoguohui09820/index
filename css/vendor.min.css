@@ -6,6 +6,145 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+ #musicApp:hover #musicPop {
+    visibility: visible;
+    opacity: 1;
+    transform: scaleY(1)
+}
+
+#musicPop {
+    max-width: 12.5rem;
+    width: 12.5rem
+}
+
+#musicPop:before {
+    content: "";
+    position: absolute;
+    display: block;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+    top: -5px;
+    right: 20px
+}
+
+#musicPop {
+    position: absolute;
+    right: 0;
+    top: calc(3rem + 5px);
+    box-shadow: 0 4px 8px rgba(31, 45, 61, .2);
+    background: var(--bs-light);
+    padding: .75rem;
+    border-radius: .5rem;
+    transform-origin: 0 -5px;
+    transform: scaleY(0);
+    opacity: 0;
+    visibility: hidden;
+    transition: .25s
+}
+
+.music-cover {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-right: .5rem
+}
+
+.music-cover,
+.music-next-btn,
+.music-play-btn,
+.music-prev-btn {
+    box-shadow: 0 1px 5px rgba(0, 123, 255, .26);
+    border: 1px solid rgba(108, 117, 125, .26)
+}
+
+.music-play-btn .icon {
+    margin: .6rem
+}
+
+.music-picture {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center
+}
+
+.music-control,
+.music-list-author {
+    display: none
+}
+
+.music-list {
+    padding: 0;
+    margin-top: .5rem;
+    max-height: 18rem;
+    overflow: auto;
+    color: var(--bs-dark)
+}
+
+.music-list::-webkit-scrollbar {
+    width: 0
+}
+
+.music-list li {
+    display: flex;
+    list-style: none;
+    padding: .25rem .75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: .25s;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.music-list li:hover {
+    background: rgba(0, 123, 255, .1)
+}
+
+.music-list li span {
+    margin-right: .5rem;
+    font-size: 85%
+}
+
+.music-list li.music-curMusic {
+    background: var(--bs-primary);
+    color: var(--bs-white)
+}
+
+#musicApp svg.on {
+    color: var(--bs-primary)
+}
+
+@-webkit-keyframes rightWhirl {
+    0% {
+        -webkit-transform: rotate(0)
+    }
+    50% {
+        -webkit-transform: rotate(180deg)
+    }
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes rightWhirl {
+    0% {
+        -webkit-transform: rotate(0)
+    }
+    50% {
+        -webkit-transform: rotate(180deg)
+    }
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+.music-cover.music-pause {
+    -webkit-animation: rightWhirl 5s linear infinite;
+    animation: rightWhirl 5s linear infinite
+}
+
 /* 添加CSS样式以确保文本自动换行 */
 .text-center td,
 .text-center th {
