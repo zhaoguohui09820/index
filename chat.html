@@ -290,6 +290,26 @@
     </div>
     <!--Headroom-->
     <!--MathJax-->
+    <script async id="MathJax-script" src="https://ixfish.cn/usr/themes/Cuteen/static/js/mathjax/tex-chtml.js"></script>
+    <script>
+        MathJax = {
+            options: {
+                renderActions: {
+                    addMenu: [0, "", ""]
+                }
+            },
+            tex: {
+                inlineMath: [
+                    ["$", "$"],
+                    ["\\(", "\\)"]
+                ]
+            },
+            svg: {
+                fontCache: "global"
+            }
+        }
+    </script>
+
     <script src="https://zhaoguohui09820.github.io/index/js/pjax.min.js"></script>
     <script src="https://zhaoguohui09820.github.io/index/js/topbar.min.js"></script>
     <script>
