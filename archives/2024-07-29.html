@@ -46,6 +46,11 @@
         </script>
     </div>
 </head>
+<audio id="backgroundMusic" loop autoplay>
+    <source src="https://zhaoguohui09820.github.io/index/audio/「你的名字。」ED - なんでもないや(Piano Cover) - DickLi ICW.flac"
+        type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
 <script src="https://zhaoguohui09820.github.io/index/js/font_3601434_nup6sgrztd.js"></script>
 <style data-custom-style>
     .hero::after {
@@ -62,8 +67,36 @@
         background: linear-gradient(to top, #262626, transparent);
     }
 </style>
+<style>
+    .music-icon {
+        position: fixed;
+        left: 20px;
+        top: 30%;
+        z-index: 1000;
+        cursor: pointer;
+        border-radius: 50%;
+        padding: 100%px;
+    }
+
+    .music-icon .icon {
+        width: 20px;
+        height: 20px;
+        fill: black;
+        /* 浅色模式下颜色 */
+    }
+
+    .dark .music-icon .icon {
+        fill: white;
+        /* 深色模式下颜色 */
+    }
+</style>
 
 <body>
+    <div id="music-icon" class="music-icon" onclick="toggleMusic()">
+        <svg class="icon icon-20" aria-hidden="true">
+            <use xlink:href="#music"></use>
+        </svg>
+    </div>
 
     <nav class="navbar navbar-expand-md fixed-top px-2 px-md-5 has-img" id="navPC">
         <div class="container-fluid">
@@ -174,7 +207,7 @@
     </nav>
 
     <div id="hero-box" class="hero"
-        style="background-image: url('https://yun.ixfish.cn/?explorer/share/fileOut&shareID=9gdtMAjw&path=%7BshareItemLink%3A9gdtMAjw%7D%2F22.webp');">
+        style="background-image: url('https://zhaoguohui09820.github.io/index/img/S00125-12365070.jpg');">
         <h3 class="post-title serif-font">加入我的Minecraft 服务器</h3>
     </div>
 
@@ -298,7 +331,7 @@
                         <div class="row m-0">
                             <div class="col-6 post-link-box rounded-start">
                                 <a class="prev-card-img serif-font"
-                                    href="https://zhaoguohui09820.github.io/index/archives/2024-07-18.html" style="background-image: url(https://yun.ixfish.cn/?explorer/share/fileOut&shareID=9gdtMAjw&path=%7BshareItemLink%3A9gdtMAjw%7D%2F20.webp
+                                    href="https://zhaoguohui09820.github.io/index/archives/2024-07-18.html" style="background-image: url(https://zhaoguohui09820.github.io/index/img/S00125-12405097.jpg
 );">
                                     <span class="line-clamp-2 np-text">冯少杰的画作</span>
                                     <div class="text-xs post-link-text">« 上一篇</div>
@@ -307,7 +340,7 @@
 
                             <div class="col-6 post-link-box rounded-end">
                                 <a class="next-card-img serif-font"
-                                    href="https://zhaoguohui09820.github.io/index/archives/2024-07-29.html" style="background-image: url(https://yun.ixfish.cn/?explorer/share/fileOut&shareID=9gdtMAjw&path=%7BshareItemLink%3A9gdtMAjw%7D%2F22.webp
+                                    href="https://zhaoguohui09820.github.io/index/archives/2024-07-29.html" style="background-image: url(https://zhaoguohui09820.github.io/index/img/S00125-12365070.jpg
 );">
                                     <div class="line-clamp-2 np-text">已经是最后一个了，后面没有了</div>
                                     <div class="text-xs post-link-text">下一篇 »</div>
@@ -346,7 +379,7 @@
                     <ul>
                         <li>
                             <div class="cl-link cl-level-2 cl-link-active cl-transform" data-cata-target="heading-0">
-                                题目简介</div>
+                                加入我的Minecraft 服务器</div>
                         </li>
                         <li>
                             <div class="cl-link cl-level-2" data-cata-target="heading-1">视频教程</div>
@@ -506,6 +539,22 @@
             margin: 0;
         }
     </style>
+
+    <script>
+        function toggleMusic() {
+            var music = document.getElementById('backgroundMusic');
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+        // 设置固定的音量
+        document.addEventListener('DOMContentLoaded', function () {
+            var music = document.getElementById('backgroundMusic');
+            music.volume = 0.5; // 设置音量为50%
+        });
+    </script>
 </body>
 
 </html>
