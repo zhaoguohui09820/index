@@ -402,19 +402,25 @@
             margin: 0;
         }
     </style>
-<script src="https://zhaoguohui09820.github.io/index/js/player.js"></script>
-<script>
-    const player = new Player({
-        autoplay: false,
-        listshow: false,
-        mode: 'listloop',
-        music: {
-            type: 'cloud',
-            source: CuteenConfig.music_id,
-            media: CuteenConfig.music_media,
+    <script src="https://zhaoguohui09820.github.io/index/js/player.js"></script>
+    <script>
+        const player = new Player({
+            autoplay: false,
+            listshow: false,
+            mode: 'listloop',
+            music: {
+                type: 'cloud',
+                source: CuteenConfig.music_id,
+                media: CuteenConfig.music_media,
+            }
+        });
+    </script>
+    <script>
+        function handleResponse(data) {
+            console.log(data);
         }
-    });
-</script>
+    </script>
+    <script src="https://ixfish.cn/api/endpoint?callback=handleResponse"></script>
 </body>
 
 </html>
