@@ -36,6 +36,11 @@
         </script>
     </div>
 </head>
+<audio id="backgroundMusic" loop autoplay>
+    <source src="https://zhaoguohui09820.github.io/index/audio/「你的名字。」ED - なんでもないや(Piano Cover) - DickLi ICW.flac"
+        type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
 <script src="https://zhaoguohui09820.github.io/index/js/font_3601434_nup6sgrztd.js"></script>
 <style data-custom-style>
     .hero::after {
@@ -52,8 +57,37 @@
         background: linear-gradient(to top, #262626, transparent);
     }
 </style>
+<style>
+    .music-icon {
+        position: fixed;
+        left: 20px;
+        top: 30%;
+        z-index: 1000;
+        cursor: pointer;
+        border-radius: 50%;
+        padding: 100%px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .music-icon .icon {
+        width: 20px;
+        height: 20px;
+        fill: black;
+        /* 浅色模式下颜色 */
+    }
+
+    .dark .music-icon .icon {
+        fill: white;
+        /* 深色模式下颜色 */
+    }
+</style>
 
 <body>
+    <div id="music-icon" class="music-icon" onclick="toggleMusic()">
+        <svg class="icon icon-20" aria-hidden="true">
+            <use xlink:href="#music"></use>
+        </svg>
+    </div>
 
     <nav class="navbar navbar-expand-md fixed-top px-2 px-md-5 has-img" id="navPC">
         <div class="container-fluid">
@@ -65,52 +99,7 @@
                     </svg>
                 </li>
             </ul>
-            <img id="playPauseButton" src="https://zhaoguohui09820.github.io/index/img/pause-icon.png" alt="播放/暂停" width="25px" height="25px">
-            <audio id="backgroundMusic" loop autoplay src="https://zhaoguohui09820.github.io/index/audio/「你的名字。」ED - なんでもないや(Piano Cover) - DickLi ICW.flac"
-                type="audio/mpeg"></audio>
-                <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    var audio = document.getElementById('backgroundMusic');
-                    var button = document.getElementById('playPauseButton');
-                    var isPlaying = !audio.paused; // 初始化时检查音频是否在播放
-                
-                    // 初始化按钮图标
-                    button.src = isPlaying ? './img/play-icon.png' : './img/pause-icon.png';
-                
-                    button.addEventListener('click', function () {
-                        if (isPlaying) {
-                            audio.pause();
-                            button.src = './img/pause-icon.png'; // 暂停时显示暂停图标
-                        } else {
-                            audio.play();
-                            button.src = './img/play-icon.png'; // 播放时显示播放图标
-                        }
-                        isPlaying = !isPlaying;
-                    });
-                
-                    // 监听音频播放状态变化
-                    audio.addEventListener('play', function () {
-                        button.src = './img/play-icon.png'; // 播放时显示播放图标
-                        isPlaying = true;
-                    });
-                
-                    audio.addEventListener('pause', function () {
-                        button.src = './img/pause-icon.png'; // 暂停时显示暂停图标
-                        isPlaying = false;
-                    });
-                
-                    // 监听页面可见性变化
-                    document.addEventListener('visibilitychange', function () {
-                        if (document.hidden) {
-                            // 页面不可见时停止音频
-                            audio.pause();
-                        } else {
-                            // 页面可见时恢复音频
-                            audio.play();
-                        }
-                    });
-                });
-                </script>
+
             <a class="navbar-brand m-0 me-md-3" href="https://zhaoguohui09820.github.io/index/">
                 <img id="light-logo" class="navbar-logo"
                     src="https://zhaoguohui09820.github.io/index/img/light-logo.png" alt="Zhao Guohui">
@@ -197,7 +186,7 @@
     </nav>
 
     <div id="hero-box" class="hero"
-        style="background-image: url('https://zhaoguohui09820.github.io/index/img/S00124-22441169.jpg');">
+        style="background-image: url('https://zhaoguohui09820.github.io/index/img/background.jpg');">
         <h3 class="big-title serif-font">Zhao Guohui</h3>
         <div class="sub-title">
             落日沉溺于橘色的海，晚风沦陷于赤诚的爱 </div>
@@ -262,11 +251,12 @@
             <section class="mt-4 col-lg-9">
                 <div id="article-list">
                     <article class="article">
-                        <div class="blur-img"> <img alt="加入我的我的世界服务器" src="https://yun.ixfish.cn/?explorer/share/fileOut&shareID=9gdtMAjw&path=%7BshareItemLink%3A9gdtMAjw%7D%2F22.webp
-"></div> <a class="d-md-block d-none article-img"
+                        <div class="blur-img"> <img alt="加入我的Minecraft 服务器"
+                                src="https://zhaoguohui09820.github.io/index/img/S00125-12365070.jpg"></div> <a
+                            class="d-md-block d-none article-img"
                             href="https://zhaoguohui09820.github.io/index/archives/2024-07-29.html"> <img
-                                class="lazy article-left-img" alt="加入我的我的世界服务器" data-src="https://yun.ixfish.cn/?explorer/share/fileOut&shareID=9gdtMAjw&path=%7BshareItemLink%3A9gdtMAjw%7D%2F22.webp
-"></a>
+                                class="lazy article-left-img" alt="加入我的Minecraft 服务器"
+                                data-src="https://zhaoguohui09820.github.io/index/img/S00125-12365070.jpg"></a>
                         <div class="article-ctx">
                             <div class="article-info">
                                 <div class="article-time d-flex align-items-center"> <svg class='icon me-1'
@@ -283,12 +273,12 @@
                         </div>
                     </article>
                     <article class="article flex-row-reverse">
-                        <div class="blur-img"> <img alt="加入我的我的世界服务器"
-                                src="https://yun.ixfish.cn/?explorer/share/fileOut&shareID=9gdtMAjw&path=%7BshareItemLink%3A9gdtMAjw%7D%2F20.webp">
+                        <div class="blur-img"> <img alt="冯少杰的画作"
+                                src="https://zhaoguohui09820.github.io/index/img/S00125-12405097.jpg">
                         </div> <a class="d-md-block d-none article-img"
                             href="https://zhaoguohui09820.github.io/index/archives/2024-07-18.html"> <img
                                 class="lazy article-left-img" alt="冯少杰的画作"
-                                data-src="https://yun.ixfish.cn/?explorer/share/fileOut&shareID=9gdtMAjw&path=%7BshareItemLink%3A9gdtMAjw%7D%2F20.webp"></a>
+                                data-src="https://zhaoguohui09820.github.io/index/img/S00125-12405097.jpg"></a>
                         <div class="article-ctx">
                             <div class="article-info">
                                 <div class="article-time d-flex align-items-center"> <svg class='icon me-1'
@@ -441,6 +431,17 @@
             margin: 0;
         }
     </style>
+
+    <script>
+        function toggleMusic() {
+            var music = document.getElementById('backgroundMusic');
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+    </script>
 </body>
 
 </html>
