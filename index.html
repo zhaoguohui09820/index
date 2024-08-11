@@ -65,7 +65,52 @@
                     </svg>
                 </li>
             </ul>
-
+            <img id="playPauseButton" src="https://zhaoguohui09820.github.io/index/img/pause-icon.png" alt="播放/暂停" width="25px" height="25px">
+            <audio id="backgroundMusic" loop autoplay src="https://zhaoguohui09820.github.io/index/audio/「你的名字。」ED - なんでもないや(Piano Cover) - DickLi ICW.flac"
+                type="audio/mpeg"></audio>
+                <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var audio = document.getElementById('backgroundMusic');
+                    var button = document.getElementById('playPauseButton');
+                    var isPlaying = !audio.paused; // 初始化时检查音频是否在播放
+                
+                    // 初始化按钮图标
+                    button.src = isPlaying ? './img/play-icon.png' : './img/pause-icon.png';
+                
+                    button.addEventListener('click', function () {
+                        if (isPlaying) {
+                            audio.pause();
+                            button.src = './img/pause-icon.png'; // 暂停时显示暂停图标
+                        } else {
+                            audio.play();
+                            button.src = './img/play-icon.png'; // 播放时显示播放图标
+                        }
+                        isPlaying = !isPlaying;
+                    });
+                
+                    // 监听音频播放状态变化
+                    audio.addEventListener('play', function () {
+                        button.src = './img/play-icon.png'; // 播放时显示播放图标
+                        isPlaying = true;
+                    });
+                
+                    audio.addEventListener('pause', function () {
+                        button.src = './img/pause-icon.png'; // 暂停时显示暂停图标
+                        isPlaying = false;
+                    });
+                
+                    // 监听页面可见性变化
+                    document.addEventListener('visibilitychange', function () {
+                        if (document.hidden) {
+                            // 页面不可见时停止音频
+                            audio.pause();
+                        } else {
+                            // 页面可见时恢复音频
+                            audio.play();
+                        }
+                    });
+                });
+                </script>
             <a class="navbar-brand m-0 me-md-3" href="https://zhaoguohui09820.github.io/index/">
                 <img id="light-logo" class="navbar-logo"
                     src="https://zhaoguohui09820.github.io/index/img/light-logo.png" alt="Zhao Guohui">
