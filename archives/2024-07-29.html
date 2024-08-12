@@ -1778,6 +1778,22 @@
             font-family: 'CustomFonts', MiSans, Microsoft YaHei, sans-serif;
         }
     </style>
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 的宽高比 */
+            height: 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
     <nav class="navbar navbar-expand-md fixed-top px-2 px-md-5 has-img" id="navPC">
         <div class="container-fluid">
             <ul class="navbar-nav d-md-none">
