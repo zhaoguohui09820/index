@@ -12688,7 +12688,7 @@ fieldset:disabled .btn {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #E6EDF3
+    background-color: #FFFFFF
 }
 
 ::-webkit-scrollbar-thumb {
@@ -14865,7 +14865,7 @@ img.loaded.article-left-img {
 .dark .card,
 .dark .modal-content,
 .dark .typography table thead>tr>th {
-    background-color: #2C2C2C !important;
+    background-color: #161B22 !important;
     color: rgba(255, 255, 255, .8)
 }
 
