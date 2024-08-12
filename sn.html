@@ -1843,20 +1843,6 @@
                     </svg>
                     <div id="musicPop"></div>
                 </li>
-
-                <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/player.js"></script>
-                <script>
-                    const player = new Player({
-                        autoplay: false,
-                        listshow: false,
-                        mode: 'listloop',
-                        music: {
-                            type: 'cloud',
-                            source: CuteenConfig.music_id,
-                            media: CuteenConfig.music_media,
-                        }
-                    });
-                </script>
                 <li class="navbar-icon d-none d-md-inline-flex" onclick="Cuteen.DarkModeToggle();"
                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="昼夜切换">
                     <svg class="icon icon-20 darkMode" aria-hidden="true">
@@ -2008,6 +1994,19 @@
             MathJax.typeset();
             if (typeof Prism !== 'undefined') Prism.highlightAll(true, null);
             Cuteen.PjaxLoad()
+        });
+    </script>
+    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/player.js"></script>
+    <script>
+        const player = new Player({
+            autoplay: false,
+            listshow: false,
+            mode: 'listloop',
+            music: {
+                type: 'cloud',
+                source: CuteenConfig.music_id,
+                media: CuteenConfig.music_media,
+            }
         });
     </script>
     <script src="https://zhaoguohui09820.github.io/index/js/message.js"></script>
