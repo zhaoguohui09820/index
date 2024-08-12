@@ -2,7 +2,7 @@
 
 class App {
     constructor() {
-        console.log(" %c Theme Cuteen Version " + CuteenConfig.theme_version + " %c blog.zwying.com", "color:#E6EDF3;background:linear-gradient(90deg,#448bff,#44e9ff);padding:5px 0;", "color:#000;background:linear-gradient(90deg,#44e9ff,#E6EDF3);padding:5px 10px 5px 0px;");
+        console.log(" %c Theme Cuteen Version " + CuteenConfig.theme_version + " %c blog.zwying.com", "color:#FFFFFF;background:linear-gradient(90deg,#448bff,#44e9ff);padding:5px 0;", "color:#000;background:linear-gradient(90deg,#44e9ff,#FFFFFF);padding:5px 10px 5px 0px;");
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
         const dropdownElementList = document.querySelectorAll('.dropdown-toggle')
