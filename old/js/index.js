@@ -96,36 +96,36 @@ function randomAction() {
 // 创建动画序列
 for (let i = 1; i < 13; i++) {
     const img = new Image();
-    img.src = `./max/walkright${i}.avif`;
+    img.src = `./max/walkright${i}.jpg`;
     RightwalkFrames.push(img);
 
     const img2 = new Image();
-    img2.src = `./max/walkleft${i}.avif`;
+    img2.src = `./max/walkleft${i}.jpg`;
     LeftwalkFrames.push(img2);
 
     const img3 = new Image();
-    img3.src = `./max/drag${i}.avif`;
+    img3.src = `./max/drag${i}.jpg`;
     DragFrames.push(img3);
 
     const img4 = new Image();
-    img4.src = `./max/fish${i}.avif`;
+    img4.src = `./max/fish${i}.jpg`;
     fishFrames.push(img4);
 
     const img5 = new Image();
-    img5.src = `./max/kiss${i}.avif`;
+    img5.src = `./max/kiss${i}.jpg`;
     kissFrames.push(img5);
 
     const img6 = new Image();
-    img6.src = `./max/sleep${i}.avif`;
+    img6.src = `./max/sleep${i}.jpg`;
     sleepFrames.push(img6);
 
     const img7 = new Image();
-    img7.src = `./max/stand${i}.avif`;
+    img7.src = `./max/stand${i}.jpg`;
     standFrames.push(img7);
 }
 
 const img111 = new Image();
-img111.src = `./max/falling1.avif`;
+img111.src = `./max/falling1.jpg`;
 fallingFrames.push(img111);
 
 // 绘制宠物
