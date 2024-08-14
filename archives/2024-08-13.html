@@ -1763,65 +1763,6 @@
             font-family: 'CustomFonts', MiSans, Microsoft YaHei, sans-serif;
         }
     </style>
-    <style>
-        .image-container {
-            display: flex;
-            flex-wrap: wrap;
-            /* 允许项目换行 */
-            margin: -8px;
-            /* 外边距为负值，用于抵消第一行图片的间距 */
-            gap: 16px;
-            /* 设置Flex项目之间的间距 */
-        }
-
-        .image-container img {
-            flex: 1;
-            /* 让图片在容器内按比例分配空间 */
-            min-width: 150px;
-            /* 设置图片的最小宽度，防止图片过小 */
-            max-width: 100%;
-            /* 图片最大宽度不超过容器宽度 */
-            height: auto;
-            /* 保持图片的宽高比 */
-            margin: 8px;
-            /* 设置图片的间距 */
-        }
-
-        @media (max-width: 800px) {
-            .image-container {
-                /* 设置flex-direction为column，让图片垂直排列 */
-                flex-direction: column;
-                align-items: center;
-                /* 水平居中Flex项目 */
-            }
-
-            .image-container img {
-                flex: 0 0 50%;
-                /* 每张图片占据容器宽度的80% */
-                max-width: 50%;
-                /* 确保图片最大宽度不超过80% */
-                height: auto;
-                /* 保持图片的宽高比 */
-                margin-bottom: 10px;
-                /* 上下边距为10px */
-            }
-        }
-
-        @media (max-width: 500px) {
-            .image-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .image-container img {
-                flex: 0 0 100%;
-                max-width: 100%;
-                height: auto;
-                margin-bottom: 10px;
-                /* 只设置底部边距，如果需要的话 */
-            }
-        }
-    </style>
     <nav class="navbar navbar-expand-md fixed-top px-2 px-md-5 has-img" id="navPC">
         <div class="container-fluid">
             <ul class="navbar-nav d-md-none">
@@ -2001,25 +1942,45 @@
                                 <h2 id="heading-1">云端漫步</h2>
                                 <p>　　午后的阳光格外明媚，我与朋友踏上了锻炼的旅程。我们边走边聊，不经意间抬头，天空中的云朵宛如棉花糖般柔软，又似画家笔下的抽象画作，层层叠叠，变幻莫测。我拿起手机，捕捉下这些美丽的瞬间，云朵的形状和色彩，仿佛在低语着它们的故事。
                                 </p>
+                                <a data-fslightbox="" data-type="image" data-id="lightbox"
+                                    href="https://zhaoguohui09820.github.io/index/img/IMG20240813162555.jpg">
+                                    <img class="lazy entered loaded"
+                                        data-src="https://zhaoguohui09820.github.io/index/img/IMG20240813162555.jpg"
+                                        alt="行走在云端，感受日落的美" title="行走在云端，感受日落的美" data-ll-status="loaded"
+                                        src="https://zhaoguohui09820.github.io/index/img/IMG20240813162555.jpg">
+                                </a>
+                                <div class="cuteen_photos">
+                                    <a data-fslightbox="" data-type="image" data-id="lightbox"
+                                        href="https://zhaoguohui09820.github.io/index/img/IMG20240813163207.jpg">
+                                        <img class="lazy entered loaded"
+                                            data-src="https://zhaoguohui09820.github.io/index/img/IMG20240813163207.jpg"
+                                            alt="行走在云端，感受日落的美" title="行走在云端，感受日落的美" data-ll-status="loaded"
+                                            src="https://zhaoguohui09820.github.io/index/img/IMG20240813163207.jpg">
+                                    </a>
+                                    <br>
+                                    <a data-fslightbox="" data-type="image" data-id="lightbox"
+                                        href="https://zhaoguohui09820.github.io/index/img/IMG20240813162634.jpg">
+                                        <img class="lazy entered loaded"
+                                            data-src="https://zhaoguohui09820.github.io/index/img/IMG20240813162634.jpg"
+                                            alt="行走在云端，感受日落的美" title="行走在云端，感受日落的美" data-ll-status="loaded"
+                                            src="https://zhaoguohui09820.github.io/index/img/IMG20240813162634.jpg">
+                                    </a>
+                                </div>
+
                             </section>
-                            <div class="image-container">
-                                <img src="https://zhaoguohui09820.github.io/index/img/IMG20240813163207.jpg"
-                                    alt="行走在云端，感受日落的美">
-                                <img src="https://zhaoguohui09820.github.io/index/img/IMG20240813162634.jpg"
-                                    alt="行走在云端，感受日落的美">
-                                <img src="https://zhaoguohui09820.github.io/index/img/IMG20240813162555.jpg"
-                                    alt="行走在云端，感受日落的美">
-                            </div>
                             <hr>
                             <section>
                                 <h2 id="heading-2">落日余晖</h2>
                                 <p>　　锻炼结束后，我们踏上了归途。夕阳西下，天边泛起了一抹金黄。那一刻，落日的光辉洒满大地，为万物披上了一层金色的外衣。我停下脚步，拍摄下这短暂而美好的时刻。落日的余晖映照在脸上，带来温暖与宁静，让人忘却了一天的疲惫。
                                 </p>
                             </section>
-                            <div class="image-container">
-                                <img src="https://zhaoguohui09820.github.io/index/img/IMG20240813190201.jpg"
-                                    alt="行走在云端，感受日落的美">
-                            </div>
+                            <a data-fslightbox="" data-type="image" data-id="lightbox"
+                                href="https://zhaoguohui09820.github.io/index/img/IMG20240813190201.jpg">
+                                <img class="lazy entered loaded"
+                                    data-src="https://zhaoguohui09820.github.io/index/img/IMG20240813190201.jpg"
+                                    alt="行走在云端，感受日落的美" title="行走在云端，感受日落的美" data-ll-status="loaded"
+                                    src="https://zhaoguohui09820.github.io/index/img/IMG20240813190201.jpg">
+                            </a>
                             <hr>
                             <section>
                                 <h2 id="heading-3">生活中的小确幸</h2>
