@@ -13,12 +13,10 @@
   <link rel="icon" type="image/png" href="https://zhaoguohui09820.github.io/index/img/logo.avif">
   <link rel="apple-touch-icon-precomposed" href="https://zhaoguohui09820.github.io/index/img/logo.avif">
   <title>分类 作品发布 下的文章 - 赵国辉</title>
-  <link
-    href="https://zhaoguohui09820.github.io/index/css/css_2.css"
-    rel="stylesheet" media="all" onload="this.media='all'">
-  <link
-    href="https://zhaoguohui09820.github.io/index/css/css.css"
-    rel="stylesheet" media="all" onload="this.media='all'">
+  <link href="https://zhaoguohui09820.github.io/index/css/css_2.css" rel="stylesheet" media="all"
+    onload="this.media='all'">
+  <link href="https://zhaoguohui09820.github.io/index/css/css.css" rel="stylesheet" media="all"
+    onload="this.media='all'">
   <link rel="stylesheet" href="https://zhaoguohui09820.github.io/index/css/vendor.min.css">
   <link title="dark-prism" rel="stylesheet" href="https://zhaoguohui09820.github.io/index/css/prism.css">
   <style class="fslightbox-styles">
@@ -1706,7 +1704,7 @@
     </symbol>
   </svg>
   <div id="LocalizeScript">
-    <script src="https://hm.baidu.com/hm.js?76dcfa01d395fc3cb21cb24d0986b9fb"></script>
+    <script src="https://zhaoguohui09820.github.io/js/hm.js"></script>
     <script type="text/javascript">
       var CuteenConfig = {
         theme_version: '5.15(20240520)',
@@ -1723,7 +1721,7 @@
       };
     </script>
   </div>
-  <script src="https://hm.baidu.com/hm.js?76dcfa01d395fc3cb21cb24d0986b9fb"></script>
+  <script src="https://zhaoguohui09820.github.io/js/hm.js"></script>
   <style data-custom-style="">
     .hero::after {
       content: '';
@@ -1841,6 +1839,50 @@
 
   <main id="wrap" class="container">
     <div class="row justify-content-center ">
+      <section class="col-lg-3">
+        <div class="h-100 d-none d-lg-block mt-4">
+          <section class="sidebar-author card">
+            <div class="sidebar-banner"
+              style="background-image: url('https://zhaoguohui09820.github.io/index/img/63adb5ebea81a.jpg')">
+            </div>
+            <div class="text-center">
+              <img class="sidebar-avatar" src="https://zhaoguohui09820.github.io/index/img/avatar.avif" alt="avatar">
+            </div>
+            <h2 class="fw-bold serif-font mt-5 fs-4 text-center">Zhao Guohui</h2>
+            <span class="sidebar-sign">落日沉溺于橘色的海 晚风沦陷于赤诚的爱</span>
+          </section>
+          <section class="sidebar-comment-box card mt-4">
+            <div class="px-4 py-2 my-2 d-flex align-items-center border-bottom">
+              <span>联系方式</span>
+            </div>
+            <div class="px-4 py-2 my-2 d-flex align-items-center">
+              <span class="email">
+                <i class="fab fa-weixin"></i>：Zhao_guohui<br>
+                <i class="fab fa-qq"></i>：2592299180<br>
+                <i class="fas fa-envelope"></i>：zhaolixiangguohui@outlook.com<br>
+                <i class="fa-brands fa-bilibili"></i>：Zhao_Guohui
+              </span>
+            </div>
+          </section>
+          <section class="sidebar-comment-box card mt-4">
+            <div class="px-4 py-2 my-2 d-flex align-items-center border-bottom">
+              <span><i class="fas fa-map-marker-alt"></i>地理位置</span>
+            </div>
+            <div id="tencent-map" style="width: 100%; height: 200px;"></div>
+          </section>
+
+          <!-- 腾讯地图API -->
+          <script charset="utf-8" src="https://map.qq.com/api/gljs?v=1.exp&key=PJPBZ-742CB-NQHUQ-JTENG-46UIK-STBMG
+                "></script>
+          <script>
+            // 腾讯地图初始化
+            var map = new TMap.Map('tencent-map', {
+              center: new TMap.LatLng(36.359346, 114.933275), // 这里填写你想要显示的经纬度
+              zoom: 15 // 缩放级别
+            });
+          </script>
+        </div>
+      </section>
       <section class="mt-4 col-lg-9">
         <div id="article-list">
           <article class="article flex-row-reverse">
@@ -1943,141 +1985,142 @@
     headroom_fun();
   </script>
   <!--MathJax-->
-  <script="" id="MathJax-script" src="https://zhaoguohui09820.github.io/index/js/tex-chtml.js"></script>
-  <script>
-    MathJax = {
-      options: {
-        renderActions: {
-          addMenu: [0, "", ""]
+  <script="" id="MathJax-script" src="https://zhaoguohui09820.github.io/index/js/tex-chtml.js">
+  </script>
+    <script>
+      MathJax = {
+        options: {
+          renderActions: {
+            addMenu: [0, "", ""]
+          }
+        },
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"]
+          ]
+        },
+        svg: {
+          fontCache: "global"
         }
-      },
-      tex: {
-        inlineMath: [
-          ["$", "$"],
-          ["\\(", "\\)"]
-        ]
-      },
-      svg: {
-        fontCache: "global"
       }
-    }
-  </script>
+    </script>
 
-  <script src="https://zhaoguohui09820.github.io/index/js/pjax.min.js"></script>
-  <script src="https://zhaoguohui09820.github.io/index/js/topbar.min.js"></script>
-  <script>
-    const pjax = new Pjax({
-      selectors: [
-        'main', 'title', '#LocalizeScript', '#tool', '#hero-box'
-      ],
-    });
-    document.addEventListener('pjax:send', () => {
-      NProgress.set(0.6);
-    });
-    document.addEventListener('pjax:complete', () => {
-      NProgress.done();
-      if (document.getElementById('echarts_pie')) EchartsInit();
-      refreshFsLightbox();
-      MathJax.typeset();
-      headroom_fun();
-      if (typeof Prism !== 'undefined') Prism.highlightAll(true, null);
-      Cuteen.PjaxLoad()
-    });
-  </script>
-  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/player.js"></script>
-  <script>
-    const player = new Player({
-      autoplay: false,
-      listshow: false,
-      mode: 'listloop',
-      music: {
-        type: 'cloud',
-        source: CuteenConfig.music_id,
-        media: CuteenConfig.music_media,
-      }
-    });
-  </script>
-  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/message.js"></script>
-  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/OwO.js"></script>
-  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/lazyload.min.js"></script>
-  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/fslightbox.js"></script>
-  <script src="https://zhaoguohui09820.github.io/index/js/prism.js"></script>
-  <script src="https://zhaoguohui09820.github.io/index/js/main.js"></script>
-  <script src="https://zhaoguohui09820.github.io/index/js/bootstrap.bundle.min.js"></script>
-  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/smooth.min.js"></script>
-  <script>
-    var _hmt = _hmt || [];
-    (function () {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?76dcfa01d395fc3cb21cb24d0986b9fb";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-  <!--底部波浪开始-->
-  <div class="wiiuii_layout">
-    <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-      viewBox="0 24 150 28" preserveAspectRatio="none">
-      <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 
+    <script src="https://zhaoguohui09820.github.io/index/js/pjax.min.js"></script>
+    <script src="https://zhaoguohui09820.github.io/index/js/topbar.min.js"></script>
+    <script>
+      const pjax = new Pjax({
+        selectors: [
+          'main', 'title', '#LocalizeScript', '#tool', '#hero-box'
+        ],
+      });
+      document.addEventListener('pjax:send', () => {
+        NProgress.set(0.6);
+      });
+      document.addEventListener('pjax:complete', () => {
+        NProgress.done();
+        if (document.getElementById('echarts_pie')) EchartsInit();
+        refreshFsLightbox();
+        MathJax.typeset();
+        headroom_fun();
+        if (typeof Prism !== 'undefined') Prism.highlightAll(true, null);
+        Cuteen.PjaxLoad()
+      });
+    </script>
+    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/player.js"></script>
+    <script>
+      const player = new Player({
+        autoplay: false,
+        listshow: false,
+        mode: 'listloop',
+        music: {
+          type: 'cloud',
+          source: CuteenConfig.music_id,
+          media: CuteenConfig.music_media,
+        }
+      });
+    </script>
+    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/message.js"></script>
+    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/OwO.js"></script>
+    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/lazyload.min.js"></script>
+    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/fslightbox.js"></script>
+    <script src="https://zhaoguohui09820.github.io/index/js/prism.js"></script>
+    <script src="https://zhaoguohui09820.github.io/index/js/main.js"></script>
+    <script src="https://zhaoguohui09820.github.io/index/js/bootstrap.bundle.min.js"></script>
+    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/smooth.min.js"></script>
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://zhaoguohui09820.github.io/js/hm.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    <!--底部波浪开始-->
+    <div class="wiiuii_layout">
+      <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 
         58-18 88-18s
         58 18 88 18 
         58-18 88-18 
         58 18 88 18
         v44h-352z" />
-      </defs>
-      <g class="parallax">
-        <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2" />
-        <use xlink:href="#gentle-wave" x="50" y="3" fill="#3461c1" />
-        <use xlink:href="#gentle-wave" x="50" y="6" fill="#2d55aa" />
-      </g>
-    </svg>
-  </div>
-  <style type='text/css'>
-    .parallax>use {
-      animation: move-forever 12s linear infinite;
-    }
-
-    .parallax>use:nth-child(1) {
-      animation-delay: -2s;
-    }
-
-    .parallax>use:nth-child(2) {
-      animation-delay: -2s;
-      animation-duration: 5s;
-    }
-
-    .parallax>use:nth-child(3) {
-      animation-delay: -4s;
-      animation-duration: 3s;
-    }
-
-    @keyframes move-forever {
-      0% {
-        transform: translate(-90px, 0%);
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2" />
+          <use xlink:href="#gentle-wave" x="50" y="3" fill="#3461c1" />
+          <use xlink:href="#gentle-wave" x="50" y="6" fill="#2d55aa" />
+        </g>
+      </svg>
+    </div>
+    <style type='text/css'>
+      .parallax>use {
+        animation: move-forever 12s linear infinite;
       }
 
-      100% {
-        transform: translate(85px, 0%);
+      .parallax>use:nth-child(1) {
+        animation-delay: -2s;
       }
-    }
 
-    .wiiuii_layout {
-      width: 100%;
-      height: 40px;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      background: var(--footer-bg);
-    }
+      .parallax>use:nth-child(2) {
+        animation-delay: -2s;
+        animation-duration: 5s;
+      }
 
-    .editorial {
-      display: block;
-      width: 100%;
-      height: 40px;
-      margin: 0;
-    }
-  </style>
+      .parallax>use:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 3s;
+      }
+
+      @keyframes move-forever {
+        0% {
+          transform: translate(-90px, 0%);
+        }
+
+        100% {
+          transform: translate(85px, 0%);
+        }
+      }
+
+      .wiiuii_layout {
+        width: 100%;
+        height: 40px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        background: var(--footer-bg);
+      }
+
+      .editorial {
+        display: block;
+        width: 100%;
+        height: 40px;
+        margin: 0;
+      }
+    </style>
 </body>
 <div style="all: initial;">
   <div id="__hcfy__" style="all: initial;"></div>
