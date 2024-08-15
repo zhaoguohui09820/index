@@ -1925,7 +1925,7 @@
                             </header>
                             <h2 id="heading-1">什么是化学</h2>
                             <p>注意音量</p>
-                            <video controls>
+                            <video controls style="border-radius: 15px;">
                                 <source src="http://vs.leleketang.com/dat/ms/ch/k/video/20530.mp4" type="video/mp4">
                                 您的浏览器不支持Video标签。
                             </video>
@@ -1964,7 +1964,7 @@
                             <section>
                                 <h2 id="heading-3">化学发展史</h2>
                                 <p>注意音量</p>
-                                <video width="320" height="240" controls>
+                                <video controls style="border-radius: 15px;>
                                     <source src="http://vs.leleketang.com/dat/ms/ch/k/video/20531.mp4" type="video/mp4">
                                     您的浏览器不支持Video标签。
                                 </video>
@@ -2303,10 +2303,10 @@
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // 选择你要观察的元素
             const elementsToObserve = document.querySelectorAll('.article');
-    
+
             // 定义 IntersectionObserver 的回调函数
             const observerCallback = (entries, observer) => {
                 entries.forEach(entry => {
@@ -2319,16 +2319,16 @@
                     }
                 });
             };
-    
+
             // 创建 IntersectionObserver 实例
             const observerOptions = {
                 root: null, // 使用默认的视口
                 rootMargin: '0px',
                 threshold: 0.1 // 当元素的 10% 进入视口时触发回调
             };
-    
+
             const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
+
             // 观察所有选中的元素
             elementsToObserve.forEach(element => {
                 observer.observe(element);
@@ -2340,7 +2340,7 @@
             opacity: 0;
             transition: opacity 1s;
         }
-    
+
         .article.visible {
             opacity: 1;
         }
