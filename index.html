@@ -1849,7 +1849,7 @@
     </nav>
 
     <div id="hero-box" class="hero"
-        style="background-image: url('https://zhaoguohui09820.github.io/index/js/api/bg.php');">
+        style="background-image: url('https://zhaoguohui09820.github.io/index/img/S00125-13585938.jpg');">
         <h1 class="big-title serif-font">🐾 赵国辉 👻</h1>
         <div class="sub-title">
             落日沉溺于橘色的海 晚风沦陷于赤诚的爱</div>
@@ -1868,8 +1868,7 @@
                     <div class="carousel-item active">
                         <img src="https://zhaoguohui09820.github.io/index/img/10001.jpg" class="d-block w-100"
                             alt="留言板">
-                        <a class="carousel-caption"
-                            href="https://zhaoguohui09820.github.io/index/chat.html">
+                        <a class="carousel-caption" href="https://zhaoguohui09820.github.io/index/chat.html">
                             <h3 class="fw-bold serif-font">留言板</h3>
                             <ul class="post-title-info">
                             </ul>
@@ -1891,10 +1890,8 @@
                         </a>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://zhaoguohui09820.github.io/index/img/sn.jpg" class="d-block w-100"
-                            alt="闪念">
-                        <a class="carousel-caption"
-                            href="https://zhaoguohui09820.github.io/index/sn.html">
+                        <img src="https://zhaoguohui09820.github.io/index/img/sn.jpg" class="d-block w-100" alt="闪念">
+                        <a class="carousel-caption" href="https://zhaoguohui09820.github.io/index/sn.html">
                             <h3 class="fw-bold serif-font">闪念</h3>
                             <ul class="post-title-info">
                                 <li>
@@ -2273,6 +2270,92 @@
             width: 100%;
             height: 40px;
             margin: 0;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 选择你要观察的元素
+            const elementsToObserve = document.querySelectorAll('.article');
+    
+            // 定义 IntersectionObserver 的回调函数
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 元素进入视口时的处理逻辑
+                        entry.target.classList.add('visible');
+                    } else {
+                        // 元素离开视口时的处理逻辑
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            };
+    
+            // 创建 IntersectionObserver 实例
+            const observerOptions = {
+                root: null, // 使用默认的视口
+                rootMargin: '0px',
+                threshold: 0.1 // 当元素的 10% 进入视口时触发回调
+            };
+    
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+            // 观察所有选中的元素
+            elementsToObserve.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+    <style>
+        .article {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+    
+        .article.visible {
+            opacity: 1;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 选择你要观察的元素
+            const elementsToObserve = document.querySelectorAll('.article');
+    
+            // 定义 IntersectionObserver 的回调函数
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 元素进入视口时的处理逻辑
+                        entry.target.classList.add('visible');
+                    } else {
+                        // 元素离开视口时的处理逻辑
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            };
+    
+            // 创建 IntersectionObserver 实例
+            const observerOptions = {
+                root: null, // 使用默认的视口
+                rootMargin: '0px',
+                threshold: 0.1 // 当元素的 10% 进入视口时触发回调
+            };
+    
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+            // 观察所有选中的元素
+            elementsToObserve.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+    <style>
+        .article {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+    
+        .article.visible {
+            opacity: 1;
         }
     </style>
 </body>

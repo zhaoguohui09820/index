@@ -2270,6 +2270,49 @@
             margin: 0;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 选择你要观察的元素
+            const elementsToObserve = document.querySelectorAll('.article');
+    
+            // 定义 IntersectionObserver 的回调函数
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 元素进入视口时的处理逻辑
+                        entry.target.classList.add('visible');
+                    } else {
+                        // 元素离开视口时的处理逻辑
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            };
+    
+            // 创建 IntersectionObserver 实例
+            const observerOptions = {
+                root: null, // 使用默认的视口
+                rootMargin: '0px',
+                threshold: 0.1 // 当元素的 10% 进入视口时触发回调
+            };
+    
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+            // 观察所有选中的元素
+            elementsToObserve.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+    <style>
+        .article {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+    
+        .article.visible {
+            opacity: 1;
+        }
+    </style>
 </body>
 
 </html>
