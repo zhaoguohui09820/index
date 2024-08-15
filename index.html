@@ -2273,10 +2273,10 @@
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // 选择你要观察的元素
             const elementsToObserve = document.querySelectorAll('.article');
-    
+
             // 定义 IntersectionObserver 的回调函数
             const observerCallback = (entries, observer) => {
                 entries.forEach(entry => {
@@ -2289,16 +2289,16 @@
                     }
                 });
             };
-    
+
             // 创建 IntersectionObserver 实例
             const observerOptions = {
                 root: null, // 使用默认的视口
                 rootMargin: '0px',
                 threshold: 0.1 // 当元素的 10% 进入视口时触发回调
             };
-    
+
             const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
+
             // 观察所有选中的元素
             elementsToObserve.forEach(element => {
                 observer.observe(element);
@@ -2310,16 +2310,16 @@
             opacity: 0;
             transition: opacity 1s;
         }
-    
+
         .article.visible {
             opacity: 1;
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // 选择你要观察的元素
             const elementsToObserve = document.querySelectorAll('.article');
-    
+
             // 定义 IntersectionObserver 的回调函数
             const observerCallback = (entries, observer) => {
                 entries.forEach(entry => {
@@ -2332,16 +2332,16 @@
                     }
                 });
             };
-    
+
             // 创建 IntersectionObserver 实例
             const observerOptions = {
                 root: null, // 使用默认的视口
                 rootMargin: '0px',
                 threshold: 0.1 // 当元素的 10% 进入视口时触发回调
             };
-    
+
             const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
+
             // 观察所有选中的元素
             elementsToObserve.forEach(element => {
                 observer.observe(element);
@@ -2353,7 +2353,7 @@
             opacity: 0;
             transition: opacity 1s;
         }
-    
+
         .article.visible {
             opacity: 1;
         }
