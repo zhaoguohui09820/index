@@ -24,15 +24,13 @@
     <link rel="icon" type="image/png" href="https://zhaoguohui09820.github.io/index/img/logo.avif">
     <link rel="apple-touch-icon-precomposed" href="https://zhaoguohui09820.github.io/index/img/logo.avif">
     <title>🕹️ 游戏 - 赵国辉</title>
-    <link
-        href="https://zhaoguohui09820.github.io/index/css/css_2.css"
-        rel="stylesheet" media="all" onload="this.media='all'">
-    <link
-        href="https://zhaoguohui09820.github.io/index/css/css.css"
-        rel="stylesheet" media="all" onload="this.media='all'">
-        <link rel="stylesheet" href="https://zhaoguohui09820.github.io/index/css/vendor.min.css">
+    <link href="https://zhaoguohui09820.github.io/index/css/css_2.css" rel="stylesheet" media="all"
+        onload="this.media='all'">
+    <link href="https://zhaoguohui09820.github.io/index/css/css.css" rel="stylesheet" media="all"
+        onload="this.media='all'">
+    <link rel="stylesheet" href="https://zhaoguohui09820.github.io/index/css/vendor.min.css">
     <link title="dark-prism" rel="stylesheet" href="https://zhaoguohui09820.github.io/index/css/prism.css">
-        <style class="fslightbox-styles">
+    <style class="fslightbox-styles">
         .fslightbox-absoluted {
             position: absolute;
             top: 0;
@@ -1929,19 +1927,19 @@
                     <div class="row mb-4 g-3">
                         <div class="col-md-4 col-sm-6 position-relative">
                             <a class="friends-card stretched-link"
-                                href="https://zhaoguohui09820.github.io/index/old/index.html" target="_blank"
-                                title="旧的Zhao Guohui's blog"></a>
+                                href="https://code.haiyong.site/moyu/qiefangkuai.html" target="_blank" title="切盒子"></a>
                             <div class="friends-ctx">
-                                <a data-fslightbox data-type="image" data-id="lightbox" href=""><img
-                                        class="friends-img lazy" data- class="lazy"
-                                        data-src="https://zhaoguohui09820.github.io/index/img/logo.avif"></a>
+                                <a data-fslightbox data-type="image" data-id="lightbox" href="">
+                                    <img class="friends-img lazy" data- class="lazy"
+                                        data-src="https://zhaoguohui09820.github.io/index/img/box.svg">
+                                </a>
                                 <div class="ms-2">
-                                    <div class="fw-bold fs-6 line-clamp-1 mb-2">旧的Zhao Guohui's blog</div>
+                                    <div class="fw-bold fs-6 line-clamp-1 mb-2">切盒子</div>
                                 </div>
                             </div>
                             </li>
-                        </ol>
-                    </ul>
+                            </ol>
+                            </ul>
                 </section>
                 <section id="comments" class="card my-4 py-4 px-md-4 px-3">
                     <div class="mb-4 d-flex align-items-center px-2 px-md-0">
@@ -1949,7 +1947,7 @@
                             <use xlink:href="#pinglun1"></use>
                         </svg>
                         评论区
-                        </div>
+                    </div>
                     <p style="color: brown;font-size: small;margin-bottom: 0;">留言（评论）时的名字格式推荐：Zhao_Guohui</p>
                     <p style="color: brown;font-size: small;margin-top: 0;">直接以访客名义输入留言（评论）内容和名字发表留言就行什么都不用登入</p>
                     <script>
@@ -2136,10 +2134,10 @@
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // 选择你要观察的元素
             const elementsToObserve = document.querySelectorAll('.article');
-    
+
             // 定义 IntersectionObserver 的回调函数
             const observerCallback = (entries, observer) => {
                 entries.forEach(entry => {
@@ -2152,16 +2150,16 @@
                     }
                 });
             };
-    
+
             // 创建 IntersectionObserver 实例
             const observerOptions = {
                 root: null, // 使用默认的视口
                 rootMargin: '0px',
                 threshold: 0.1 // 当元素的 10% 进入视口时触发回调
             };
-    
+
             const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
+
             // 观察所有选中的元素
             elementsToObserve.forEach(element => {
                 observer.observe(element);
@@ -2173,7 +2171,7 @@
             opacity: 0;
             transition: opacity 2s;
         }
-    
+
         .article.visible {
             opacity: 1;
         }
