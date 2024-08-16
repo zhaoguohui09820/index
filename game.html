@@ -1917,7 +1917,7 @@
                     <script>
                         // 腾讯地图初始化
                         var map = new TMap.Map('tencent-map', {
-                            center: new TMap.LatLng(36.36, 114.933), // 这里填写你想要显示的经纬度
+                            center: new TMap.LatLng(36.359346, 114.933275), // 这里填写你想要显示的经纬度
                             zoom: 15 // 缩放级别
                         });
                     </script>
@@ -1939,8 +1939,27 @@
                                     <div class="fw-bold fs-6 line-clamp-1 mb-2">旧的Zhao Guohui's blog</div>
                                 </div>
                             </div>
+                            </li>
+                        </ol>
+                    </ul>
+                </section>
+                <section id="comments" class="card my-4 py-4 px-md-4 px-3">
+                    <div class="mb-4 d-flex align-items-center px-2 px-md-0">
+                        <svg class="icon icon-20 me-1" aria-hidden="true">
+                            <use xlink:href="#pinglun1"></use>
+                        </svg>
+                        评论区
                         </div>
-                    </div>
+                    <p style="color: brown;font-size: small;margin-bottom: 0;">留言（评论）时的名字格式推荐：Zhao_Guohui</p>
+                    <p style="color: brown;font-size: small;margin-top: 0;">直接以访客名义输入留言（评论）内容和名字发表留言就行什么都不用登入</p>
+                    <script>
+                        var idcomments_acct = 'ef04893f9c10746a4032da000994cfc9';
+                        var idcomments_post_id = 'game';
+                        var idcomments_post_url;
+                    </script>
+                    <span id="IDCommentsPostTitle" style="display:none"></span>
+                    <script type='text/javascript'
+                        src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
                 </section>
             </div>
         </div>
@@ -1949,7 +1968,7 @@
 
     <footer id="footer" class="bg-white p-4 text-center mt-4">
         <p class="small">
-            &copy; 2024 <a href="https://zhaoguohui09820.github.io/index/">赵国辉</a>
+            © 2024 <a href="https://zhaoguohui09820.github.io/index/">赵国辉</a>
         </p>
         <p class="small"> Powered by <a href="http://typecho.org" target="_blank">Typecho</a> ※ Theme is <a
                 href="https://blog.zwying.com" target="_blank">Cuteen</a></p>
@@ -1968,6 +1987,18 @@
         </div>
     </div>
     <!--Headroom-->
+    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/headroom.min.js"></script>
+    <script>
+        function headroom_fun() {
+            const element = document.getElementById("navPC");
+            const headroom = new Headroom(element, {
+                offset: 150,
+            });
+            headroom.init();
+        }
+
+        headroom_fun();
+    </script>
     <!--MathJax-->
     <script async="" id="MathJax-script" src="https://zhaoguohui09820.github.io/index/js/tex-chtml.js"></script>
     <script>
@@ -2005,6 +2036,7 @@
             if (document.getElementById('echarts_pie')) EchartsInit();
             refreshFsLightbox();
             MathJax.typeset();
+            headroom_fun();
             if (typeof Prism !== 'undefined') Prism.highlightAll(true, null);
             Cuteen.PjaxLoad()
         });
@@ -2022,13 +2054,23 @@
             }
         });
     </script>
-    <script src="https://zhaoguohui09820.github.io/index/js/message.js"></script>
-    <script src="https://zhaoguohui09820.github.io/index/js/OwO.js"></script>
-    <script src="https://zhaoguohui09820.github.io/index/js/lazyload.min.js"></script>
-    <script src="https://zhaoguohui09820.github.io/index/js/fslightbox.js"></script>
+    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/message.js"></script>
+    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/OwO.js"></script>
+    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/lazyload.min.js"></script>
+    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/fslightbox.js"></script>
     <script src="https://zhaoguohui09820.github.io/index/js/prism.js"></script>
     <script src="https://zhaoguohui09820.github.io/index/js/main.js"></script>
     <script src="https://zhaoguohui09820.github.io/index/js/bootstrap.bundle.min.js"></script>
+    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/smooth.min.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://zhaoguohui09820.github.io/js/hm.js";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
     <!--底部波浪开始-->
     <div class="wiiuii_layout">
         <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -2091,6 +2133,49 @@
             width: 100%;
             height: 40px;
             margin: 0;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 选择你要观察的元素
+            const elementsToObserve = document.querySelectorAll('.article');
+    
+            // 定义 IntersectionObserver 的回调函数
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 元素进入视口时的处理逻辑
+                        entry.target.classList.add('visible');
+                    } else {
+                        // 元素离开视口时的处理逻辑
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            };
+    
+            // 创建 IntersectionObserver 实例
+            const observerOptions = {
+                root: null, // 使用默认的视口
+                rootMargin: '0px',
+                threshold: 0.1 // 当元素的 10% 进入视口时触发回调
+            };
+    
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+            // 观察所有选中的元素
+            elementsToObserve.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+    <style>
+        .article {
+            opacity: 0;
+            transition: opacity 2s;
+        }
+    
+        .article.visible {
+            opacity: 1;
         }
     </style>
 </body>
