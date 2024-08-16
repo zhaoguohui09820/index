@@ -1735,22 +1735,7 @@
         </script>
     </div>
     <script src="https://zhaoguohui09820.github.io/js/hm.js"></script>
-    <style data-custom-style="">
-        .hero::after {
-            content: '';
-            width: 100%;
-            height: 15%;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(to top, #FFFFFF, transparent);
-        }
-
-        .dark .hero::after {
-            background: linear-gradient(to top, #121212, transparent);
-        }
-
-
+    <style>
         body {
             transition: background-color 0.3s, color 0.3s;
             font-family: 'CustomFonts', MiSans, Microsoft YaHei, sans-serif;
@@ -1846,6 +1831,22 @@
         <h1 class="big-title serif-font">🐾 赵国辉 👻</h1>
         <div class="sub-title">
             落日沉溺于橘色的海 晚风沦陷于赤诚的爱</div>
+        <section class="main-hero-waves-area waves-area">
+            <svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z">
+                    </path>
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0"></use>
+                    <use xlink:href="#gentle-wave" x="48" y="3"></use>
+                    <use xlink:href="#gentle-wave" x="48" y="5"></use>
+                    <use xlink:href="#gentle-wave" x="48" y="7"></use>
+                </g>
+            </svg>
+        </section>
     </div>
 
     <main id="wrap" class="container">
@@ -2152,25 +2153,6 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-    <!--底部波浪开始-->
-    <div class="wiiuii_layout">
-        <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28" preserveAspectRatio="none">
-            <defs>
-                <path id="gentle-wave" d="M-160 44c30 0 
-        58-18 88-18s
-        58 18 88 18 
-        58-18 88-18 
-        58 18 88 18
-        v44h-352z" />
-            </defs>
-            <g class="parallax">
-                <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2" />
-                <use xlink:href="#gentle-wave" x="50" y="3" fill="#3461c1" />
-                <use xlink:href="#gentle-wave" x="50" y="6" fill="#2d55aa" />
-            </g>
-        </svg>
-    </div>
     <style type='text/css'>
         .parallax>use {
             animation: move-forever 12s linear infinite;

@@ -1722,27 +1722,12 @@
     </script>
   </div>
   <script src="https://zhaoguohui09820.github.io/js/hm.js"></script>
-  <style data-custom-style="">
-    .hero::after {
-      content: '';
-      width: 100%;
-      height: 15%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background: linear-gradient(to top, #FFFFFF, transparent);
-    }
-
-    .dark .hero::after {
-      background: linear-gradient(to top, #121212, transparent);
-    }
-
-
+    <style>
         body {
             transition: background-color 0.3s, color 0.3s;
             font-family: 'CustomFonts', MiSans, Microsoft YaHei, sans-serif;
         }
-  </style>
+    </style>
   <nav class="navbar navbar-expand-md fixed-top px-2 px-md-5 has-img" id="navPC">
     <div class="container-fluid">
       <ul class="navbar-nav d-md-none">
@@ -1789,22 +1774,19 @@
               </section>
             </div>
           </section>
-
-
-                    <ul class="navbar-nav justify-content-start flex-grow-1 px-4 pt-4 px-md-0 pt-md-0 pe-md-3">
-                        <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
-                                href="https://zhaoguohui09820.github.io/index/shsb.html">👋 生活</a></li>
-                        <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
-                                href="https://zhaoguohui09820.github.io/index/zpfb.html">📝 作品</a></li>
-                        <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
-                                href="https://haiyong.site/moyu/">🕹️ 游戏</a></li>
-                        <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
-                                href="https://zhaoguohui09820.github.io/index/sn.html">💡 闪念</a></li>
-                        <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
-                                href="https://zhaoguohui09820.github.io/index/chat.html">💬 留言</a></li>
-                    </ul>
+          <ul class="navbar-nav justify-content-start flex-grow-1 px-4 pt-4 px-md-0 pt-md-0 pe-md-3">
+            <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
+                href="https://zhaoguohui09820.github.io/index/shsb.html">👋 生活</a></li>
+            <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
+                href="https://zhaoguohui09820.github.io/index/zpfb.html">📝 作品</a></li>
+            <li class="nav-item"><a target="_self" class="nav-link text-nowrap" href="https://haiyong.site/moyu/">🕹️
+                游戏</a></li>
+            <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
+                href="https://zhaoguohui09820.github.io/index/sn.html">💡 闪念</a></li>
+            <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
+                href="https://zhaoguohui09820.github.io/index/chat.html">💬 留言</a></li>
+          </ul>
         </div>
-
       </div>
       <ul class="navbar-nav">
         <li class="navbar-icon" data-bs-toggle="modal" data-bs-target="#searchModal" style="opacity: 0;">
@@ -1827,12 +1809,25 @@
       </ul>
     </div>
   </nav>
-
   <div id="hero-box" class="hero"
     style="background-image: url('https://blog.zwying.com/usr/uploads/2023/11/S00125-13355407.jpg');">
     <h1 class="post-title serif-font">生活随笔 • 共1篇 </h1>
+    <section class="main-hero-waves-area waves-area">
+      <svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave"
+            d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path>
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0"></use>
+          <use xlink:href="#gentle-wave" x="48" y="3"></use>
+          <use xlink:href="#gentle-wave" x="48" y="5"></use>
+          <use xlink:href="#gentle-wave" x="48" y="7"></use>
+        </g>
+      </svg>
+    </section>
   </div>
-
   <main id="wrap" class="container">
     <div class="row justify-content-center ">
       <section class="col-lg-3">
@@ -1959,183 +1954,165 @@
   <!--MathJax-->
   <script async="" id="MathJax-script" src="https://zhaoguohui09820.github.io/index/js/tex-chtml.js">
   </script>
-    <script>
-      MathJax = {
-        options: {
-          renderActions: {
-            addMenu: [0, "", ""]
+  <script>
+    MathJax = {
+      options: {
+        renderActions: {
+          addMenu: [0, "", ""]
+        }
+      },
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"]
+        ]
+      },
+      svg: {
+        fontCache: "global"
+      }
+    }
+  </script>
+
+  <script src="https://zhaoguohui09820.github.io/index/js/pjax.min.js"></script>
+  <script src="https://zhaoguohui09820.github.io/index/js/topbar.min.js"></script>
+  <script>
+    const pjax = new Pjax({
+      selectors: [
+        'main', 'title', '#LocalizeScript', '#tool', '#hero-box'
+      ],
+    });
+    document.addEventListener('pjax:send', () => {
+      NProgress.set(0.6);
+    });
+    document.addEventListener('pjax:complete', () => {
+      NProgress.done();
+      if (document.getElementById('echarts_pie')) EchartsInit();
+      refreshFsLightbox();
+      MathJax.typeset();
+      headroom_fun();
+      if (typeof Prism !== 'undefined') Prism.highlightAll(true, null);
+      Cuteen.PjaxLoad()
+    });
+  </script>
+  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/player.js"></script>
+  <script>
+    const player = new Player({
+      autoplay: false,
+      listshow: false,
+      mode: 'listloop',
+      music: {
+        type: 'cloud',
+        source: CuteenConfig.music_id,
+        media: CuteenConfig.music_media,
+      }
+    });
+  </script>
+  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/message.js"></script>
+  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/OwO.js"></script>
+  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/lazyload.min.js"></script>
+  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/fslightbox.js"></script>
+  <script src="https://zhaoguohui09820.github.io/index/js/prism.js"></script>
+  <script src="https://zhaoguohui09820.github.io/index/js/main.js"></script>
+  <script src="https://zhaoguohui09820.github.io/index/js/bootstrap.bundle.min.js"></script>
+  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/smooth.min.js"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://zhaoguohui09820.github.io/js/hm.js";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <style type='text/css'>
+    .parallax>use {
+      animation: move-forever 12s linear infinite;
+    }
+
+    .parallax>use:nth-child(1) {
+      animation-delay: -2s;
+    }
+
+    .parallax>use:nth-child(2) {
+      animation-delay: -2s;
+      animation-duration: 5s;
+    }
+
+    .parallax>use:nth-child(3) {
+      animation-delay: -4s;
+      animation-duration: 3s;
+    }
+
+    @keyframes move-forever {
+      0% {
+        transform: translate(-90px, 0%);
+      }
+
+      100% {
+        transform: translate(85px, 0%);
+      }
+    }
+
+    .wiiuii_layout {
+      width: 100%;
+      height: 40px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      background: var(--footer-bg);
+    }
+
+    .editorial {
+      display: block;
+      width: 100%;
+      height: 40px;
+      margin: 0;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 选择你要观察的元素
+      const elementsToObserve = document.querySelectorAll('.article');
+
+      // 定义 IntersectionObserver 的回调函数
+      const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // 元素进入视口时的处理逻辑
+            entry.target.classList.add('visible');
+          } else {
+            // 元素离开视口时的处理逻辑
+            entry.target.classList.remove('visible');
           }
-        },
-        tex: {
-          inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"]
-          ]
-        },
-        svg: {
-          fontCache: "global"
-        }
-      }
-    </script>
-
-    <script src="https://zhaoguohui09820.github.io/index/js/pjax.min.js"></script>
-    <script src="https://zhaoguohui09820.github.io/index/js/topbar.min.js"></script>
-    <script>
-      const pjax = new Pjax({
-        selectors: [
-          'main', 'title', '#LocalizeScript', '#tool', '#hero-box'
-        ],
-      });
-      document.addEventListener('pjax:send', () => {
-        NProgress.set(0.6);
-      });
-      document.addEventListener('pjax:complete', () => {
-        NProgress.done();
-        if (document.getElementById('echarts_pie')) EchartsInit();
-        refreshFsLightbox();
-        MathJax.typeset();
-        headroom_fun();
-        if (typeof Prism !== 'undefined') Prism.highlightAll(true, null);
-        Cuteen.PjaxLoad()
-      });
-    </script>
-    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/player.js"></script>
-    <script>
-      const player = new Player({
-        autoplay: false,
-        listshow: false,
-        mode: 'listloop',
-        music: {
-          type: 'cloud',
-          source: CuteenConfig.music_id,
-          media: CuteenConfig.music_media,
-        }
-      });
-    </script>
-    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/message.js"></script>
-    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/OwO.js"></script>
-    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/lazyload.min.js"></script>
-    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/fslightbox.js"></script>
-    <script src="https://zhaoguohui09820.github.io/index/js/prism.js"></script>
-    <script src="https://zhaoguohui09820.github.io/index/js/main.js"></script>
-    <script src="https://zhaoguohui09820.github.io/index/js/bootstrap.bundle.min.js"></script>
-    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/smooth.min.js"></script>
-    <script>
-      var _hmt = _hmt || [];
-      (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://zhaoguohui09820.github.io/js/hm.js";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
-    </script>
-    <!--底部波浪开始-->
-    <div class="wiiuii_layout">
-      <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28" preserveAspectRatio="none">
-        <defs>
-          <path id="gentle-wave" d="M-160 44c30 0 
-        58-18 88-18s
-        58 18 88 18 
-        58-18 88-18 
-        58 18 88 18
-        v44h-352z" />
-        </defs>
-        <g class="parallax">
-          <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2" />
-          <use xlink:href="#gentle-wave" x="50" y="3" fill="#3461c1" />
-          <use xlink:href="#gentle-wave" x="50" y="6" fill="#2d55aa" />
-        </g>
-      </svg>
-    </div>
-    <style type='text/css'>
-      .parallax>use {
-        animation: move-forever 12s linear infinite;
-      }
-
-      .parallax>use:nth-child(1) {
-        animation-delay: -2s;
-      }
-
-      .parallax>use:nth-child(2) {
-        animation-delay: -2s;
-        animation-duration: 5s;
-      }
-
-      .parallax>use:nth-child(3) {
-        animation-delay: -4s;
-        animation-duration: 3s;
-      }
-
-      @keyframes move-forever {
-        0% {
-          transform: translate(-90px, 0%);
-        }
-
-        100% {
-          transform: translate(85px, 0%);
-        }
-      }
-
-      .wiiuii_layout {
-        width: 100%;
-        height: 40px;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-        background: var(--footer-bg);
-      }
-
-      .editorial {
-        display: block;
-        width: 100%;
-        height: 40px;
-        margin: 0;
-      }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // 选择你要观察的元素
-            const elementsToObserve = document.querySelectorAll('.article');
-    
-            // 定义 IntersectionObserver 的回调函数
-            const observerCallback = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // 元素进入视口时的处理逻辑
-                        entry.target.classList.add('visible');
-                    } else {
-                        // 元素离开视口时的处理逻辑
-                        entry.target.classList.remove('visible');
-                    }
-                });
-            };
-    
-            // 创建 IntersectionObserver 实例
-            const observerOptions = {
-                root: null, // 使用默认的视口
-                rootMargin: '0px',
-                threshold: 0.1 // 当元素的 10% 进入视口时触发回调
-            };
-    
-            const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
-            // 观察所有选中的元素
-            elementsToObserve.forEach(element => {
-                observer.observe(element);
-            });
         });
-    </script>
-    <style>
-        .article {
-            opacity: 0;
-            transition: opacity 2s;
-        }
-    
-        .article.visible {
-            opacity: 1;
-        }
-    </style>
+      };
+
+      // 创建 IntersectionObserver 实例
+      const observerOptions = {
+        root: null, // 使用默认的视口
+        rootMargin: '0px',
+        threshold: 0.1 // 当元素的 10% 进入视口时触发回调
+      };
+
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+      // 观察所有选中的元素
+      elementsToObserve.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
+  <style>
+    .article {
+      opacity: 0;
+      transition: opacity 2s;
+    }
+
+    .article.visible {
+      opacity: 1;
+    }
+  </style>
 </body>
 <div style="all: initial;">
   <div id="__hcfy__" style="all: initial;"></div>
