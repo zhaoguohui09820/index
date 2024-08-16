@@ -1793,15 +1793,26 @@
           <ul class="navbar-nav justify-content-start flex-grow-1 px-4 pt-4 px-md-0 pt-md-0 pe-md-3">
             <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
                 href="https://zhaoguohui09820.github.io/index/shsb.html">👋 生活</a></li>
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle show" role="button"
-                data-bs-toggle="dropdown" aria-expanded="true">🥇 学习</a>
-              <ul class="dropdown-menu" data-bs-popper="static">
-                <li><a target="_self" class="dropdown-item" href="https://zhaoguohui09820.github.io/index/hx.html">⚗️
-                    化学</a></li>
-              </ul>
-            </li>
             <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
                 href="https://zhaoguohui09820.github.io/index/zpfb.html">📝 作品</a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle show" role="button"
+                data-bs-toggle="dropdown" aria-expanded="true">🕹️ 游戏</a>
+              <ul class="dropdown-menu" data-bs-popper="static">
+                <li><a target="_self" class="dropdown-item"
+                    href="https://code.haiyong.site/moyu/qiefangkuai.html">切盒子</a></li>
+                <li><a target="_self" class="dropdown-item" href="https://code.haiyong.site/moyu/tan.html">贪吃蛇</a></li>
+                <li><a target="_self" class="dropdown-item" href="https://haiyong.site/moyu/saolei-2.html">扫雷</a></li>
+                <li><a target="_self" class="dropdown-item"
+                    href="https://wanghao221.github.io/game/Lion-Game.html">让狮子冷静下来</a></li>
+                <li><a target="_self" class="dropdown-item" href="https://haiyong.site/moyu/eluosi.html">俄罗斯方块</a></li>
+                <li><a target="_self" class="dropdown-item" href="https://haiyong.site/moyu/staggeringbeauty/">越摇越快乐</a>
+                </li>
+                <li><a target="_self" class="dropdown-item" href="https://haiyong.site/moyu/cheche/">3D小车车</a></li>
+                <li><a target="_self" class="dropdown-item" href="https://haiyong.site/moyu/ikun-home/">鸡乐盒plus</a></li>
+                <li><a target="_self" class="dropdown-item" href="https://haiyong.site/moyu/sanzhiji.html">三只小鸡</a></li>
+                <li><a target="_self" class="dropdown-item" href="https://wanghao221.github.io/ji/">ji</a></li>
+              </ul>
+            </li>
             <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
                 href="https://zhaoguohui09820.github.io/index/sn.html">💡 闪念</a></li>
             <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
@@ -1987,183 +1998,183 @@
   <!--MathJax-->
   <script async id="MathJax-script" src="https://zhaoguohui09820.github.io/index/js/tex-chtml.js">
   </script>
-    <script>
-      MathJax = {
-        options: {
-          renderActions: {
-            addMenu: [0, "", ""]
-          }
-        },
-        tex: {
-          inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"]
-          ]
-        },
-        svg: {
-          fontCache: "global"
+  <script>
+    MathJax = {
+      options: {
+        renderActions: {
+          addMenu: [0, "", ""]
         }
+      },
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"]
+        ]
+      },
+      svg: {
+        fontCache: "global"
       }
-    </script>
+    }
+  </script>
 
-    <script src="https://zhaoguohui09820.github.io/index/js/pjax.min.js"></script>
-    <script src="https://zhaoguohui09820.github.io/index/js/topbar.min.js"></script>
-    <script>
-      const pjax = new Pjax({
-        selectors: [
-          'main', 'title', '#LocalizeScript', '#tool', '#hero-box'
-        ],
-      });
-      document.addEventListener('pjax:send', () => {
-        NProgress.set(0.6);
-      });
-      document.addEventListener('pjax:complete', () => {
-        NProgress.done();
-        if (document.getElementById('echarts_pie')) EchartsInit();
-        refreshFsLightbox();
-        MathJax.typeset();
-        headroom_fun();
-        if (typeof Prism !== 'undefined') Prism.highlightAll(true, null);
-        Cuteen.PjaxLoad()
-      });
-    </script>
-    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/player.js"></script>
-    <script>
-      const player = new Player({
-        autoplay: false,
-        listshow: false,
-        mode: 'listloop',
-        music: {
-          type: 'cloud',
-          source: CuteenConfig.music_id,
-          media: CuteenConfig.music_media,
-        }
-      });
-    </script>
-    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/message.js"></script>
-    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/OwO.js"></script>
-    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/lazyload.min.js"></script>
-    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/fslightbox.js"></script>
-    <script src="https://zhaoguohui09820.github.io/index/js/prism.js"></script>
-    <script src="https://zhaoguohui09820.github.io/index/js/main.js"></script>
-    <script src="https://zhaoguohui09820.github.io/index/js/bootstrap.bundle.min.js"></script>
-    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/smooth.min.js"></script>
-    <script>
-      var _hmt = _hmt || [];
-      (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://zhaoguohui09820.github.io/js/hm.js";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
-    </script>
-    <!--底部波浪开始-->
-    <div class="wiiuii_layout">
-      <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28" preserveAspectRatio="none">
-        <defs>
-          <path id="gentle-wave" d="M-160 44c30 0 
+  <script src="https://zhaoguohui09820.github.io/index/js/pjax.min.js"></script>
+  <script src="https://zhaoguohui09820.github.io/index/js/topbar.min.js"></script>
+  <script>
+    const pjax = new Pjax({
+      selectors: [
+        'main', 'title', '#LocalizeScript', '#tool', '#hero-box'
+      ],
+    });
+    document.addEventListener('pjax:send', () => {
+      NProgress.set(0.6);
+    });
+    document.addEventListener('pjax:complete', () => {
+      NProgress.done();
+      if (document.getElementById('echarts_pie')) EchartsInit();
+      refreshFsLightbox();
+      MathJax.typeset();
+      headroom_fun();
+      if (typeof Prism !== 'undefined') Prism.highlightAll(true, null);
+      Cuteen.PjaxLoad()
+    });
+  </script>
+  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/player.js"></script>
+  <script>
+    const player = new Player({
+      autoplay: false,
+      listshow: false,
+      mode: 'listloop',
+      music: {
+        type: 'cloud',
+        source: CuteenConfig.music_id,
+        media: CuteenConfig.music_media,
+      }
+    });
+  </script>
+  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/message.js"></script>
+  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/OwO.js"></script>
+  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/lazyload.min.js"></script>
+  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/fslightbox.js"></script>
+  <script src="https://zhaoguohui09820.github.io/index/js/prism.js"></script>
+  <script src="https://zhaoguohui09820.github.io/index/js/main.js"></script>
+  <script src="https://zhaoguohui09820.github.io/index/js/bootstrap.bundle.min.js"></script>
+  <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/smooth.min.js"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://zhaoguohui09820.github.io/js/hm.js";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <!--底部波浪开始-->
+  <div class="wiiuii_layout">
+    <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 
         58-18 88-18s
         58 18 88 18 
         58-18 88-18 
         58 18 88 18
         v44h-352z" />
-        </defs>
-        <g class="parallax">
-          <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2" />
-          <use xlink:href="#gentle-wave" x="50" y="3" fill="#3461c1" />
-          <use xlink:href="#gentle-wave" x="50" y="6" fill="#2d55aa" />
-        </g>
-      </svg>
-    </div>
-    <style type='text/css'>
-      .parallax>use {
-        animation: move-forever 12s linear infinite;
+      </defs>
+      <g class="parallax">
+        <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2" />
+        <use xlink:href="#gentle-wave" x="50" y="3" fill="#3461c1" />
+        <use xlink:href="#gentle-wave" x="50" y="6" fill="#2d55aa" />
+      </g>
+    </svg>
+  </div>
+  <style type='text/css'>
+    .parallax>use {
+      animation: move-forever 12s linear infinite;
+    }
+
+    .parallax>use:nth-child(1) {
+      animation-delay: -2s;
+    }
+
+    .parallax>use:nth-child(2) {
+      animation-delay: -2s;
+      animation-duration: 5s;
+    }
+
+    .parallax>use:nth-child(3) {
+      animation-delay: -4s;
+      animation-duration: 3s;
+    }
+
+    @keyframes move-forever {
+      0% {
+        transform: translate(-90px, 0%);
       }
 
-      .parallax>use:nth-child(1) {
-        animation-delay: -2s;
+      100% {
+        transform: translate(85px, 0%);
       }
+    }
 
-      .parallax>use:nth-child(2) {
-        animation-delay: -2s;
-        animation-duration: 5s;
-      }
+    .wiiuii_layout {
+      width: 100%;
+      height: 40px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      background: var(--footer-bg);
+    }
 
-      .parallax>use:nth-child(3) {
-        animation-delay: -4s;
-        animation-duration: 3s;
-      }
+    .editorial {
+      display: block;
+      width: 100%;
+      height: 40px;
+      margin: 0;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 选择你要观察的元素
+      const elementsToObserve = document.querySelectorAll('.article');
 
-      @keyframes move-forever {
-        0% {
-          transform: translate(-90px, 0%);
-        }
-
-        100% {
-          transform: translate(85px, 0%);
-        }
-      }
-
-      .wiiuii_layout {
-        width: 100%;
-        height: 40px;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-        background: var(--footer-bg);
-      }
-
-      .editorial {
-        display: block;
-        width: 100%;
-        height: 40px;
-        margin: 0;
-      }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // 选择你要观察的元素
-            const elementsToObserve = document.querySelectorAll('.article');
-    
-            // 定义 IntersectionObserver 的回调函数
-            const observerCallback = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // 元素进入视口时的处理逻辑
-                        entry.target.classList.add('visible');
-                    } else {
-                        // 元素离开视口时的处理逻辑
-                        entry.target.classList.remove('visible');
-                    }
-                });
-            };
-    
-            // 创建 IntersectionObserver 实例
-            const observerOptions = {
-                root: null, // 使用默认的视口
-                rootMargin: '0px',
-                threshold: 0.1 // 当元素的 10% 进入视口时触发回调
-            };
-    
-            const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
-            // 观察所有选中的元素
-            elementsToObserve.forEach(element => {
-                observer.observe(element);
-            });
+      // 定义 IntersectionObserver 的回调函数
+      const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // 元素进入视口时的处理逻辑
+            entry.target.classList.add('visible');
+          } else {
+            // 元素离开视口时的处理逻辑
+            entry.target.classList.remove('visible');
+          }
         });
-    </script>
-    <style>
-        .article {
-            opacity: 0;
-            transition: opacity 1s;
-        }
-    
-        .article.visible {
-            opacity: 1;
-        }
-    </style>
+      };
+
+      // 创建 IntersectionObserver 实例
+      const observerOptions = {
+        root: null, // 使用默认的视口
+        rootMargin: '0px',
+        threshold: 0.1 // 当元素的 10% 进入视口时触发回调
+      };
+
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+      // 观察所有选中的元素
+      elementsToObserve.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
+  <style>
+    .article {
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    .article.visible {
+      opacity: 1;
+    }
+  </style>
 </body>
 <div style="all: initial;">
   <div id="__hcfy__" style="all: initial;"></div>
