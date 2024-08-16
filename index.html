@@ -1736,23 +1736,6 @@
     </div>
     <script src="https://zhaoguohui09820.github.io/js/hm.js"></script>
     <style>
-        #hero-box {
-            position: relative;
-            overflow: hidden;
-        }
-
-        #background-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 2s;
-        }
-
         body {
             transition: background-color 0.3s, color 0.3s;
             font-family: 'CustomFonts', MiSans, Microsoft YaHei, sans-serif;
@@ -1845,34 +1828,6 @@
     </nav>
 
     <div id="hero-box" class="hero" style="background-image: url('https://bing.img.run/uhd.php'); height: 700px;">
-        <video id="background-video" loop muted autoplay
-            style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-            <source
-                src="https://6qffx1-my.sharepoint.com/personal/2219_6qffx1_onmicrosoft_com/_layouts/15/download.aspx?UniqueId=f0d098fd%2Dbe52%2D4b86%2Db573%2De919fa7331db"
-                type="video/mp4">
-        </video>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var video = document.getElementById('background-video');
-                video.addEventListener('canplaythrough', function () {
-                    // 视频加载完成后，显示视频并隐藏图片
-                    video.style.display = 'block';
-                    video.style.opacity = 0;
-                    video.play();
-
-                    // 平滑过渡效果
-                    setTimeout(function () {
-                        video.style.transition = 'opacity 2s';
-                        video.style.opacity = 1;
-                    }, 100);
-                });
-
-                // 确保视频在DOM加载后尝试播放
-                video.play().catch(function (error) {
-                    console.log('Video play failed:', error);
-                });
-            });
-        </script>
         <h1 class="big-title serif-font">🐾 赵国辉 👻</h1>
         <div class="sub-title">
             落日沉溺于橘色的海 晚风沦陷于赤诚的爱</div>
