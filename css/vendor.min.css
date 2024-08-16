@@ -48,7 +48,7 @@
     --bs-warning: #ffc107;
     --bs-danger: #dc3545;
     --bs-light: #FAFAFA;
-    --bs-dark: #BDBDBD;
+    --bs-dark: 0, 0, 0, 0.8;
     --bs-primary-rgb: 13, 110, 253;
     --bs-secondary-rgb: 108, 117, 125;
     --bs-success-rgb: 25, 135, 84;
