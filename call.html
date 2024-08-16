@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>主题切换示例</title>
+<style>
+  :root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --transition-duration: 0.5s;
+  }
+
+  .dark-theme {
+    --background-color: #333333;
+    --text-color: #ffffff;
+  }
+
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  .theme-switch {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+
+  .theme-switch:hover {
+    background-color: #e0e0e0;
+  }
+</style>
+</head>
+<body>
+
+<h1>主题切换示例</h1>
+<p>这是一个示例文本，用于展示主题切换的效果。</p>
+<button class="theme-switch">切换主题</button>
+
+<script>
+  const themeSwitch = document.querySelector('.theme-switch');
+  const body = document.body;
+
+  themeSwitch.addEventListener('click', function() {
+    body.classList.toggle('dark-theme');
+  });
+</script>
+
+</body>
+</html>
