@@ -13367,14 +13367,14 @@ a:hover {
     line-height: 1.5rem;
     word-break: break-all;
     overflow: hidden;
-    color: #bdbdbd;
+    color: #FFFFFF;
 }
 
 .article-ctx {
     display: flex;
     z-index: 10;
     padding: 1.25rem 1rem;
-    color: #FFFFFF;
+    color: #BDBDBD;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
@@ -13733,7 +13733,7 @@ img.loaded.article-left-img {
 }
 
 .article-sort {
-    color: #FFFFFF
+    color: #BDBDBD
 }
 
 .article.flex-row-reverse .article-img {
