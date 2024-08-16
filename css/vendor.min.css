@@ -14938,8 +14938,8 @@ img.loaded.article-left-img {
 .dark .accordion-item,
 .dark .form-control,
 .dark .right-btn-icon {
-    background-color: #0D1117 !important;
-    border-color: rgba(209, 213, 219, .1) !important
+    background-color: #1E1E1E !important;
+    border-color: #424242 !important
 }
 
 .dark .bg-blur {
