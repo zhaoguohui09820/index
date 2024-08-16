@@ -13835,23 +13835,23 @@ img.loaded.article-left-img {
     animation-delay: -5s;
     -webkit-animation-duration: 20s;
     animation-duration: 20s;
-    fill: #f9fafb
+    fill: #ffffff
 }
 
 .dark .waves-area .parallax>use:first-child {
-    fill: rgba(15, 23, 42, .7)
+    fill: rgba(18, 18, 18, .7)
 }
 
 .dark .waves-area .parallax>use:nth-child(2) {
-    fill: rgba(15, 23, 42, .5)
+    fill: rgba(18, 18, 18, .5)
 }
 
 .dark .waves-area .parallax>use:nth-child(3) {
-    fill: rgba(15, 23, 42, .3)
+    fill: rgba(18, 18, 18, .3)
 }
 
 .dark .waves-area .parallax>use:nth-child(4) {
-    fill: #0D1117
+    fill: #121212
 }
 
 .sidebar-banner {
