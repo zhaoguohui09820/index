@@ -14845,7 +14845,7 @@ img.loaded.article-left-img {
 }
 
 .dark {
-    --bs-light: #0D1117;
+    --bs-light: #1e1e1e;
     --bs-dark: rgba(255, 255, 255, 0.8)
 }
 
