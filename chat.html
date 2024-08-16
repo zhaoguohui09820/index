@@ -24,12 +24,10 @@
     <link rel="icon" type="image/png" href="https://zhaoguohui09820.github.io/index/img/logo.avif">
     <link rel="apple-touch-icon-precomposed" href="https://zhaoguohui09820.github.io/index/img/logo.avif">
     <title>💬 留言板 - 赵国辉</title>
-    <link
-        href="https://zhaoguohui09820.github.io/index/css/css_2.css"
-        rel="stylesheet" media="all" onload="this.media='all'">
-    <link
-        href="https://zhaoguohui09820.github.io/index/css/css.css"
-        rel="stylesheet" media="all" onload="this.media='all'">
+    <link href="https://zhaoguohui09820.github.io/index/css/css_2.css" rel="stylesheet" media="all"
+        onload="this.media='all'">
+    <link href="https://zhaoguohui09820.github.io/index/css/css.css" rel="stylesheet" media="all"
+        onload="this.media='all'">
     <link rel="stylesheet" href="https://zhaoguohui09820.github.io/index/css/vendor.min.css">
     <link title="dark-prism" rel="stylesheet" href="https://zhaoguohui09820.github.io/index/css/prism.css">
     <style class="fslightbox-styles">
@@ -1721,7 +1719,7 @@
         </symbol>
     </svg>
     <div id="LocalizeScript">
-                <script src="https://zhaoguohui09820.github.io/js/hm.js"></script>
+        <script src="https://zhaoguohui09820.github.io/js/hm.js"></script>
         <script type="text/javascript">
             var CuteenConfig = {
                 theme_version: '5.15(20240520)',
@@ -1738,7 +1736,7 @@
             };
         </script>
     </div>
-            <script src="https://zhaoguohui09820.github.io/js/hm.js"></script>
+    <script src="https://zhaoguohui09820.github.io/js/hm.js"></script>
     <style data-custom-style="">
         .hero::after {
             content: '';
@@ -1814,13 +1812,6 @@
                     <ul class="navbar-nav justify-content-start flex-grow-1 px-4 pt-4 px-md-0 pt-md-0 pe-md-3">
                         <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
                                 href="https://zhaoguohui09820.github.io/index/shsb.html">👋 生活</a></li>
-                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle show" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="true">🥇 学习</a>
-                            <ul class="dropdown-menu" data-bs-popper="static">
-                                <li><a target="_self" class="dropdown-item"
-                                        href="https://zhaoguohui09820.github.io/index/hx.html">⚗️ 化学</a></li>
-                            </ul>
-                        </li>
                         <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
                                 href="https://zhaoguohui09820.github.io/index/zpfb.html">📝 作品</a></li>
                         <li class="nav-item"><a target="_self" class="nav-link text-nowrap"
@@ -1899,7 +1890,7 @@
                     <script>
                         // 腾讯地图初始化
                         var map = new TMap.Map('tencent-map', {
-                            center: new TMap.LatLng(36.359346,114.933275), // 这里填写你想要显示的经纬度
+                            center: new TMap.LatLng(36.359346, 114.933275), // 这里填写你想要显示的经纬度
                             zoom: 15 // 缩放级别
                         });
                     </script>
@@ -2138,10 +2129,10 @@
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // 选择你要观察的元素
             const elementsToObserve = document.querySelectorAll('.article');
-    
+
             // 定义 IntersectionObserver 的回调函数
             const observerCallback = (entries, observer) => {
                 entries.forEach(entry => {
@@ -2154,16 +2145,16 @@
                     }
                 });
             };
-    
+
             // 创建 IntersectionObserver 实例
             const observerOptions = {
                 root: null, // 使用默认的视口
                 rootMargin: '0px',
                 threshold: 0.1 // 当元素的 10% 进入视口时触发回调
             };
-    
+
             const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
+
             // 观察所有选中的元素
             elementsToObserve.forEach(element => {
                 observer.observe(element);
@@ -2175,7 +2166,7 @@
             opacity: 0;
             transition: opacity 1s;
         }
-    
+
         .article.visible {
             opacity: 1;
         }
