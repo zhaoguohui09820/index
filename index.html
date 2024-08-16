@@ -1080,6 +1080,20 @@
         src="chrome-extension://odphnbhiddhdpoccbialllejaajemdio/scripts/inspector.js"></script>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var video = document.getElementById('background-video');
+            video.addEventListener('canplaythrough', function () {
+                video.style.opacity = 1;
+            });
+        });
+    </script>
+    <style>
+        #background-video {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+    </style>
 </head>
 
 <body>
@@ -1826,8 +1840,13 @@
             </ul>
         </div>
     </nav>
-
     <div id="hero-box" class="hero" style="background-image: url('https://bing.img.run/uhd.php'); height: 700px;">
+        <video id="background-video" autoplay loop muted poster="https://bing.img.run/uhd.php"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 0; transition: opacity 1s;">
+            <source
+                src="https://6qffx1-my.sharepoint.com/personal/2219_6qffx1_onmicrosoft_com/_layouts/15/download.aspx?UniqueId=f0d098fd%2Dbe52%2D4b86%2Db573%2De919fa7331db"
+                type="video/mp4">
+        </video>
         <h1 class="big-title serif-font">🐾 赵国辉 👻</h1>
         <div class="sub-title">
             落日沉溺于橘色的海 晚风沦陷于赤诚的爱</div>
