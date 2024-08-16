@@ -14854,7 +14854,7 @@ img.loaded.article-left-img {
 }
 
 .dark body {
-    background-color: #1e1e1e;
+    background-color: #121212;
 }
 
 .dark .reply2view {
@@ -14865,7 +14865,7 @@ img.loaded.article-left-img {
 .dark .card,
 .dark .modal-content,
 .dark .typography table thead>tr>th {
-    background-color: #161B22 !important;
+    background-color: #1e1e1e !important;
     color: rgba(255, 255, 255, .8)
 }
 
@@ -14881,7 +14881,7 @@ img.loaded.article-left-img {
 .dark .nav-tabs,
 .dark .nav-tabs .nav-link.active,
 .dark .timeline-with-icons {
-    border-color: #374151 !important
+    border-color: #424242 !important
 }
 
 .dark [text-anchor=middle] {
