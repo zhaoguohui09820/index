@@ -1864,6 +1864,11 @@
                         video.style.opacity = 1;
                     }, 100);
                 });
+
+                // 确保视频在DOM加载后尝试播放
+                video.play().catch(function (error) {
+                    console.log('Video play failed:', error);
+                });
             });
         </script>
         <h1 class="big-title serif-font">🐾 赵国辉 👻</h1>
