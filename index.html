@@ -1827,7 +1827,7 @@
         </div>
     </nav>
 
-    <div id="hero-box" class="hero" style="background-image: url('https://bing.img.run/uhd.php');">
+    <div id="hero-box" class="hero" style="background-image: url('https://bing.img.run/uhd.php');height: 700px;">
         <h1 class="big-title serif-font">🐾 赵国辉 👻</h1>
         <div class="sub-title">
             落日沉溺于橘色的海 晚风沦陷于赤诚的爱</div>
@@ -2068,18 +2068,6 @@
         </div>
     </div>
     <!--Headroom-->
-    <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/headroom.min.js"></script>
-    <script>
-        function headroom_fun() {
-            const element = document.getElementById("navPC");
-            const headroom = new Headroom(element, {
-                offset: 150,
-            });
-            headroom.init();
-        }
-
-        headroom_fun();
-    </script>
     <!--MathJax-->
     <script async="" id="MathJax-script" src="https://zhaoguohui09820.github.io/index/js/tex-chtml.js">
     </script>
@@ -2118,7 +2106,7 @@
             if (document.getElementById('echarts_pie')) EchartsInit();
             refreshFsLightbox();
             MathJax.typeset();
-            headroom_fun();
+            
             if (typeof Prism !== 'undefined') Prism.highlightAll(true, null);
             Cuteen.PjaxLoad()
         });
