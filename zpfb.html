@@ -1727,6 +1727,30 @@
       transition: background-color 0.3s, color 0.3s;
       font-family: 'CustomFonts', MiSans, Microsoft YaHei, sans-serif;
     }
+
+    :root {
+      --icon-color-light: #ffffffcc;
+      --icon-color-dark: #666666;
+      --icon-hover-color-light: #ffffff;
+      --icon-hover-color-dark: #333333;
+    }
+
+    .dark-mode {
+      --icon-color: #ffffffcc;
+      --icon-hover-color: #ffffff;
+    }
+
+    .email-icon,
+    .fa-brands {
+      color: var(--icon-color-light);
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .email-icon:hover,
+    .fa-brands:hover {
+      color: var(--icon-hover-color-light);
+      transform: translateY(-3px);
+    }
   </style>
   <nav class="navbar navbar-expand-md fixed-top px-2 px-md-5 has-img" id="navPC">
     <div class="container-fluid">
@@ -1844,6 +1868,14 @@
             </div>
             <h2 class="fw-bold serif-font mt-5 fs-4 text-center">Zhao Guohui</h2>
             <span class="sidebar-sign">落日沉溺于橘色的海 晚风沦陷于赤诚的爱</span>
+            <div style="text-align: center;margin-bottom: 5px;">
+              <a href="mailto:zhaolixiangguohui@outlook.com" style="margin-right: 10px;">
+                <i class="fas fa-envelope email-icon"></i>
+              </a>
+              <a href="https://space.bilibili.com/1385150042?spm_id_from=333.1007.0.0">
+                <i class="fa-brands fa-bilibili"></i>
+              </a>
+            </div>
           </section>
           <section class="sidebar-comment-box card mt-4">
             <div class="px-4 py-2 my-2 d-flex align-items-center border-bottom">
