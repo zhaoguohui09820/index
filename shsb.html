@@ -1997,7 +1997,30 @@
       MathJax.typeset();
 
       if (typeof Prism !== 'undefined') Prism.highlightAll(true, null);
-      Cuteen.PjaxLoad()
+                  Cuteen.PjaxLoad()
+
+            // 重新初始化IntersectionObserver
+            const elementsToObserve = document.querySelectorAll('.article');
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            };
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            elementsToObserve.forEach(element => {
+                observer.observe(element);
+            });
     });
   </script>
   <script src="https://blog.zwying.com/usr/themes/Cuteen/static/js/player.js"></script>
