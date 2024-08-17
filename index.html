@@ -1736,6 +1736,30 @@
     </div>
     <script src="https://zhaoguohui09820.github.io/js/hm.js"></script>
     <style>
+        @media (max-width: 768px) {
+            #hero-box img {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 0px;
+            }
+
+            #hero-box h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #hero-box img {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 0px;
+            }
+
+            #hero-box h1 {
+                font-size: 36px;
+            }
+        }
+
         #hero-box {
             background-size: cover;
             /* 确保背景图片覆盖整个视口 */
@@ -1746,6 +1770,10 @@
         body {
             transition: background-color 0.3s, color 0.3s;
             font-family: 'CustomFonts', MiSans, Microsoft YaHei, sans-serif;
+        }
+
+        h1.big-title.serif-font {
+            margin-top: 5px;
         }
     </style>
     <nav class="navbar navbar-expand-md fixed-top px-2 px-md-5 has-img" id="navPC">
@@ -1813,12 +1841,7 @@
                 </div>
             </div>
             <ul class="navbar-nav">
-                <li class="navbar-icon" data-bs-toggle="modal" data-bs-target="#searchModal" style="opacity: 0;">
-                    <svg class="icon icon-20" aria-hidden="true">
-                        <use xlink:href="#search"></use>
-                    </svg>
-                </li>
-                <li id="musicApp" class="navbar-icon position-relative d-none d-md-inline-flex">
+                <li id="musicApp" class="navbar-icon position-relative d-md-inline-flex">
                     <svg id="musicSvg" class="icon icon-20" aria-hidden="true">
                         <use xlink:href="#music"></use>
                     </svg>
@@ -1835,6 +1858,7 @@
     </nav>
 
     <div id="hero-box" class="hero" style="background-image: url('https://bing.img.run/uhd.php'); height: 100vh;">
+        <img src="https://zhaoguohui09820.github.io/index/img/avatar.avif" width="200" height="200" alt="我的头像">
         <h1 class="big-title serif-font">🐾 赵国辉 👻</h1>
         <div class="sub-title">
             落日沉溺于橘色的海 晚风沦陷于赤诚的爱</div>
