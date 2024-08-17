@@ -1867,8 +1867,8 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://zhaoguohui09820.github.io/index/img/10001.jpg"
-                            class="d-block w-100" alt="留言板">
+                        <img src="https://zhaoguohui09820.github.io/index/img/10001.jpg" class="d-block w-100"
+                            alt="留言板">
                         <a class="carousel-caption" href="https://zhaoguohui09820.github.io/index/chat.html">
                             <h3 class="fw-bold serif-font">留言板</h3>
                             <ul class="post-title-info">
@@ -1876,8 +1876,7 @@
                         </a>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://zhaoguohui09820.github.io/index/img/game.jpg"
-                            class="d-block w-100" alt="游戏">
+                        <img src="https://zhaoguohui09820.github.io/index/img/game.jpg" class="d-block w-100" alt="游戏">
                         <a class="carousel-caption" href="https://haiyong.site/moyu/">
                             <h3 class="fw-bold serif-font">游戏</h3>
                             <ul class="post-title-info">
@@ -1885,8 +1884,7 @@
                         </a>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://zhaoguohui09820.github.io/index/img/sn.jpg"
-                            class="d-block w-100" alt="闪念">
+                        <img src="https://zhaoguohui09820.github.io/index/img/sn.jpg" class="d-block w-100" alt="闪念">
                         <a class="carousel-caption" href="https://zhaoguohui09820.github.io/index/sn.html">
                             <h3 class="fw-bold serif-font">闪念</h3>
                             <ul class="post-title-info">
@@ -2261,6 +2259,140 @@
             opacity: 1;
         }
     </style>
+    <script>
+
+        !function () {
+
+            function n(n, e, t) {
+
+                return n.getAttribute(e) || t
+
+            }
+
+            function e(n) {
+
+                return document.getElementsByTagName(n)
+
+            }
+
+            function t() {
+
+                var t = e("script"), o = t.length, i = t[o - 1];
+
+                return {
+
+                    l: o,
+                    // z 軸上的位置索引，默認值為 -1
+                    z: n(i, "zIndex", -1),
+                    // 透明度，默認值為 0.5
+                    o: n(i, "opacity", .5),
+                    // 顏色，默認值為黑色
+                    c: n(i, "color", "0,0,139"),
+                    // 粒子數量，默認值為 99
+                    n: n(i, "count", 150)
+
+                }
+
+            }
+
+            function o() {
+
+                // 捕捉當前頁面的寬度（m.width），考慮了窗口邊框、文檔元素邊框和文檔本身的大小
+                a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+                    // 捕捉當前頁面的高度（m.height），考慮了窗口邊框、文檔元素邊框和文檔本身的大小
+                    c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+
+            }
+
+            function i() {
+
+                // 清空整個畫布（m），清除任何先前繪製的內容，准備繪製新的框架
+                r.clearRect(0, 0, a, c);
+
+                /**
+                 * 循環遍歷 s 數組中的每個元素
+                 * x 索引用於記錄當前遍歷到的元素位置
+                 */
+                s.forEach(function (i, x) {
+
+                    /**
+                     * 更新每個粒子的位置，讓它們在畫布上移動。
+                     * xa 和 ya 是它們在 x 和 y 軸向上的速度。
+                     * 粒子在碰到畫布邊界時會反彈（改變移動方向）。
+                     */
+                    for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) {
+                        // u 數組包含所有的粒子和光標（y），n 代表 u 中的每個元素（粒子或光標），檢查它們是否存在
+                        n = u[e],
+                            null !== n.x && null !== n.y && ( // 如果粒子存在（即 x 和 y 坐標都不是 null），計算它到光標的距離
+                                o = i.x - n.x, m = i.y - n.y,
+                                l = o * o + m * m, // 使用距離公式計算距離
+                                l < n.max && // 如果粒子足夠接近光標
+                                (n === y && l >= n.max / 2 // 檢查粒子是否是光標本身
+                                    && (i.x -= .03 * o, i.y -= .03 * m), // 如果是光標，稍微反彈一下
+                                    t = (n.max - l) / n.max, // 計算顏色的透明度
+                                    // 設定畫筆的粗細和顏色
+                                    r.beginPath(),
+                                    r.lineWidth = t / 2,
+                                    // 使用 rgba 格式，透明度由 t 決定
+                                    r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")",
+                                    // 開始一條從粒子到光標的新路徑
+                                    r.moveTo(i.x, i.y),
+                                    // 繪製一條到光標的直線
+                                    r.lineTo(n.x, n.y),
+                                    // 繪製直線
+                                    r.stroke()))
+
+                    }
+                }),
+                    // 持續更新畫布，模擬動態效果
+                    x(i)
+
+            }
+            /**
+             * 初始化所有變量。
+             * 創建 <canvas> 元素 m，並設定其 id 和 style。
+             * 設定動畫循環 x，以及計算機生成的隨機數 w。
+             * 初始化光標坐標 y，設定最大距離值的 s 和 u 數組。
+             * 計算機生成的隨機位置和速度，並添加到 s 數組。
+             */
+            var a, c, u, m = document.createElement("canvas"),
+                d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
+                x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+                    function (n) {
+
+                        window.setTimeout(n, 1e3 / 45)
+
+                    },
+
+                w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+                    window.onmousemove = function (n) {
+
+                        n = n || window.event, y.x = n.clientX, y.y = n.clientY
+
+                    },
+
+                    window.onmouseout = function () {
+
+                        y.x = null, y.y = null
+
+                    };
+            // 生成大量粒子，每個粒子都有隨機的位置和速度
+            for (var s = [], f = 0; d.n > f; f++) {
+
+                var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+
+            }
+
+            u = s.concat([y]),
+                /**
+                 * 初始化動畫循環。
+                 * 在等待 100ms 後，開始更新動畫。
+                 */
+                setTimeout(function () { i() }, 100)
+
+        }();
+
+    </script>
 </body>
 
 </html>
