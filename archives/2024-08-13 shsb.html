@@ -28,12 +28,10 @@
     <link rel="icon" type="image/png" href="https://zhaoguohui09820.github.io/index/img/logo.avif">
     <link rel="apple-touch-icon-precomposed" href="https://zhaoguohui09820.github.io/index/img/logo.avif">
     <title>行走在云端，感受日落的美 - 赵国辉</title>
-    <link
-        href="https://zhaoguohui09820.github.io/index/css/css_2.css"
-        rel="stylesheet" media="all" onload="this.media='all'">
-    <link
-        href="https://zhaoguohui09820.github.io/index/css/css.css"
-        rel="stylesheet" media="all" onload="this.media='all'">
+    <link href="https://zhaoguohui09820.github.io/index/css/css_2.css" rel="stylesheet" media="all"
+        onload="this.media='all'">
+    <link href="https://zhaoguohui09820.github.io/index/css/css.css" rel="stylesheet" media="all"
+        onload="this.media='all'">
     <link rel="stylesheet" href="https://zhaoguohui09820.github.io/index/css/vendor.min.css">
     <link title="dark-prism" rel="stylesheet" href="https://zhaoguohui09820.github.io/index/css/prism.css">
     <style class="fslightbox-styles">
@@ -1725,7 +1723,7 @@
         </symbol>
     </svg>
     <div id="LocalizeScript">
-                <script src="https://zhaoguohui09820.github.io/js/hm.js"></script>
+        <script src="https://zhaoguohui09820.github.io/js/hm.js"></script>
         <script type="text/javascript">
             var CuteenConfig = {
                 theme_version: '5.15(20240520)',
@@ -1742,7 +1740,7 @@
             };
         </script>
     </div>
-            <script src="https://zhaoguohui09820.github.io/js/hm.js"></script>
+    <script src="https://zhaoguohui09820.github.io/js/hm.js"></script>
     <style>
         /* bing收录侧边栏 */
         .searchs {
@@ -1859,6 +1857,40 @@
         body {
             transition: background-color 0.3s, color 0.3s;
             font-family: 'CustomFonts', MiSans, Microsoft YaHei, sans-serif;
+        }
+
+        /* 评论系统样式 */
+        #cusdis_thread {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        #cusdis_thread .cusdis-avatar {
+            border-radius: 50%;
+        }
+
+        #cusdis_thread .cusdis-username {
+            font-weight: bold;
+        }
+
+        #cusdis_thread .cusdis-content {
+            margin-top: 10px;
+        }
+
+        #cusdis_thread .cusdis-reply-btn {
+            background-color: #2186f3;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #cusdis_thread .cusdis-reply-btn:hover {
+            background-color: #0056b3;
         }
     </style>
     <nav class="navbar navbar-expand-md fixed-top px-2 px-md-5 has-img" id="navPC">
@@ -1985,7 +2017,7 @@
                             </a>
                         </div>
                     </section>
-                                        <section class="sidebar-comment-box card mt-4">
+                    <section class="sidebar-comment-box card mt-4">
                         <div class="px-3 py-2 my-2 d-flex align-items-center border-bottom">
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
                                 viewBox="0 0 48 48">
@@ -2235,16 +2267,20 @@
                         </svg>
                         评论区
                     </div>
-                    <p style="color: brown;font-size: small;margin-bottom: 0;">留言（评论）时的名字格式推荐：Zhao_Guohui</p>
-                    <p style="color: brown;font-size: small;margin-top: 0;">直接以访客名义输入留言（评论）内容和名字发表留言就行什么都不用登入</p>
-                    <script>
-                        var idcomments_acct = 'ef04893f9c10746a4032da000994cfc9';
-                        var idcomments_post_id = '2024-08-13';
-                        var idcomments_post_url;
+                    <div id="cusdis_thread" data-host="https://cusdis.com"
+                        data-app-id="336b2586-5085-45cd-b78c-911f596293e3" data-page-id="{{ PAGE_ID }}"
+                        data-page-url="{{ PAGE_URL }}" data-page-title="{{ PAGE_TITLE }}"></div>
+                    <script async defer src="https://cusdis.com/js/cusdis.es.js">
+                        document.addEventListener('cusdis.comment.created', function (event) {
+                            // 评论创建后的处理逻辑
+                            console.log('Comment created:', event.detail);
+                        });
+
+                        document.addEventListener('cusdis.comment.replied', function (event) {
+                            // 评论回复后的处理逻辑
+                            console.log('Comment replied:', event.detail);
+                        });
                     </script>
-                    <span id="IDCommentsPostTitle" style="display:none"></span>
-                    <script type='text/javascript'
-                        src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
                 </section>
             </div>
         </div>
@@ -2317,7 +2353,7 @@
             </svg>
         </div>
     </div>
-        <!-- 站点运行时间 -->
+    <!-- 站点运行时间 -->
     <script type="text/javascript">
         function show_runtime() {
             window.setTimeout("show_runtime()", 1000);
@@ -2374,9 +2410,9 @@
             if (document.getElementById('echarts_pie')) EchartsInit();
             refreshFsLightbox();
             MathJax.typeset();
-            
+
             if (typeof Prism !== 'undefined') Prism.highlightAll(true, null);
-                        Cuteen.PjaxLoad()
+            Cuteen.PjaxLoad()
 
             // 重新初始化IntersectionObserver
             const elementsToObserve = document.querySelectorAll('.article');
@@ -2479,10 +2515,10 @@
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // 选择你要观察的元素
             const elementsToObserve = document.querySelectorAll('.article');
-    
+
             // 定义 IntersectionObserver 的回调函数
             const observerCallback = (entries, observer) => {
                 entries.forEach(entry => {
@@ -2495,16 +2531,16 @@
                     }
                 });
             };
-    
+
             // 创建 IntersectionObserver 实例
             const observerOptions = {
                 root: null, // 使用默认的视口
                 rootMargin: '0px',
                 threshold: 0.1 // 当元素的 10% 进入视口时触发回调
             };
-    
+
             const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
+
             // 观察所有选中的元素
             elementsToObserve.forEach(element => {
                 observer.observe(element);
@@ -2516,7 +2552,7 @@
             opacity: 0;
             transition: opacity 2s;
         }
-    
+
         .article.visible {
             opacity: 1;
         }
