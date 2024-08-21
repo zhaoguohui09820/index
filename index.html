@@ -1900,7 +1900,9 @@
             max-width: 100%;
             overflow: hidden;
             text-overflow: ellipsis;
+            text-align: center;
             white-space: nowrap;
+            color: #dbdbdb;
         }
 
         .text::after {
@@ -1933,6 +1935,12 @@
                 line-height: 1.5;
                 white-space: normal;
                 overflow: auto;
+                white-space: pre-wrap;
+                /* 允许换行 */
+                width: 15em;
+                /* 设置宽度为15个字符的宽度 */
+                margin: 0 auto;
+                /* 居中 */
             }
         }
     </style>
@@ -2024,9 +2032,11 @@
             let isDeleting = false;
             let hitokotoText = '';
 
-            const typingSpeed = 150; // 定义打字速度（毫秒）
+            const typingSpeed = 200; // 定义打字速度（毫秒）
             const deletingSpeed = 100; // 定义删除速度（毫秒）
             const delayBetweenCycles = 5000; // 在句子完成显示和删除之前的延迟时间（毫秒）
+
+            let timeoutId; // 用于存储当前的 setTimeout ID
 
             function typeWriter() {
                 if (isDeleting) {
@@ -2036,14 +2046,14 @@
                 }
 
                 if (!isDeleting && charIndex === hitokotoText.length) {
-                    setTimeout(() => isDeleting = true, delayBetweenCycles);
+                    timeoutId = setTimeout(() => isDeleting = true, delayBetweenCycles);
                 } else if (isDeleting && charIndex === 0) {
                     isDeleting = false;
                     fetchHitokoto();
                 }
 
                 const speed = isDeleting ? deletingSpeed : typingSpeed;
-                setTimeout(typeWriter, speed);
+                timeoutId = setTimeout(typeWriter, speed);
             }
 
             function fetchHitokoto() {
@@ -2051,6 +2061,8 @@
                     .then(response => response.json())
                     .then(data => {
                         hitokotoText = data.hitokoto;
+                        clearTimeout(timeoutId); // 清除之前的 setTimeout
+                        charIndex = 0; // 重置字符索引
                         typeWriter();
                     })
                     .catch(console.error);
