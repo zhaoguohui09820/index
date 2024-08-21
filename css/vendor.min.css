@@ -6,6 +6,15 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+ @font-face {
+    font-family: "Pacifico-Regular";
+    src: url('./Pacifico-Regular-all.ttf') format('truetype');
+}
+
+.Pacifico-Regular {
+    font-family: 'Pacifico-Regular';
+}
+
 /* 添加CSS样式以确保文本自动换行 */
 .text-center td,
 .text-center th {
