@@ -1887,6 +1887,54 @@
         h1.big-title.serif-font {
             margin-top: 5px;
         }
+
+        .text {
+            font-family: 'fangsong';
+            display: inline-block;
+            position: relative;
+            font-size: 16px;
+            height: 16px;
+            line-height: 16px;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .text::after {
+            content: '';
+            display: inline-block;
+            vertical-align: text-top;
+            width: 2px;
+            height: 16px;
+            background-color: rgb(245, 245, 245);
+            margin-left: 2px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .text {
+                font-size: 16px;
+                height: auto;
+                line-height: 1.5;
+                white-space: normal;
+                overflow: auto;
+            }
+        }
     </style>
     <nav class="navbar navbar-expand-md fixed-top px-2 px-md-5 has-img" id="navPC">
         <div class="container-fluid">
@@ -1967,8 +2015,50 @@
     <div id="hero-box" class="hero" style="background-image: url('https://bing.img.run/uhd.php'); height: 100vh;">
         <img src="./img/avatar.avif" width="200" height="200" alt="我的头像">
         <h1 class="big-title serif-font">🐾 赵国辉 👻</h1>
-        <div class="sub-title">
-            落日沉溺于橘色的海 晚风沦陷于赤诚的爱</div>
+
+            <span class="text" id="hitokoto_text"></span>
+
+        <script>
+            const textElement = document.querySelector('.text');
+            let currentIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let hitokotoText = '';
+
+            const typingSpeed = 150; // 定义打字速度（毫秒）
+            const deletingSpeed = 100; // 定义删除速度（毫秒）
+            const delayBetweenCycles = 5000; // 在句子完成显示和删除之前的延迟时间（毫秒）
+
+            function typeWriter() {
+                if (isDeleting) {
+                    textElement.innerHTML = hitokotoText.slice(0, charIndex--);
+                } else {
+                    textElement.innerHTML = hitokotoText.slice(0, ++charIndex);
+                }
+
+                if (!isDeleting && charIndex === hitokotoText.length) {
+                    setTimeout(() => isDeleting = true, delayBetweenCycles);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    fetchHitokoto();
+                }
+
+                const speed = isDeleting ? deletingSpeed : typingSpeed;
+                setTimeout(typeWriter, speed);
+            }
+
+            function fetchHitokoto() {
+                fetch('https://v1.hitokoto.cn')
+                    .then(response => response.json())
+                    .then(data => {
+                        hitokotoText = data.hitokoto;
+                        typeWriter();
+                    })
+                    .catch(console.error);
+            }
+
+            fetchHitokoto();
+        </script>
         <section class="main-hero-waves-area waves-area">
             <svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
